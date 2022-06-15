@@ -3,24 +3,24 @@ package com.example.proyecto.entity;
 public class GuarderiasEntity {
 
     private String nombre;
-    private float precioNoche;
+    private float precio_noche;
     private String telefono;
     private String email;
-    private String direccion;
+    //duda dirección.
     private float valoracion;
 
     // Constructor
 
-    public GuarderiasEntity(String nombre, float precioNoche, String telefono, String email, String direccion, float valoracion) {
+    public GuarderiasEntity(String nombre, float precio_noche, String telefono, String email, float valoracion) {
         this.nombre = nombre;
-        this.precioNoche = precioNoche;
+        this.precio_noche = precio_noche;
         this.telefono = telefono;
         this.email = email;
-        this.direccion = direccion;
         this.valoracion = valoracion;
     }
 
     //GetterSetter
+
 
     public String getNombre() {
         return nombre;
@@ -30,12 +30,12 @@ public class GuarderiasEntity {
         this.nombre = nombre;
     }
 
-    public float getPrecioNoche() {
-        return precioNoche;
+    public float getPrecio_noche() {
+        return precio_noche;
     }
 
     public void setPrecioNoche(float precioNoche) {
-        this.precioNoche = precioNoche;
+        this.precio_noche = precioNoche;
     }
 
     public String getTelefono() {
@@ -52,14 +52,6 @@ public class GuarderiasEntity {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public float getValoracion() {
