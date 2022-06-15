@@ -9,6 +9,7 @@ public class HotelesEntity {
     private String email;
     private String telefono;
 
+    // Constructor
     public HotelesEntity(Integer id, String nombre, boolean piscina, float valoracion, float precio_noche, String email, String telefono) {
         this.id = id;
         this.nombre = nombre;
@@ -19,6 +20,7 @@ public class HotelesEntity {
         this.telefono = telefono;
     }
 
+    // Getter y Setters
     public Integer getId() {
         return id;
     }
