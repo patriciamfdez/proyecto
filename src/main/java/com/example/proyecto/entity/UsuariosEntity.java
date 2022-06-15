@@ -13,9 +13,6 @@ public class UsuariosEntity {
     private String clave;
     private String telefono;
     private Date fecha_nacimiento;
-    private String direccion;
-    private Image foto;
-    private Integer metodo_pago_id;
 
     //Constructores
 
@@ -30,9 +27,7 @@ public class UsuariosEntity {
         this.clave = clave;
         this.telefono = telefono;
         this.fecha_nacimiento = fecha_nacimiento;
-        this.direccion = direccion;
-        this.foto = foto;
-        this.metodo_pago_id = metodo_pago_id;
+
     }
     //Getters and Setters
 
@@ -108,27 +103,6 @@ public class UsuariosEntity {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getDireccion() {
-        return direccion;
+
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public Image getFoto() {
-        return foto;
-    }
-
-    public void setFoto(Image foto) {
-        this.foto = foto;
-    }
-
-    public Integer getMetodo_pago_id() {
-        return metodo_pago_id;
-    }
-
-    public void setMetodo_pago_id(Integer metodo_pago_id) {
-        this.metodo_pago_id = metodo_pago_id;
-    }
-}
