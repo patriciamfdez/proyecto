@@ -1,4 +1,4 @@
 package com.example.proyecto.entity;
 
-public class Guarderias {
+public class TiposDePagosEntity {
 }

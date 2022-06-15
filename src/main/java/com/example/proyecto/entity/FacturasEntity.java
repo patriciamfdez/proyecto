@@ -1,4 +1,4 @@
 package com.example.proyecto.entity;
 
-public class Catalogos {
+public class FacturasEntity {
 }
