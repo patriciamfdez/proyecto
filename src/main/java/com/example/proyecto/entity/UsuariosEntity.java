@@ -1,6 +1,5 @@
 package com.example.proyecto.entity;
 
-import java.awt.*;
 import java.util.Date;
 
 public class UsuariosEntity {
