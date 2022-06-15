@@ -15,7 +15,7 @@ public class UsuariosEntity {
 
     //Constructores
 
-    public UsuariosEntity(Integer id, String doc_identificacion, String nombre, String primer_apellido, String segundo_apellido, String email, String clave, String telefono, Date fecha_nacimiento, String direccion, Integer metodo_pago_id) {
+    public UsuariosEntity(Integer id, String doc_identificacion, String nombre, String primer_apellido, String segundo_apellido, String email, String clave, String telefono, Date fecha_nacimiento) {
         this.id = id;
         this.doc_identificacion = doc_identificacion;
         this.nombre = nombre;
