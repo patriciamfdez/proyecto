@@ -1,4 +1,4 @@
 package com.example.proyecto.repository;
 
-public interface ServiciosUsuarios {
+public interface PaseadoresRepository {
 }
