@@ -1,4 +1,4 @@
 package com.example.proyecto.repository;
 
-public interface Catalogos {
+public interface CatalogosRepository {
 }
