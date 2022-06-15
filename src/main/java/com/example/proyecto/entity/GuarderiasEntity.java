@@ -9,7 +9,7 @@ public class GuarderiasEntity {
     private String direccion;
     private float valoracion;
 
-    //Constructor
+    // Constructor
 
     public GuarderiasEntity(String nombre, float precioNoche, String telefono, String email, String direccion, float valoracion) {
         this.nombre = nombre;
