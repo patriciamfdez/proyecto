@@ -1,4 +1,4 @@
 package com.example.proyecto.repository;
 
-public interface Facturas {
+public interface FacturasRepository {
 }
