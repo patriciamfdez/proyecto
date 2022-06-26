@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @SpringBootApplication
-public class ProyectoApplication extends WebSecurityConfigurerAdapter {
+public class ProyectoApplication extends WebSecurityConfigurerAdapter{
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoApplication.class, args);
@@ -40,3 +40,4 @@ public class ProyectoApplication extends WebSecurityConfigurerAdapter {
 		auth.inMemoryAuthentication().withUser("root").password("1234").roles("BASICO");
 	}
 }
+
