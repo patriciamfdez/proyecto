@@ -8,7 +8,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-public class SecurityConfiguration {
+public abstract class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -20,6 +20,7 @@ public class SecurityConfiguration {
         return http.build();
     }
 
+    protected abstract void configure(HttpSecurity http) throws Exception;
 }
 
 
