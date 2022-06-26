@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="https://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -26,34 +26,19 @@
 
 </head>
 <body>
+
     <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top headroom" >
-        <div class="container">
-            <div class="navbar-header">
-                <!-- Button for smallest screens -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="miperfil.html" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a href="#">Hoteles</a></li>
-                            <li><a href="residencias.html">Residencias</a></li>
-                            <li><a href="restaurantes.html">Restaurantes</a></li>
-                            <li><a href="paseadores.html">Paseadores</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="btn" href="signin.html">Iniciar sesión / Registrarse</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div> 
+	<div th:replace="~{fragments/navBarIN :: navBarIndex}"> </div>
     <!-- /.navbar -->
-    <header id="head" class="secondary"></header>
-    
+
+
+
+
+	<!-- footer -->
+	<div th:replace="~{fragments/footer :: nuestroFooter}"> </div>
+	<!-- /footer -->
+
+
 
     <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
