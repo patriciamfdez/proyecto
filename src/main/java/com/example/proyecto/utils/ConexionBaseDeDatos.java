@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class ConexionBaseDeDatos {
     private static String url = "jdbc:mysql://localhost:3306/doggo?serverTimezone=UTC";
     private static String username = "root";
-    private static String password = "caniche95";
+    private static String password = "1234";
     private static BasicDataSource pool;
 
     // Crea el pool
