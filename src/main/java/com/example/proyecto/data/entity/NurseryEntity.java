@@ -1,26 +1,32 @@
 package com.example.proyecto.data.entity;
 
-public class GuarderiasEntity {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "guarderia")
+public class NurseryEntity {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
     private String nombre;
     private float precio_noche;
     private String telefono;
     private String email;
-    //duda dirección.
+    private String direccion;
     private float valoracion;
 
-    // Constructor
+    public NurseryEntity() {}
 
-    public GuarderiasEntity(String nombre, float precio_noche, String telefono, String email, float valoracion) {
+    public NurseryEntity(long id, String nombre, float precio_noche, String telefono, String email, String direccion, float valoracion) {
+        this.id = id;
         this.nombre = nombre;
         this.precio_noche = precio_noche;
         this.telefono = telefono;
         this.email = email;
+        this.direccion = direccion;
         this.valoracion = valoracion;
     }
-
-    //GetterSetter
-
 
     public String getNombre() {
         return nombre;
@@ -52,6 +58,26 @@ public class GuarderiasEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setPrecio_noche(float precio_noche) {
+        this.precio_noche = precio_noche;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public float getValoracion() {
