@@ -12,6 +12,6 @@ public interface NurseryRepository extends CrudRepository<NurseryEntity,Long> {
 
     List<NurseryEntity> findAll();
 
-    @Query(value = "SELECT * FROM guarderia WHERE precio_noche > :priceMax AND precio_noche < :priceMin", nativeQuery = true)
+    @Query(value = "SELECT * FROM guarderia WHERE precio_noche >= :priceMax AND precio_noche <= :priceMin", nativeQuery = true)
     List<NurseryEntity> findPriceFilter(float priceMax, float priceMin);
 }
