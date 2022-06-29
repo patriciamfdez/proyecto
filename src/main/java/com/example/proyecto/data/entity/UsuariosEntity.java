@@ -1,10 +1,12 @@
 package com.example.proyecto.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
 public class UsuariosEntity {
+    @Id
     private Integer id;
     private String doc_identificacion;
     private String nombre;
