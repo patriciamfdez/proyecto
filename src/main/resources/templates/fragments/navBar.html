@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="assets/css/main.css">
+
+	<!-- Iconos -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<!-- NavBar del Index NO LOGADO -->
+
+	<div class="navbar navbar-inverse navbar-fixed-top headroom"  th:fragment="navBarIndexIn">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li class="active"><a href="#">Inicio</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="residencias.html">Residencias</a></li>
+							<li><a href="paseadores.html">Paseadores</a></li>
+						</ul>
+					</li>
+					<li><a class="btn" href="signin.html">Iniciar sesión / Registrarse</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+
+<!-- NavBar del Index LOGADO-->
+<div class="navbar navbar-inverse navbar-fixed-top headroom"  th:fragment="navBarIndexOut">
+	<div class="container">
+		<div class="navbar-header">
+			<!-- Button for smallest screens -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav pull-right">
+				<li class="active"><a href="#">Inicio</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="residencias.html">Residencias</a></li>
+						<li><a href="paseadores.html">Paseadores</a></li>
+					</ul>
+				</li>
+				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i> Mi perfil <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="miperfil.hmtl">Ver perfil</a></li>
+						<li><a href="#">Mis mascotas</a></li>
+						<li><a href="#">Mis reservas</a></li>
+						<li><a href="#">Mis paseadores</a></li>
+						<li><a href="#">Notificaciones</a></li>
+						<li><a href="#">Métodos de pago</a></li>
+					</ul>
+				</li>
+				<li><a class="btn" href="#">Cerrar sesión</a></li> <!-- TODO Cambiar link a página inicio de LogIn -->
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<!-- /.navbar -->
+
+
+
+<!-- NavBar de Guarderías/Paseadores/Hoteles/Restaurantes  NO LOGADO-->
+<div class="navbar navbar-inverse navbar-fixed-top headroom"  th:fragment="navBarServIn">
+	<div class="container">
+		<div class="navbar-header">
+			<!-- Button for smallest screens -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav pull-right">
+				<li><a href="#">Inicio</a></li>
+				<li class="active" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="hoteles.html">Hoteles</a></li>
+						<li><a href="residencias.html">Residencias</a></li>
+						<li><a href="restaurantes.html">Restaurantes</a></li>
+						<li><a href="paseadores.html">Paseadores</a></li>
+					</ul>
+				</li>
+				<li><a class="btn" href="signin.html">Iniciar sesión / Registrarse</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<!-- /.navbar -->
+
+
+
+<!-- NavBar de Guarderías/Paseadores/Hoteles/Restaurantes  LOGADO-->
+<div class="navbar navbar-inverse navbar-fixed-top headroom"  th:fragment="navBarServOut">
+	<div class="container">
+		<div class="navbar-header">
+			<!-- Button for smallest screens -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav pull-right">
+				<li><a href="#">Inicio</a></li>
+				<li class="active" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="hoteles.html">Hoteles</a></li>
+						<li><a href="residencias.html">Residencias</a></li>
+						<li><a href="restaurantes.html">Restaurantes</a></li>
+						<li><a href="paseadores.html">Paseadores</a></li>
+					</ul>
+				</li>
+				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i> Mi perfil <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="miperfil.hmtl">Ver perfil</a></li>
+						<li><a href="#">Mis mascotas</a></li>
+						<li><a href="#">Mis reservas</a></li>
+						<li><a href="#">Mis paseadores</a></li>
+						<li><a href="#">Notificaciones</a></li>
+						<li><a href="#">Métodos de pago</a></li>
+					</ul>
+				</li>
+				<li><a class="btn" href="#">Cerrar sesión</a></li> <!-- TODO Cambiar link a página inicio de LogIn -->
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<!-- /.navbar -->
+
+
+
+<!-- NavBar de Perfil/Notificaciones/Masscotas/Reservas... -->
+<div class="navbar navbar-inverse navbar-fixed-top headroom"  th:fragment="navBarProfile">
+	<div class="container">
+		<div class="navbar-header">
+			<!-- Button for smallest screens -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav pull-right">
+				<li><a href="#">Inicio</a></li>
+				<li  class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="hoteles.html">Hoteles</a></li>
+						<li><a href="residencias.html">Residencias</a></li>
+						<li><a href="restaurantes.html">Restaurantes</a></li>
+						<li><a href="paseadores.html">Paseadores</a></li>
+					</ul>
+				</li>
+				<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+				<li class="active" class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i> Mi perfil <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="miperfil.hmtl">Ver perfil</a></li>
+						<li><a href="#">Mis mascotas</a></li>
+						<li><a href="#">Mis reservas</a></li>
+						<li><a href="#">Mis paseadores</a></li>
+						<li><a href="#">Notificaciones</a></li>
+						<li><a href="#">Métodos de pago</a></li>
+					</ul>
+				</li>
+				<li><a class="btn" href="#">Cerrar sesión</a></li> <!-- TODO Cambiar link a página inicio de LogIn -->
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+<!-- /.navbar -->
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="assets/js/headroom.min.js"></script>
+	<script src="assets/js/jQuery.headroom.min.js"></script>
+	<script src="assets/js/template.js"></script>
+</body>
+</html>
