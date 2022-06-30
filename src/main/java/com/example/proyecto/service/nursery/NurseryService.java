@@ -12,4 +12,6 @@ public interface NurseryService {
     List<Nursery> filterNurseryByPrice(String priceMax, String priceMin);
 
     Page<Nursery> findById(Integer userId, Pageable pageable);
+
+    List<Nursery> filterNurseryByAddress(String address);
 }

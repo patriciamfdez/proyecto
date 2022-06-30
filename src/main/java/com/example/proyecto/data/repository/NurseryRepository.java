@@ -16,5 +16,7 @@ public interface NurseryRepository extends CrudRepository<NurseryEntity,Long> {
     List<NurseryEntity> findPriceFilter(float priceMax, float priceMin);
 
     List<NurseryEntity> findById();
+
+    List<NurseryEntity> findNurseryAddress();
 }
 

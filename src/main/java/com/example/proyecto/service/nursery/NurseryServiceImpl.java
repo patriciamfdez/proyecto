@@ -9,7 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.naming.directory.SearchResult;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,5 +53,16 @@ public class NurseryServiceImpl implements NurseryService{
         return null;
     }
 
+    @Override
+    public List<Nursery> filterNurseryByAddress(String address) {
+        List<Nursery>listNurseryDto = new ArrayList<>();
+
+        List<NurseryEntity> nurseryEntityList = repository.findNurseryAddress();
+        nurseryEntityList.forEach(nursery -> {
+            listNurseryDto.add(mapper.convertEntityToDto(nursery));
+        });
+
+        return listNurseryDto;
+    }
 
 }

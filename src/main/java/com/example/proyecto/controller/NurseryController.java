@@ -2,10 +2,7 @@ package com.example.proyecto.controller;
 
 import com.example.proyecto.dto.Nursery;
 import com.example.proyecto.service.nursery.NurseryService;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.Id;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -36,6 +33,14 @@ public class NurseryController {
 
         return service.findById(id);
     }
+
+    @GetMapping(value = "/{address}")
+    public List<Nursery> getNurseryAddress(){
+
+        return service.filterNurseryByAddress(String address);
+    }
+
+
 
 
     @PostMapping(value = "/create")
