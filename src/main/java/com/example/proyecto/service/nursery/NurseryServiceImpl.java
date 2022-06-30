@@ -5,8 +5,11 @@ import com.example.proyecto.data.repository.NurseryRepository;
 import com.example.proyecto.dto.Nursery;
 import com.example.proyecto.service.nursery.mapper.NurseryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.naming.directory.SearchResult;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,5 +46,13 @@ public class NurseryServiceImpl implements NurseryService{
 
         return listNurseryDto;
     }
+
+
+    @Override
+    public Page<Nursery> findById(Integer userId, Pageable pageable) {
+
+        return null;
+    }
+
 
 }

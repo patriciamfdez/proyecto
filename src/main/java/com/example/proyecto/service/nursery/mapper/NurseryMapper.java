@@ -11,6 +11,10 @@ public class NurseryMapper {
         nurseryDto.setId(nurseryEntity.getId());
         nurseryDto.setName(nurseryEntity.getNombre());
         nurseryDto.setPriceNight(nurseryEntity.getPrecio_noche());
+        nurseryDto.setPhone(nurseryEntity.getTelefono());
+        nurseryDto.setEmail(nurseryEntity.getEmail());
+        nurseryDto.setAdress(nurseryEntity.getDireccion());
+
         return nurseryDto;
     }
 }
