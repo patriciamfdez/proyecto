@@ -3,6 +3,7 @@ package com.example.proyecto.data.entity;
 import javax.persistence.*;
 
 @Entity
+//cambiar nombres cuando actualicemos mySql
 @Table(name = "guarderia")
 public class NurseryEntity {
 
@@ -15,6 +16,7 @@ public class NurseryEntity {
     private String email;
     private String direccion;
     private float valoracion;
+    //Falta las fechas en las que se reserva
 
     public NurseryEntity() {}
 
