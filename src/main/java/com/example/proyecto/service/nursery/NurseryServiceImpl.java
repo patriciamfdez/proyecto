@@ -1,6 +1,6 @@
 package com.example.proyecto.service.nursery;
 
-import com.example.proyecto.data.entity.NurseryEntity;
+import com.example.proyecto.data.entity.DaycareEntity;
 import com.example.proyecto.data.repository.NurseryRepository;
 import com.example.proyecto.dto.Nursery;
 import com.example.proyecto.service.nursery.mapper.NurseryMapper;
@@ -24,9 +24,9 @@ public class NurseryServiceImpl implements NurseryService{
     public List<Nursery> listNursery() {
         List<Nursery>listNurseryDto = new ArrayList<>();
 
-        List<NurseryEntity> nurseryEntityList = repository.findAll();
+        List<DaycareEntity> daycareEntityList = repository.findAll();
 
-        nurseryEntityList.forEach(nursery -> {
+        daycareEntityList.forEach(nursery -> {
             listNurseryDto.add(mapper.convertEntityToDto(nursery));
         });
 
@@ -37,9 +37,9 @@ public class NurseryServiceImpl implements NurseryService{
     public List<Nursery> filterNurseryByPrice(String priceMax, String priceMin) {
         List<Nursery>listNurseryDto = new ArrayList<>();
 
-        List<NurseryEntity> nurseryEntityList = repository.findPriceFilter(Float.parseFloat(priceMax),Float.parseFloat(priceMin));
+        List<DaycareEntity> daycareEntityList = repository.findPriceFilter(Float.parseFloat(priceMax),Float.parseFloat(priceMin));
 
-        nurseryEntityList.forEach(nursery -> {
+        daycareEntityList.forEach(nursery -> {
             listNurseryDto.add(mapper.convertEntityToDto(nursery));
         });
 
@@ -57,8 +57,8 @@ public class NurseryServiceImpl implements NurseryService{
     public List<Nursery> filterNurseryByAddress(String address) {
         List<Nursery>listNurseryDto = new ArrayList<>();
 
-        List<NurseryEntity> nurseryEntityList = repository.findNurseryAddress();
-        nurseryEntityList.forEach(nursery -> {
+        List<DaycareEntity> daycareEntityList = repository.findNurseryAddress();
+        daycareEntityList.forEach(nursery -> {
             listNurseryDto.add(mapper.convertEntityToDto(nursery));
         });
 
