@@ -44,7 +44,7 @@ public class DogsEntity {
         return name;
     }
 
-    public void setNombre(String nombre) {
+    public void setName(String name) {
         this.name = name;
     }
 
