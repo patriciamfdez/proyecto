@@ -1,6 +1,6 @@
 package com.example.proyecto.dto;
 
-public class Nursery {
+public class Daycare {
     private String name;
     private String reservation;
     private Long id;

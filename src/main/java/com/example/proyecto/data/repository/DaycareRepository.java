@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface NurseryRepository extends CrudRepository<DaycareEntity,Long> {
+public interface DaycareRepository extends CrudRepository<DaycareEntity,Long> {
 
     List<DaycareEntity> findAll();
 

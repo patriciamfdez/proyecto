@@ -1,7 +1,7 @@
 package com.example.proyecto.controller;
 
-import com.example.proyecto.dto.Nursery;
-import com.example.proyecto.service.nursery.NurseryService;
+import com.example.proyecto.dto.Daycare;
+import com.example.proyecto.service.nursery.DaycareService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -9,26 +9,26 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping(value= "/doggo/nursery", produces = APPLICATION_JSON_VALUE)
-public class NurseryController {
+public class DaycareController {
 
-    private final NurseryService service;
+    private final DaycareService service;
 
-    public NurseryController(NurseryService service) {
+    public DaycareController(DaycareService service) {
         this.service = service;
     }
 
     @GetMapping()
-    List<Nursery> listNursery(){
+    List<Daycare> listNursery(){
         return service.listNursery();
     }
 
     @GetMapping(value = "price/max/{priceMax}/min/{priceMin}")
-    public List<Nursery> getNurseryPrice(@PathVariable String priceMax, @PathVariable String priceMin){
+    public List<Daycare> getNurseryPrice(@PathVariable String priceMax, @PathVariable String priceMin){
 
         return service.filterNurseryByPrice(priceMax, priceMin);
     }
 
-    @GetMapping(value = "/{id}")
+ /*   @GetMapping(value = "/{id}")
     public Nursery getNursery(){
 
         return service.findById(id);
@@ -39,12 +39,12 @@ public class NurseryController {
 
         return service.filterNurseryByAddress(String address);
     }
-
+*/
 
 
 
     @PostMapping(value = "/create")
-    public Nursery createNursery(){
+    public Daycare createNursery(){
 
         return null;
     }
