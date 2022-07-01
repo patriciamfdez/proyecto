@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class UsersEntity {
+public class UserEntity {
     @Id
     private Integer id;
     private String docIdentification;
@@ -19,7 +19,7 @@ public class UsersEntity {
 
     //Constructores
 
-    public UsersEntity(Integer id, String docIdentification, String name, String firstSurname, String lastSurname, String email, String password, String phoneNumber, Date birthDate) {
+    public UserEntity(Integer id, String docIdentification, String name, String firstSurname, String lastSurname, String email, String password, String phoneNumber, Date birthDate) {
         this.id = id;
         this.docIdentification = docIdentification;
         this.name = name;

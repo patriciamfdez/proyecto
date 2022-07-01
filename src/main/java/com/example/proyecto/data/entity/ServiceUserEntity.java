@@ -2,7 +2,7 @@ package com.example.proyecto.data.entity;
 
 import java.util.Date;
 
-public class ServicesUsersEntity {
+public class ServiceUserEntity {
     private Integer id;
     private String username;
     private String BookingStatus;
@@ -13,7 +13,7 @@ public class ServicesUsersEntity {
 
     // Constructores
 
-    public ServicesUsersEntity(Integer id, String username, String BookingStatus, Date CreationDate, String ServiceName, Date BookingStartDate, Date BookingLastDate) {
+    public ServiceUserEntity(Integer id, String username, String BookingStatus, Date CreationDate, String ServiceName, Date BookingStartDate, Date BookingLastDate) {
         this.id = id;
         this.username = username;
         this.BookingStatus = BookingStatus;

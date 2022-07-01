@@ -1,6 +1,6 @@
 package com.example.proyecto.data.entity;
 
-public class DogsEntity {
+public class DogEntity {
     private Integer id;
     private String name;
     private float weightKg;
@@ -15,7 +15,7 @@ public class DogsEntity {
 
     // Constructor
 
-    public DogsEntity(Integer id, String name, float weightKg, String age, String gender, String race, boolean microchip, boolean sterilized, String infAdditional, boolean compatible, String allergies) {
+    public DogEntity(Integer id, String name, float weightKg, String age, String gender, String race, boolean microchip, boolean sterilized, String infAdditional, boolean compatible, String allergies) {
         this.id = id;
         this.name = name;
         this.weightKg = weightKg;
