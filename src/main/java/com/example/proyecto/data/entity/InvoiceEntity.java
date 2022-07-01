@@ -7,6 +7,7 @@ public class InvoiceEntity {
     private float amount;
     private String status;
 
+
     //Constructor
 
     public InvoiceEntity(Date invoiceDate, float amount, String status) {

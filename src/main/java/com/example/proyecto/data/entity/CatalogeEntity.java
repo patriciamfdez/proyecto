@@ -4,6 +4,7 @@ public class CatalogeEntity {
 
     private String serviceType;
 
+
     //Constructores
     public CatalogeEntity(String serviceType) {
         this.serviceType = serviceType;
