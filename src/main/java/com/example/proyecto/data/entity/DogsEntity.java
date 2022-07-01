@@ -15,7 +15,7 @@ public class DogsEntity {
 
     // Constructor
 
-    public DogsEntity(Integer id, String name, float weightKg, String age, String gender, String race, boolean microchip, boolean sterilized, String inf_adiocional, boolean compatible, String allergies) {
+    public DogsEntity(Integer id, String name, float weightKg, String age, String gender, String race, boolean microchip, boolean sterilized, String infAdditional, boolean compatible, String allergies) {
         this.id = id;
         this.name = name;
         this.weightKg = weightKg;
@@ -24,7 +24,7 @@ public class DogsEntity {
         this.race = race;
         this.microchip = microchip;
         this.sterilized = sterilized;
-        this.infAdditional = infAdditional;
+        this.infAdditional = this.infAdditional;
         this.compatible = compatible;
         this.allergies = allergies;
     }
