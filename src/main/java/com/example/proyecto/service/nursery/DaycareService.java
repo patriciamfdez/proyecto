@@ -10,8 +10,8 @@ public interface DaycareService {
 
     List<Daycare> listNursery();
     List<Daycare> filterNurseryByPrice(String priceMax, String priceMin);
-
+/*
     Page<Daycare> findById(Integer userId, Pageable pageable);
 
-    List<Daycare> filterNurseryByAddress(String address);
+    List<Daycare> filterNurseryByAddress(String address);*/
 }

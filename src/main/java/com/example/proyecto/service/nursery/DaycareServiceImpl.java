@@ -46,13 +46,13 @@ public class DaycareServiceImpl implements DaycareService {
         return listDaycareDto;
     }
 
-
+/*
     @Override
     public Page<Daycare> findById(Integer userId, Pageable pageable) {
 
         return null;
-    }
-
+    }*/
+/*
     @Override
     public List<Daycare> filterNurseryByAddress(String address) {
         List<Daycare> listDaycareDto = new ArrayList<>();
@@ -63,6 +63,6 @@ public class DaycareServiceImpl implements DaycareService {
         });
 
         return listDaycareDto;
-    }
+    }*/
 
 }
