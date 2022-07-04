@@ -1,5 +1,9 @@
 package com.example.proyecto.data.entity;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
+@Entity
+@Table(name = "invoice")
 
 public class InvoiceEntity {
 

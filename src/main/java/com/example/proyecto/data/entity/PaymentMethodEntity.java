@@ -1,5 +1,11 @@
 package com.example.proyecto.data.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "payment_method")
+
 public class PaymentMethodEntity {
     private Integer id;
     private String description;

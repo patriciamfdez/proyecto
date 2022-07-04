@@ -1,7 +1,10 @@
 package com.example.proyecto.data.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
-
+@Entity
+@Table(name = "dog_walker")
 public class DogWalkerEntity {
     private String doc_identification;
     private String name;

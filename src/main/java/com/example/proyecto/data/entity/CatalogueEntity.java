@@ -1,12 +1,18 @@
 package com.example.proyecto.data.entity;
 
-public class CatalogeEntity {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "catalogue")
+
+public class CatalogueEntity {
 
     private String serviceType;
 
 
     //Constructores
-    public CatalogeEntity(String serviceType) {
+    public CatalogueEntity(String serviceType) {
         this.serviceType = serviceType;
     }
 

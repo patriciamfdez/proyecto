@@ -1,7 +1,10 @@
 package com.example.proyecto.data.entity;
 
-import java.util.Date;
+import javax.persistence.Entity;
 
+
+import java.util.Date;
+@Entity
 public class ServiceUserEntity {
     private Integer id;
     private String username;
