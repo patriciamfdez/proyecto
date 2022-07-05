@@ -1,29 +1,42 @@
 package com.example.proyecto.data.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "daycare")
-public class DaycareEntity {
+public class DaycareEntity  implements Serializable {
 
+    // Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
+    @Column(nullable = false, length = 45)
     private String name;
+    @Column(nullable = false)
     private float night_price;
+    @Column(nullable = false, length = 15)
     private String phone;
+    @Column(nullable = false, length = 150)
     private String email;
+    @Column(nullable = false, length = 150)
     private String address;
     private float assessment;
+    @Column(nullable = false)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date entry_date;
+    @Column(nullable = false)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date departure_date;
     //Falta las fechas en las que se reserva
 
     public DaycareEntity() {
     }
 
-    public DaycareEntity(int id, String name, float night_price, String phone, String email, String address, float assessment, Date entry_date, Date departure_date) {
+    public DaycareEntity(Integer id, String name, float night_price, String phone, String email, String address, float assessment, Date entry_date, Date departure_date) {
         this.id = id;
         this.name = name;
         this.night_price = night_price;

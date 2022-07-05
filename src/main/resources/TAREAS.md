@@ -23,4 +23,6 @@ Crear páginas:
      - eliminar
      - añadir/editar
    - factura
-    
+
+EJECUTAR: mvn spring-boot:run*
+    *

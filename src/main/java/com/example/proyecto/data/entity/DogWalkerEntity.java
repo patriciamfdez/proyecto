@@ -1,33 +1,63 @@
 package com.example.proyecto.data.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-public class DogWalkerEntity {
+@Entity
+@Table(name = "dogWalker")
+public class DogWalkerEntity  implements Serializable {
+
+    // Attributes
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(nullable = false, length = 45)
     private String doc_identification;
+    @Column(nullable = false, length = 45)
     private String name;
+    @Column(nullable = false, length = 45)
+    private String userName;
+    @Column(nullable = false, length = 45)
     private String first_surname;
+    @Column(length = 45)
     private String last_surname;
+    @Column(nullable = false, length = 150)
     private String email;
+    @Column(nullable = false, length = 512)
     private String password;
+    @Column(nullable = false, length = 15)
     private String phone;
+    @Column(nullable = false)
     private Date birthdate;
+    @Column(nullable = false, length = 200)
     private String availability;
+    @Column(nullable = false, length = 150)
     private String address;
+    @Column(nullable = false)
     private Integer max_num_dogs;
+    @Column(nullable = false, length = 45)
     private String weight_dogs;
+    @Column(nullable = false)
     private boolean sterilized;
+    @Column(length = 400)
     private String reviews;
     private float assessment;
+    @Column(nullable = false)
     private float price_walk;
-    // Duda de como poner las fotos
     private String profile_picture;
     private String gallery;
 
     // Constructor
 
-    public DogWalkerEntity(String doc_identification, String name, String first_surname, String last_surname, String email, String password, String phone, Date birthdate, String availability, String address, Integer max_num_dogs, String weight_dogs, boolean sterilized, String reviews, float assessment, float price_walk, String profile_picture, String gallery) {
+    public DogWalkerEntity(Integer id, String doc_identification, String name, String userName, String first_surname,
+                           String last_surname, String email, String password, String phone, Date birthdate,
+                           String availability, String address, Integer max_num_dogs, String weight_dogs, boolean sterilized,
+                           String reviews, float assessment, float price_walk, String profile_picture, String gallery) {
+        this.id = id;
         this.doc_identification = doc_identification;
         this.name = name;
+        this.userName = userName;
         this.first_surname = first_surname;
         this.last_surname = last_surname;
         this.email = email;
@@ -44,6 +74,26 @@ public class DogWalkerEntity {
         this.price_walk = price_walk;
         this.profile_picture = profile_picture;
         this.gallery = gallery;
+    }
+
+
+    // Getters and Setters
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getDoc_identification() {
