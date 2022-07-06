@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="https://www.thymeleaf.org">
+<html lang="en" xmlns="https://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -86,11 +86,12 @@
 </footer>
 
 
+
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="assets/js/headroom.min.js"></script>
-<script src="assets/js/jQuery.headroom.min.js"></script>
-<script src="assets/js/template.js"></script>
+<script th:src="@{/js/headroom.min.js}"></script>
+<script th:src="@{/js/jQuery.headroom.min.js}"></script>
+<script th:src="@{/js/template.js}"></script>
 </body>
 </html>
