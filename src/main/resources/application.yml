@@ -4,8 +4,8 @@ spring:
       indent-output: true
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/doggo
-    username: root
-    password: 1234
+    username: doggo
+    password: 123456
 
   thymeleaf:
     cache: false
