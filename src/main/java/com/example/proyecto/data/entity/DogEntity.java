@@ -2,6 +2,7 @@ package com.example.proyecto.data.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name = "dog")
@@ -50,6 +51,10 @@ public class DogEntity  implements Serializable {
         this.allergies = allergies;
     }
 
+    // Relations
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "dogs")
+    private Set<User> users;
 
     //Getters y Setters
 

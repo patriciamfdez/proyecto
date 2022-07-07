@@ -17,6 +17,9 @@ public class Role implements Serializable {
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
     private Set<User> users;
 
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
+    private Set<Menu> menus;
+
     public Integer getId() {
         return id;
     }
@@ -39,5 +42,13 @@ public class Role implements Serializable {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public Set<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(Set<Menu> menus) {
+        this.menus = menus;
     }
 }

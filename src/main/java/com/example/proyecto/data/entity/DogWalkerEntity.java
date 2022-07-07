@@ -3,6 +3,7 @@ package com.example.proyecto.data.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "dogWalker")
@@ -47,6 +48,11 @@ public class DogWalkerEntity  implements Serializable {
     private float price_walk;
     private String profile_picture;
     private String gallery;
+
+    // Relations
+
+    @ManyToMany (fetch = FetchType.EAGER)
+    private Set<AddressEntity> addresses;
 
     // Constructor
 

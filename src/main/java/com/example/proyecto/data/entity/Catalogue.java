@@ -17,10 +17,10 @@ public class Catalogue implements Serializable {
     // Relations
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private DaycareEntity daycare;
+    private DaycareEntity daycares;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private DogWalkerEntity dogWalker;
+    private DogWalkerEntity dogWalkers;
 
     //Constructores
 
@@ -48,19 +48,19 @@ public class Catalogue implements Serializable {
         this.serviceType = serviceType;
     }
 
-    public DaycareEntity getDaycare() {
-        return daycare;
+    public DaycareEntity getDaycares() {
+        return daycares;
     }
 
-    public void setDaycare(DaycareEntity daycare) {
-        this.daycare = daycare;
+    public void setDaycares(DaycareEntity daycares) {
+        this.daycares = daycares;
     }
 
-    public DogWalkerEntity getDogWalker() {
-        return dogWalker;
+    public DogWalkerEntity getDogWalkers() {
+        return dogWalkers;
     }
 
-    public void setDogWalker(DogWalkerEntity dogWalker) {
-        this.dogWalker = dogWalker;
+    public void setDogWalkers(DogWalkerEntity dogWalkers) {
+        this.dogWalkers = dogWalkers;
     }
 }

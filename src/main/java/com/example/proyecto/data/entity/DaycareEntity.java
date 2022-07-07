@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "daycare")
@@ -32,6 +33,11 @@ public class DaycareEntity  implements Serializable {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date departure_date;
     //Falta las fechas en las que se reserva
+
+    // Relations
+
+    @ManyToMany (fetch = FetchType.EAGER)
+    private Set<AddressEntity> addresses;
 
     public DaycareEntity() {
     }

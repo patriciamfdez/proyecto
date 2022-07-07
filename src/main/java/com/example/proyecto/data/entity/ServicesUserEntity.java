@@ -31,13 +31,13 @@ public class ServicesUserEntity  implements Serializable {
     // Relations
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private User user;
+    private User users;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Catalogue catalogue;
+    private Catalogue catalogues;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private DogEntity dog;
+    private DogEntity dogs;
 
     // Constructores
 
@@ -54,29 +54,28 @@ public class ServicesUserEntity  implements Serializable {
 
     // Getter and Setters
 
-
-    public User getUser() {
-        return user;
+    public User getUsers() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsers(User users) {
+        this.users = users;
     }
 
-    public Catalogue getCatalogue() {
-        return catalogue;
+    public Catalogue getCatalogues() {
+        return catalogues;
     }
 
-    public void setCatalogue(Catalogue catalogue) {
-        this.catalogue = catalogue;
+    public void setCatalogues(Catalogue catalogues) {
+        this.catalogues = catalogues;
     }
 
-    public DogEntity getDog() {
-        return dog;
+    public DogEntity getDogs() {
+        return dogs;
     }
 
-    public void setDog(DogEntity dog) {
-        this.dog = dog;
+    public void setDogs(DogEntity dogs) {
+        this.dogs = dogs;
     }
 
     public Integer getId() {

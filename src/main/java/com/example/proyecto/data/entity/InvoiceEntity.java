@@ -24,10 +24,10 @@ public class InvoiceEntity  implements Serializable {
     // Relations
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private ServicesUserEntity servicesUser;
+    private ServicesUserEntity servicesUsers;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private PaymentMethodEntity paymentMethod;
+    private PaymentMethodEntity paymentMethods;
 
     //Constructor
 
@@ -71,5 +71,21 @@ public class InvoiceEntity  implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public ServicesUserEntity getServicesUsers() {
+        return servicesUsers;
+    }
+
+    public void setServicesUsers(ServicesUserEntity servicesUsers) {
+        this.servicesUsers = servicesUsers;
+    }
+
+    public PaymentMethodEntity getPaymentMethods() {
+        return paymentMethods;
+    }
+
+    public void setPaymentMethods(PaymentMethodEntity paymentMethods) {
+        this.paymentMethods = paymentMethods;
     }
 }
