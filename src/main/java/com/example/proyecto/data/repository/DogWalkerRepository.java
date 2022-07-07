@@ -1,4 +1,4 @@
 package com.example.proyecto.data.repository;
 
-public interface FacturasRepository {
+public interface DogWalkerRepository {
 }

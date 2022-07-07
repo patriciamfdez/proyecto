@@ -1,4 +1,5 @@
 package com.example.proyecto.data.repository;
 
-public interface TiposDePagoRepository {
+public interface DogRepository {
+
 }

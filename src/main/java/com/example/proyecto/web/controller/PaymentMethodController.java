@@ -1,4 +1,5 @@
 package com.example.proyecto.web.controller;
 
-public class PaseadoresController {
+public class PaymentMethodController {
+
 }
