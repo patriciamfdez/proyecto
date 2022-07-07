@@ -4,7 +4,6 @@
 <head th:replace="~{fragments/head :: head}"></head>
 
 <body class="home">
-
 <!-- Fixed navbar -->
 <nav th:replace="~{fragments/navBar :: navBarIndexIn}"> </nav>
 <!-- /.navbar -->
@@ -116,12 +115,10 @@
 		<div class="wrapper clearfix">
 			<!-- AddThis Button BEGIN -->
 			<div class="addthis_toolbox addthis_default_style">
-				<a class="addthis_button_facebook_like" ></a>
-				<!-- fb:like:layout="button_count" -->
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 				<a class="addthis_button_tweet"></a>
 				<a class="addthis_button_linkedin_counter"></a>
-				<a class="addthis_button_google_plusone" ></a>
-				<!--g:plusone:size="medium" -->
+				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
 			</div>
 			<!-- AddThis Button END -->
 		</div>
@@ -129,10 +126,11 @@
 </section>
 <!-- /social links -->
 
-
 <!-- footer -->
-<div th:replace="~{fragments/footer :: nuestroFooter}"> </div>
-<!-- /footer -->
+<footer th:replace="~{fragments/footer :: nuestroFooter}"></footer>
+	<!-- /footer -->
+
+
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
