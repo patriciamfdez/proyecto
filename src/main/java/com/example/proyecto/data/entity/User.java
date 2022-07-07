@@ -39,7 +39,7 @@ public class User implements Serializable {
     private User user;
 
     @ManyToMany (fetch = FetchType.EAGER)
-    private Set<Address> address;
+    private Set<AddressEntity> address;
 
 
 
@@ -147,11 +147,11 @@ public class User implements Serializable {
         this.user = user;
     }
 
-    public Set<Address> getAddress() {
+    public Set<AddressEntity> getAddress() {
         return address;
     }
 
-    public void setAddress(Set<Address> address) {
+    public void setAddress(Set<AddressEntity> address) {
         this.address = address;
     }
 }
