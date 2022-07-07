@@ -17,11 +17,17 @@ public class Menu {
     private Integer active;
     private String url;
 
+    // Relations
+
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    // Constructor
+
     public Menu() {
     }
+
+    // Getters and Setters
 
     public Integer getId() {
         return id;

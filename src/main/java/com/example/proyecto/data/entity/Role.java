@@ -14,11 +14,15 @@ public class Role implements Serializable {
     @Column(nullable = false)
     private String roleName;
 
+    // Relations
+
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
     private Set<User> users;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
     private Set<Menu> menus;
+
+    // Getters and Setters
 
     public Integer getId() {
         return id;

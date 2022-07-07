@@ -39,6 +39,8 @@ public class DaycareEntity  implements Serializable {
     @ManyToMany (fetch = FetchType.EAGER)
     private Set<AddressEntity> addresses;
 
+    // Constructor
+
     public DaycareEntity() {
     }
 
@@ -54,11 +56,14 @@ public class DaycareEntity  implements Serializable {
         this.departure_date = departure_date;
     }
 
-    public int getId() {
+    // Getters and Setters
+
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -124,5 +129,13 @@ public class DaycareEntity  implements Serializable {
 
     public void setDeparture_date(Date departure_date) {
         this.departure_date = departure_date;
+    }
+
+    public Set<AddressEntity> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<AddressEntity> addresses) {
+        this.addresses = addresses;
     }
 }
