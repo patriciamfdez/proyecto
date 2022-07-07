@@ -1,4 +1,4 @@
 package com.example.proyecto.web.controller;
 
-public class PerrosController {
+public class InvoiceController {
 }
