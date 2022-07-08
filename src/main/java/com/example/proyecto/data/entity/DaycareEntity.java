@@ -26,13 +26,7 @@ public class DaycareEntity  implements Serializable {
     @Column(nullable = false, length = 150)
     private String address;
     private float assessment;
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date entry_date;
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date departure_date;
-    //Falta las fechas en las que se reserva
+
 
     // Relations
 
