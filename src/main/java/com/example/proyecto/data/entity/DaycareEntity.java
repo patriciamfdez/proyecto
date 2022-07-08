@@ -115,4 +115,5 @@ public class DaycareEntity  implements Serializable {
     public void setAddresses(Set<AddressEntity> addresses) {
         this.addresses = addresses;
     }
+
 }
