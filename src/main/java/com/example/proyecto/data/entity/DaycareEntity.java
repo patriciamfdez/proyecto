@@ -25,13 +25,8 @@ public class DaycareEntity  implements Serializable {
     private String email;
     @Column(nullable = false, length = 150)
     private String address;
+    @Column(nullable = false)
     private float assessment;
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date entry_date;
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date departure_date;
     //Falta las fechas en las que se reserva
 
     // Relations
@@ -44,7 +39,7 @@ public class DaycareEntity  implements Serializable {
     public DaycareEntity() {
     }
 
-    public DaycareEntity(Integer id, String name, float night_price, String phone, String email, String address, float assessment, Date entry_date, Date departure_date) {
+    public DaycareEntity(Integer id, String name, float night_price, String phone, String email, String address, float assessment) {
         this.id = id;
         this.name = name;
         this.night_price = night_price;
@@ -52,8 +47,6 @@ public class DaycareEntity  implements Serializable {
         this.email = email;
         this.address = address;
         this.assessment = assessment;
-        this.entry_date = entry_date;
-        this.departure_date = departure_date;
     }
 
     // Getters and Setters
@@ -113,22 +106,6 @@ public class DaycareEntity  implements Serializable {
 
     public void setAssessment(float assessment) {
         this.assessment = assessment;
-    }
-
-    public Date getEntry_date() {
-        return entry_date;
-    }
-
-    public void setEntry_date(Date entry_date) {
-        this.entry_date = entry_date;
-    }
-
-    public Date getDeparture_date() {
-        return departure_date;
-    }
-
-    public void setDeparture_date(Date departure_date) {
-        this.departure_date = departure_date;
     }
 
     public Set<AddressEntity> getAddresses() {
