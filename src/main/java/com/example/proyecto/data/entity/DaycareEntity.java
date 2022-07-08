@@ -46,8 +46,6 @@ public class DaycareEntity  implements Serializable {
         this.email = email;
         this.address = address;
         this.assessment = assessment;
-        this.entry_date = entry_date;
-        this.departure_date = departure_date;
     }
 
     // Getters and Setters
@@ -107,22 +105,6 @@ public class DaycareEntity  implements Serializable {
 
     public void setAssessment(float assessment) {
         this.assessment = assessment;
-    }
-
-    public Date getEntry_date() {
-        return entry_date;
-    }
-
-    public void setEntry_date(Date entry_date) {
-        this.entry_date = entry_date;
-    }
-
-    public Date getDeparture_date() {
-        return departure_date;
-    }
-
-    public void setDeparture_date(Date departure_date) {
-        this.departure_date = departure_date;
     }
 
     public Set<AddressEntity> getAddresses() {
