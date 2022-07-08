@@ -52,3 +52,25 @@ VALUES
     (5,2),
     (6,1),
     (6,2);
+
+
+INSERT INTO doggo.dog
+(id,
+age,
+allergies,
+compatible,
+gender,
+inf_additional,
+microchip,
+name,
+race,
+sterilized,
+weight_kg)
+VALUES
+( 1, 2, 'yes',1,'F','X', 1,'Federica', 'dalmatian',1, 20),
+( 2, 4, 'no',1,'M','X', 1,'Estanislao','bull dog',1,10),
+( 3, 1, 'no',1,'M','My dog bite', 1,'Sigofredo','Chihuahua',1,3),
+( 4, 7, 'yes',1,'F','X', 1,'Don Dog','beagle',1, 14),
+( 5, 8, 'no',1,'F','X', 1,'Juanita','galgo', 1,18);
+
+commit;
