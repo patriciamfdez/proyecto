@@ -31,11 +31,11 @@ public class MenuService extends AbstractBusinessService<Menu, Integer, MenuDTO,
     public List<MenuDTO> getMenuForUserId(Integer userId) {
         User user = this.userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException(String.format("The user ID %s does not exist", userId)));
-        return getMenuForRole(user.getRoles());
+        return getMenuForRole(user.getRole());
     }
 
     public List<MenuDTO> getMenuForRole(Collection<Role> roles) {
-        List<Menu> menus = this.getRepository().findDistinctByRolesIn(roles);
+        List<Menu> menus = this.getRepository().findDistinctByRoleIn(roles);
         return this.getServiceMapper().toDto(menus);
     }
 }

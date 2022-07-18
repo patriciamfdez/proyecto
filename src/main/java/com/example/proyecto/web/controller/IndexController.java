@@ -1,9 +1,7 @@
 package com.example.proyecto.web.controller;
 
-import com.example.proyecto.data.entity.User;
 import com.example.proyecto.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,10 +15,10 @@ public class IndexController extends AbstractController {
         super(menuService);
     }
 
-    @GetMapping()
+    @GetMapping("/")
     public String indexPage(ModelMap model) {
-        final Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("username", ((User) principal).getUserName());
+//        final Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        model.addAttribute("username", ((User) principal).getUserName());
         return "index";
     }
 }

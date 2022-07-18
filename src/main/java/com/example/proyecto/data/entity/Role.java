@@ -5,24 +5,21 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+@Table(name = "ROLE")
 public class Role implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(name = "role_name", nullable = false)
     private String roleName;
 
-    // Relations
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "role")
+    private Set<User> user;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
-    private Set<User> users;
-
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
-    private Set<Menu> menus;
-
-    // Getters and Setters
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "role")
+    private Set<Menu> menu;
 
     public Integer getId() {
         return id;
@@ -41,18 +38,18 @@ public class Role implements Serializable {
     }
 
     public Set<User> getUsers() {
-        return users;
+        return user;
     }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    public void setUsers(Set<User> userEntities) {
+        this.user = userEntities;
     }
 
     public Set<Menu> getMenus() {
-        return menus;
+        return menu;
     }
 
-    public void setMenus(Set<Menu> menus) {
-        this.menus = menus;
+    public void setMenus(Set<Menu> menuEntities) {
+        this.menu = menuEntities;
     }
 }

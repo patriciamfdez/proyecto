@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "paymentMethod")
-public class PaymentMethodEntity implements Serializable {
+public class PaymentMethod implements Serializable {
 
     // Attributes
     @Id
@@ -15,7 +15,7 @@ public class PaymentMethodEntity implements Serializable {
 
     //Constructores
 
-    public PaymentMethodEntity(Integer id, String description) {
+    public PaymentMethod(Integer id, String description) {
         this.id = id;
         this.description = description;
     }

@@ -1,24 +1,22 @@
 package com.example.proyecto.data.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "daycare")
-public class DaycareEntity  implements Serializable {
-
-    // Attributes
+public class Daycare implements Serializable {
+    //Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(nullable = false, length = 45)
     private String name;
-    @Column(nullable = false)
-    private float night_price;
+
+    @Column (nullable = false)
+    private float nightPrice;
+
     @Column(nullable = false, length = 15)
     private String phone;
     @Column(nullable = false, length = 150)
@@ -26,31 +24,25 @@ public class DaycareEntity  implements Serializable {
     @Column(nullable = false, length = 150)
     private String address;
     @Column(nullable = false)
-    private float assessment;
-    //Falta las fechas en las que se reserva
-
+    private float ranking;
     // Relations
 
     @ManyToMany (fetch = FetchType.EAGER)
-    private Set<AddressEntity> addresses;
+    private Set<Address> addresses;
 
     // Constructor
-
-    public DaycareEntity() {
+    public Daycare() {
     }
 
-    public DaycareEntity(Integer id, String name, float night_price, String phone, String email, String address, float assessment) {
+    public Daycare(Integer id, String name, float nightPrice, String phone, String email, String address, float ranking) {
         this.id = id;
         this.name = name;
-        this.night_price = night_price;
+        this.nightPrice = nightPrice;
         this.phone = phone;
         this.email = email;
         this.address = address;
-        this.assessment = assessment;
+        this.ranking = ranking;
     }
-
-    // Getters and Setters
-
 
     public Integer getId() {
         return id;
@@ -66,14 +58,6 @@ public class DaycareEntity  implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public float getNight_price() {
-        return night_price;
-    }
-
-    public void setNight_price(float night_price) {
-        this.night_price = night_price;
     }
 
     public String getPhone() {
@@ -100,20 +84,27 @@ public class DaycareEntity  implements Serializable {
         this.address = address;
     }
 
-    public float getAssessment() {
-        return assessment;
+    public float getNightPrice() {
+        return nightPrice;
     }
 
-    public void setAssessment(float assessment) {
-        this.assessment = assessment;
+    public void setNightPrice(float nightPrice) {
+        this.nightPrice = nightPrice;
     }
 
-    public Set<AddressEntity> getAddresses() {
+    public float getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(float ranking) {
+        this.ranking = ranking;
+    }
+
+    public Set<Address> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(Set<AddressEntity> addresses) {
+    public void setAddresses(Set<Address> addresses) {
         this.addresses = addresses;
     }
-
 }

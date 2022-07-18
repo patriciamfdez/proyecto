@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "servicesUser")
-public class ServicesUserEntity  implements Serializable {
+public class ServicesUser implements Serializable {
 
     // Attributes
     @Id
@@ -37,11 +37,11 @@ public class ServicesUserEntity  implements Serializable {
     private Catalogue catalogues;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private DogEntity dogs;
+    private Dog dogs;
 
     // Constructores
 
-    public ServicesUserEntity(Integer id, String username, String BookingStatus, Date CreationDate, String serviceName, Date bookingStartDate, Date bookingLastDate) {
+    public ServicesUser(Integer id, String username, String BookingStatus, Date CreationDate, String serviceName, Date bookingStartDate, Date bookingLastDate) {
         this.id = id;
         this.username = username;
         this.bookingStatus = BookingStatus;
@@ -70,11 +70,11 @@ public class ServicesUserEntity  implements Serializable {
         this.catalogues = catalogues;
     }
 
-    public DogEntity getDogs() {
+    public Dog getDogs() {
         return dogs;
     }
 
-    public void setDogs(DogEntity dogs) {
+    public void setDogs(Dog dogs) {
         this.dogs = dogs;
     }
 

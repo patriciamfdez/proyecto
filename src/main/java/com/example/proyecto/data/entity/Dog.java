@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "dog")
-public class DogEntity  implements Serializable {
+public class Dog implements Serializable {
 
     // Attributes
     @Id
@@ -33,11 +33,18 @@ public class DogEntity  implements Serializable {
     @Column(length = 512)
     private String allergies;
 
+    // Relations
+
+    @OneToMany (mappedBy = "dog")
+    private Set<User> user;
+
+    // Builder
 
 
-    // Constructor
+    public Dog() {
+    }
 
-    public DogEntity(Integer id, String name, float weightKg, String age, String gender, String race, boolean microchip, boolean sterilized, String infAdditional, boolean compatible, String allergies) {
+    public Dog(Integer id, String name, float weightKg, String age, String gender, String race, boolean microchip, boolean sterilized, String infAdditional, boolean compatible, String allergies) {
         this.id = id;
         this.name = name;
         this.weightKg = weightKg;
@@ -51,11 +58,6 @@ public class DogEntity  implements Serializable {
         this.allergies = allergies;
     }
 
-    // Relations
-
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "dogs")
-    private Set<User> users;
-
     //Getters y Setters
 
     public Integer getId() {
@@ -64,6 +66,14 @@ public class DogEntity  implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Set<User> getUser() {
+        return user;
+    }
+
+    public void setUser(Set<User> user) {
+        this.user = user;
     }
 
     public String getName() {

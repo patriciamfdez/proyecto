@@ -1,6 +1,7 @@
-package com.example.proyecto.config;
+package proyecto.config;
 
 
+import com.example.proyecto.config.CustomAuthorizationConfig;
 import com.example.proyecto.service.security.CustomUserAuthenticationProvider;
 import com.example.proyecto.web.access.expression.CustomWebSecurityExpressionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public SecurityConfig(CustomUserAuthenticationProvider authenticationProvider,
-            AccessDecisionManager accessDecisionManager,
-            CustomWebSecurityExpressionHandler customWebSecurityExpressionHandler) {
+                          AccessDecisionManager accessDecisionManager,
+                          CustomWebSecurityExpressionHandler customWebSecurityExpressionHandler) {
         this.authenticationProvider = authenticationProvider;
         this.accessDecisionManager = accessDecisionManager;
         this.customWebSecurityExpressionHandler = customWebSecurityExpressionHandler;
@@ -70,7 +71,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/*").hasAnyRole("ROLE_ADMIN") // Esto significa que a /admin no puedes acceder si no tienes el role ADMIN
                 .antMatchers("/login/*").permitAll()
                 .antMatchers("/logout").permitAll()
-                .antMatchers("/*", "/api/*").authenticated()
+                .antMatchers("/api/*").authenticated()
+                .antMatchers("/index").permitAll()
+        //   .antMatchers("/wellcome").permitAll()
+        //   .antMatchers("/landing").permitAll()
         ;
     }
 

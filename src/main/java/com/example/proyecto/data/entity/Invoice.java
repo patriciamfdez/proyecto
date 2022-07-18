@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "invoice")
-public class InvoiceEntity  implements Serializable {
+public class Invoice implements Serializable {
 
     // Attributes
     @Id
@@ -24,14 +24,14 @@ public class InvoiceEntity  implements Serializable {
     // Relations
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private ServicesUserEntity servicesUsers;
+    private ServicesUser servicesUsers;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private PaymentMethodEntity paymentMethods;
+    private PaymentMethod paymentMethods;
 
     //Constructor
 
-    public InvoiceEntity(Integer id, Date invoiceDate, float amount, String status) {
+    public Invoice(Integer id, Date invoiceDate, float amount, String status) {
         this.id = id;
         this.invoiceDate = invoiceDate;
         this.amount = amount;
@@ -73,19 +73,19 @@ public class InvoiceEntity  implements Serializable {
         this.status = status;
     }
 
-    public ServicesUserEntity getServicesUsers() {
+    public ServicesUser getServicesUsers() {
         return servicesUsers;
     }
 
-    public void setServicesUsers(ServicesUserEntity servicesUsers) {
+    public void setServicesUsers(ServicesUser servicesUsers) {
         this.servicesUsers = servicesUsers;
     }
 
-    public PaymentMethodEntity getPaymentMethods() {
+    public PaymentMethod getPaymentMethods() {
         return paymentMethods;
     }
 
-    public void setPaymentMethods(PaymentMethodEntity paymentMethods) {
+    public void setPaymentMethods(PaymentMethod paymentMethods) {
         this.paymentMethods = paymentMethods;
     }
 }

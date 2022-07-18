@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "dogWalker")
-public class DogWalkerEntity  implements Serializable {
+public class DogWalker implements Serializable {
 
     // Attributes
     @Id
@@ -52,14 +52,14 @@ public class DogWalkerEntity  implements Serializable {
     // Relations
 
     @ManyToMany (fetch = FetchType.EAGER)
-    private Set<AddressEntity> addresses;
+    private Set<Address> addresses;
 
     // Constructor
 
-    public DogWalkerEntity(Integer id, String doc_identification, String name, String userName, String first_surname,
-                           String last_surname, String email, String password, String phone, Date birthdate,
-                           String availability, String address, Integer max_num_dogs, String weight_dogs, boolean sterilized,
-                           String reviews, float assessment, float price_walk, String profile_picture, String gallery) {
+    public DogWalker(Integer id, String doc_identification, String name, String userName, String first_surname,
+                     String last_surname, String email, String password, String phone, Date birthdate,
+                     String availability, String address, Integer max_num_dogs, String weight_dogs, boolean sterilized,
+                     String reviews, float assessment, float price_walk, String profile_picture, String gallery) {
         this.id = id;
         this.doc_identification = doc_identification;
         this.name = name;

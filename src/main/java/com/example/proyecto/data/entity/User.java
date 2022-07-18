@@ -6,43 +6,71 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
+@Table(name = "USERS")
 public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
+    @Column(name = "user_name", nullable = false)
     private String userName;
     @Column(nullable = false)
     private String password;
     @Temporal(TemporalType.DATE)
+    @Column(name = "date_initial")
     private Date date;
     @Basic(optional = false)
     private boolean active;
     @Column(nullable = true, length = 45)
     private String name;
-    @Column(nullable = true, length = 45)
-    private String firstSurname;
-    @Column(length = 45)
-    private String lastSurname;
+    @Column(name = "surname", nullable = true, length = 45)
+    private String Surname;
     @Column(nullable = true, length = 150)
     private String email;
     @Column(nullable = true, length = 15)
     private String phone;
-    @Column(nullable = true)
+    @Column(name = "birth_date", nullable = true)
     private Date birthDate;
 
+    //Relations
     @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Role> roles;
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    Set<Role> role;
 
     @ManyToMany (fetch = FetchType.EAGER)
-    private Set<AddressEntity> addresses;
+    private Set<Address> addresses;
 
-    @ManyToMany (fetch = FetchType.EAGER)
-    private Set<DogEntity> dogs;
+    //Crear objeto list add etc
+    @ManyToOne()
+    @JoinColumn(name="dog_id")
+    private Dog dog;
 
+    @OneToOne()
+    @JoinColumn(name="dogWalker_id")
+    private DogWalker dogWalker;
 
     // Getters and Setters
+
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public DogWalker getDogWalker() {
+        return dogWalker;
+    }
+
+    public void setDogWalker(DogWalker dogWalker) {
+        this.dogWalker = dogWalker;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -83,14 +111,6 @@ public class User implements Serializable {
         this.active = active;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
     public String getName() {
         return name;
     }
@@ -99,20 +119,12 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public String getFirstSurname() {
-        return firstSurname;
+    public String getSurname() {
+        return Surname;
     }
 
-    public void setFirstSurname(String firstSurname) {
-        this.firstSurname = firstSurname;
-    }
-
-    public String getLastSurname() {
-        return lastSurname;
-    }
-
-    public void setLastSurname(String lastSurname) {
-        this.lastSurname = lastSurname;
+    public void setSurname(String surname) {
+        Surname = surname;
     }
 
     public String getEmail() {
@@ -139,19 +151,19 @@ public class User implements Serializable {
         this.birthDate = birthDate;
     }
 
-    public Set<AddressEntity> getAddresses() {
-        return addresses;
+    public Set<Role> getRole() {
+        return role;
     }
 
-    public void setAddresses(Set<AddressEntity> addresses) {
-        this.addresses = addresses;
+    public void setRole(Set<Role> role) {
+        this.role = role;
     }
 
-    public Set<DogEntity> getDogs() {
-        return dogs;
+    public Dog getDog() {
+        return dog;
     }
 
-    public void setDogs(Set<DogEntity> dogs) {
-        this.dogs = dogs;
+    public void setDog(Dog dog) {
+        this.dog = dog;
     }
 }

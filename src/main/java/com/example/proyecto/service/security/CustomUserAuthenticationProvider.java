@@ -53,7 +53,7 @@ public class CustomUserAuthenticationProvider implements AuthenticationProvider 
     }
 
     private Collection<? extends GrantedAuthority> createAuthorities(User user) {
-        return AuthorityUtils.createAuthorityList(user.getRoles().stream()
+        return AuthorityUtils.createAuthorityList(user.getRole().stream()
                 .map(Role::getRoleName)
                 .toArray(String[]::new)
         );
