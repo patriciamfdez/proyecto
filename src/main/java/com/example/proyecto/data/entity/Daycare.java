@@ -30,7 +30,7 @@ public class Daycare implements Serializable {
     @ManyToMany (fetch = FetchType.EAGER)
     private Set<Address> addresses;
 
-    @OneToMany (mappedBy = "daycare")
+    @OneToMany (mappedBy = "daycares")
     private Set<Catalogue> catalogue;
 
     // Constructor
