@@ -1,14 +1,14 @@
-delete from `USER_ROLE`;
-delete from `ROLE`;
-delete from `DAYCARE_ADDRESSES`;
-delete from `DAYCARE`;
+delete from `user_role`;
+delete from `role`;
+delete from `daycare_addresses`;
+delete from `daycare`;
 delete from `dog_walker_addresses`;
 delete from `dog_walker`;
 delete from `dog`;
 delete from `address`;
 delete from `catalogue`;
 delete from `invoice`;
-delete from `USERS`;
+delete from `users`;
 INSERT INTO users (id, active, birth_date, date_initial, email, surname, name, password, phone, user_name)
 VALUES (1,1,'2022-05-08','2022-05-08','admin@gmail.com','admin','admin','$2a$04$UWl44lyROes50n/qHGQKbu.3JwDMXkZZSaL1Tz5V7IF4EORU6p2fG','956783542','admin'),
        (2,1,'2022-05-08','2022-05-08','emingora@gmail.com','emingora','emingora','$2a$04$UWl44lyROes50n/qHGQKbu.3JwDMXkZZSaL1Tz5V7IF4EORU6p2fG','956783541','emingora'),
