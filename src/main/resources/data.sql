@@ -1,3 +1,14 @@
+delete from `USER_ROLE`;
+delete from `ROLE`;
+delete from `DAYCARE_ADDRESSES`;
+delete from `DAYCARE`;
+delete from `dog_walker_addresses`;
+delete from `dog_walker`;
+delete from `dog`;
+delete from `address`;
+delete from `catalogue`;
+delete from `invoice`;
+delete from `USERS`;
 INSERT INTO users (id, active, birth_date, date_initial, email, surname, name, password, phone, user_name)
 VALUES (1,1,'2022-05-08','2022-05-08','admin@gmail.com','admin','admin','$2a$04$UWl44lyROes50n/qHGQKbu.3JwDMXkZZSaL1Tz5V7IF4EORU6p2fG','956783542','admin'),
        (2,1,'2022-05-08','2022-05-08','emingora@gmail.com','emingora','emingora','$2a$04$UWl44lyROes50n/qHGQKbu.3JwDMXkZZSaL1Tz5V7IF4EORU6p2fG','956783541','emingora'),
@@ -20,25 +31,20 @@ VALUES
 
 INSERT INTO user_role (user_id, role_id)
 VALUES
---ADMINISTRADOR CON TODOS LOS ROLES
     (1,1),
     (1,2),
     (1,3),
     (1,4),
--- ROLE_USER
     (2,2),
     (3,2),
- --ROLE_USER + ROLE_DOGWALKER
     (4,2),
     (4,3),
     (5,2),
     (5,3),
- --ROLE_USER + ROLE DAYCARE
     (6,2),
     (6,4),
     (7,2),
     (7,4),
---ROLE ANONYMOUS
     (99999,5);
 
 -- Menu
@@ -53,26 +59,19 @@ VALUES
 
 INSERT INTO menu_role(menu_id, role_id)
 VALUES
---HOME -> TODOS
     (1,1),
     (1,2),
     (1,3),
     (1,4),
-
---TASK -> TODOS
     (2,1),
     (2,2),
     (2,3),
     (2,4),
---ADMIN -> ADMIN
     (3,1),
---DAYCARE -> ADMIN Y USER
     (4,1),
     (4,2),
---DOGWALKER -> ADMIN Y USER
     (5,1),
     (5,2),
---ANONYMOUS
     (1,5),
     (9,5);
 
