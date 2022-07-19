@@ -63,4 +63,6 @@ public class Catalogue implements Serializable {
     public void setDogWalkers(DogWalker dogWalkers) {
         this.dogWalkers = dogWalkers;
     }
+
+
 }

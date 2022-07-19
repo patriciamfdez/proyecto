@@ -54,6 +54,9 @@ public class DogWalker implements Serializable {
     @ManyToMany (fetch = FetchType.EAGER)
     private Set<Address> addresses;
 
+    @OneToMany (mappedBy = "dogWalkers")
+    private Set<Catalogue> catalogue;
+
     // Constructor
 
     public DogWalker(Integer id, String doc_identification, String name, String userName, String first_surname,
@@ -244,5 +247,21 @@ public class DogWalker implements Serializable {
 
     public void setGallery(String gallery) {
         this.gallery = gallery;
+    }
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public Set<Catalogue> getCatalogue() {
+        return catalogue;
+    }
+
+    public void setCatalogue(Set<Catalogue> catalogue) {
+        this.catalogue = catalogue;
     }
 }

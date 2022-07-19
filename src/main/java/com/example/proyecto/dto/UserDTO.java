@@ -12,8 +12,7 @@ public class UserDTO {
     private Date date;
     private boolean active;
     private String name;
-    private String firstSurname;
-    private String lastSurname;
+    private String surname;
     private String email;
     private String phone;
     private Date birthDate;
@@ -68,20 +67,12 @@ public class UserDTO {
         this.name = name;
     }
 
-    public String getFirstSurname() {
-        return firstSurname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setFirstSurname(String firstSurname) {
-        this.firstSurname = firstSurname;
-    }
-
-    public String getLastSurname() {
-        return lastSurname;
-    }
-
-    public void setLastSurname(String lastSurname) {
-        this.lastSurname = lastSurname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {

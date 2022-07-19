@@ -30,6 +30,9 @@ public class Daycare implements Serializable {
     @ManyToMany (fetch = FetchType.EAGER)
     private Set<Address> addresses;
 
+    @OneToMany (mappedBy = "daycare")
+    private Set<Catalogue> catalogue;
+
     // Constructor
     public Daycare() {
     }
@@ -106,5 +109,12 @@ public class Daycare implements Serializable {
 
     public void setAddresses(Set<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    public Set<Catalogue> getCatalogue() {
+        return catalogue;
+    }
+    public void setCatalogue(Set<Catalogue> catalogue) {
+        this.catalogue = catalogue;
     }
 }

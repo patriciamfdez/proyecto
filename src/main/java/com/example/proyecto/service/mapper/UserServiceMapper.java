@@ -19,6 +19,10 @@ public class UserServiceMapper  extends AbstractServiceMapper<User, UserDTO>{
         entity.setId(userDTO.getId());
         entity.setUserName(userDTO.getUserName());
         entity.setPassword(userDTO.getPassword());
+        entity.setBirthDate(userDTO.getBirthDate());
+        entity.setDate(userDTO.getDate());
+        entity.setName(userDTO.getName());
+        entity.setSurname(userDTO.getSurname());
         entity.setActive(userDTO.isActive());
         entity.setRole(this.roleServiceMapper.toEntity(userDTO.getRoles().
                         stream().collect(Collectors.toList())).stream()
