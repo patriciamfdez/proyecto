@@ -1,7 +1,5 @@
-package proyecto.config;
+package com.example.proyecto.config;
 
-
-import com.example.proyecto.config.CustomAuthorizationConfig;
 import com.example.proyecto.service.security.CustomUserAuthenticationProvider;
 import com.example.proyecto.web.access.expression.CustomWebSecurityExpressionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login/*").permitAll()
                 .antMatchers("/logout").permitAll()
                 .antMatchers("/api/*").authenticated()
+                .antMatchers("/daycare").permitAll()
                 .antMatchers("/index").permitAll()
         //   .antMatchers("/wellcome").permitAll()
         //   .antMatchers("/landing").permitAll()
