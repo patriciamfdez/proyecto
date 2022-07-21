@@ -56,8 +56,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // Logout
         http.logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/login?logout").deleteCookies("JSESSIONID").invalidateHttpSession(true)
+                .logoutSuccessUrl("/index").deleteCookies("JSESSIONID").invalidateHttpSession(true)
                 .permitAll();
+
+        // .logoutSuccessUrl("/login?logout").deleteCookies("JSESSIONID").invalidateHttpSession(true)
 
         // CSRF is enabled by default, with Java Config
         http.csrf().disable()

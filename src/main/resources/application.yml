@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/doggo
     username: doggo
     password: 123456
-
+    initialization-mode: always
   thymeleaf:
     cache: false
     mode: HTML
@@ -17,12 +17,12 @@ spring:
     cache:
       period: 0
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
     defer-datasource-initialization: true
-    sql:
+  sql:
       init:
         mode: always
 server:
   port: 8080
-
