@@ -58,6 +58,7 @@ VALUES
     (3,'Admin',10, 1, '/admin'),
     (4,'Daycare',20, 1, '/Daycare'),
     (5,'DogWalker',30, 1, '/Dogwalker'),
+    (6,'Users',40, 1, '/users'),
     (9,'Login',1000, 1, '/login');
 
 INSERT INTO menu_role(menu_id, role_id)
@@ -76,6 +77,7 @@ VALUES
     (5,1),
     (5,2),
     (1,5),
+    (6,1),
     (9,5);
 
 
