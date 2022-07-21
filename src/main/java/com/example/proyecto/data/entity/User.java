@@ -24,7 +24,7 @@ public class User implements Serializable {
     @Column(nullable = true, length = 45)
     private String name;
     @Column(name = "surname", nullable = true, length = 45)
-    private String Surname;
+    private String surname;
     @Column(nullable = true, length = 150)
     private String email;
     @Column(nullable = true, length = 15)
@@ -120,11 +120,11 @@ public class User implements Serializable {
     }
 
     public String getSurname() {
-        return Surname;
+        return surname;
     }
 
     public void setSurname(String surname) {
-        Surname = surname;
+        surname = surname;
     }
 
     public String getEmail() {

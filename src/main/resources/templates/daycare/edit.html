@@ -12,29 +12,29 @@
 <!-- /.navbar -->
 <header id="head" class="secondary"></header>
 
-<div layout:fragment="breadcrumb" th:object="${book}">
-    <h1>Books Management</h1>
+<div layout:fragment="breadcrumb" th:object="${daycare}">
+    <h1>Daycares Management</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/books"><i class="fa fa-tasks"></i> Books</a></li>
-        <li class="active" th:utext="@{'Book ID: <b>' + ${book.id}} + '</b>'"></li>
+        <li><a href="/daycare"><i class="fa fa-tasks"></i> Daycare</a></li>
+        <li class="active" th:utext="@{'Daycare ID: <b>' + ${daycare.id}} + '</b>'"></li>
     </ol>
 </div>
 <div layout:fragment="content">
     <div class="row">
         <div class="col-md-12">
-            <form role="form" th:object="${book}" method="post">
+            <form role="form" th:object="${daycare}" method="post">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="tab-content">
-                            <input th:type="hidden" th:field="${book.id}"/>
+                            <input th:type="hidden" th:field="${daycare.id}"/>
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="name" th:text="#{Books.Name}"></label>
+                                        <label for="name" th:text="#{Daycares.Name}"></label>
                                         <input type="text" class="form-control"
                                                id="name"
-                                               th:field="${book.bookTitle}"
+                                               th:field="${daycare.Name}"
                                                maxlength="255">
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="box-footer with-border">
-                    <a th:href="@{/books}" class="btn btn-default" role="button"
+                    <a th:href="@{/daycare}" class="btn btn-default" role="button"
                        title="Back list" th:text="#{General.Cancel}">
                         <span aria-hidden="true"></span>
                     </a>

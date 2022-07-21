@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // Logout
         http.logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/login?logout").deleteCookies("JSESSIONID").invalidateHttpSession(true)
+                .logoutSuccessUrl("/index").deleteCookies("JSESSIONID").invalidateHttpSession(true)
                 .permitAll();
 
         // CSRF is enabled by default, with Java Config
@@ -69,6 +69,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/*").hasAnyRole("ROLE_ADMIN") // Esto significa que a /admin no puedes acceder si no tienes el role ADMIN
                 .antMatchers("/login/*").permitAll()
                 .antMatchers("/logout").permitAll()
+                .antMatchers("/users").hasAnyRole("ROLE_ADMIN")
                 .antMatchers("/api/*").authenticated()
                 .antMatchers("/daycare").permitAll()
                 .antMatchers("/index").permitAll()

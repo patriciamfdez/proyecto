@@ -39,10 +39,13 @@ public class UserServiceMapper  extends AbstractServiceMapper<User, UserDTO>{
         dto.setId(entity.getId());
         dto.setActive(entity.isActive());
         dto.setUserName(entity.getUserName());
-        dto.setPassword(entity.getPassword());
         dto.setBirthDate(entity.getBirthDate());
         dto.setDate(entity.getDate());
-        dto.setDate(entity.getDate());
+        dto.setName(entity.getName());
+        dto.setSurname(entity.getSurname());
+        dto.setEmail(entity.getEmail());
+        dto.setPhone(entity.getPhone());
+        dto.setAddresses(entity.getAddresses());
         //dto.setPassword(); la password no se edita ni se lista
         dto.setRoles(this.roleServiceMapper.toDto(entity.getRole().
                         stream().collect(Collectors.toList())).stream()
