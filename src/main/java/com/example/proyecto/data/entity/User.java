@@ -43,7 +43,6 @@ public class User implements Serializable {
     @ManyToMany (fetch = FetchType.EAGER)
     private Set<Address> addresses;
 
-    //Crear objeto list add etc
     @ManyToOne()
     @JoinColumn(name="dog_id")
     private Dog dog;
