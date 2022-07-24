@@ -153,6 +153,7 @@ public class DogWalkerDTO {
         this.assessment = assessment;
     }
 
+
     public float getPrice_walk() {
         return price_walk;
     }
