@@ -38,13 +38,11 @@ Mostrar <span sd:page-size-selector="javascript"></span> entradas
             <td th:text="${item.ranking}"></td>
             <td>
                 <a href="#" class="btn btn-default" th:href="@{'/daycare/' + ${item.id}}"
-                   title="View"><span class="glyphicon glyphicon glyphicon-eye-open"></span></a>
+                   title="View">Ver</a>
                 <a href="#" class="btn btn-default" th:href="@{'/daycare/' + ${item.id} + '/edit'}"
-                   title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                   title="Edit">Modificar</a>
                 <button class="btn btn-danger" type="submit" value="Delete"
-                        th:formaction="'/daycare/' + ${item.id} + '/delete'">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </button>
+                        th:formaction="'/daycare/' + ${item.id} + '/delete'">Borrar</button>
                 <!-- <a href="#" class="btn btn-default" th:href="@{'/tasks/' + ${task.id} + '/delete'}" -->
                 <!-- title="Delete"><span class="glyphicon glyphicon-trash"></span></a> -->
             </td>

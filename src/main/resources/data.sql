@@ -98,6 +98,10 @@ VALUES
   ( 4, 'dogs junios',10,'666777888','pruebaguarderia@gmail.com', 7,'alcorcon 39'),
   ( 5, 'pipi junios',5,'666777888','pruebaguarderia@gmail.com', 7,'sevilla 8');
 
+INSERT INTO dog_walker (id, address, assessment, availability, birthdate, doc_identification, email, gallery, max_num_dogs, name, password, phone, price_walk, profile_picture, reviews, sterilized, user_name, weight_dogs, surname)
+VALUES
+  (1,'Calle Manzana, 1', 4.1, 'Todo el año', '2022-05-08','87653976G','pepe@gmail.com', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro');
+
 UPDATE users SET dog_id = 1 WHERE id = 1 AND id = 5;
 UPDATE users SET dog_id = 2 WHERE id = 3;
 UPDATE users SET dog_id = 3 WHERE id = 6;

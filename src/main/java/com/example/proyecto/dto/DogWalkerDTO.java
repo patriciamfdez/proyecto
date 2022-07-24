@@ -8,8 +8,7 @@ public class DogWalkerDTO {
     private String doc_identification;
     private String name;
     private String userName;
-    private String first_surname;
-    private String last_surname;
+    private String surname;
     private String email;
     private String password;
     private String phone;
@@ -18,7 +17,7 @@ public class DogWalkerDTO {
     private String address;
     private Integer max_num_dogs;
     private String weight_dogs;
-    private boolean sterilized;
+    private String sterilized;
     private String reviews;
     private float assessment;
     private float price_walk;
@@ -58,20 +57,12 @@ public class DogWalkerDTO {
         this.userName = userName;
     }
 
-    public String getFirst_surname() {
-        return first_surname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setFirst_surname(String first_surname) {
-        this.first_surname = first_surname;
-    }
-
-    public String getLast_surname() {
-        return last_surname;
-    }
-
-    public void setLast_surname(String last_surname) {
-        this.last_surname = last_surname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {
@@ -138,11 +129,11 @@ public class DogWalkerDTO {
         this.weight_dogs = weight_dogs;
     }
 
-    public boolean isSterilized() {
+    public String getSterilized() {
         return sterilized;
     }
 
-    public void setSterilized(boolean sterilized) {
+    public void setSterilized(String sterilized) {
         this.sterilized = sterilized;
     }
 

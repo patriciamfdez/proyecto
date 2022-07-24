@@ -1,6 +1,5 @@
 package com.example.proyecto.web.controller;
 
-import com.example.proyecto.data.entity.User;
 import com.example.proyecto.dto.DaycareDTO;
 import com.example.proyecto.service.DaycareService;
 import com.example.proyecto.service.MenuService;
@@ -10,7 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;

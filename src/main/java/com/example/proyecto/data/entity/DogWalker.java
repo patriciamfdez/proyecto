@@ -20,9 +20,7 @@ public class DogWalker implements Serializable {
     @Column(nullable = false, length = 45)
     private String userName;
     @Column(nullable = false, length = 45)
-    private String first_surname;
-    @Column(length = 45)
-    private String last_surname;
+    private String surname;
     @Column(nullable = false, length = 150)
     private String email;
     @Column(nullable = false, length = 512)
@@ -39,8 +37,8 @@ public class DogWalker implements Serializable {
     private Integer max_num_dogs;
     @Column(nullable = false, length = 45)
     private String weight_dogs;
-    @Column(nullable = false)
-    private boolean sterilized;
+    @Column(nullable = false, length = 10)
+    private String sterilized;
     @Column(length = 400)
     private String reviews;
     private float assessment;
@@ -59,16 +57,18 @@ public class DogWalker implements Serializable {
 
     // Constructor
 
-    public DogWalker(Integer id, String doc_identification, String name, String userName, String first_surname,
-                     String last_surname, String email, String password, String phone, Date birthdate,
-                     String availability, String address, Integer max_num_dogs, String weight_dogs, boolean sterilized,
+
+    public DogWalker() {
+    }
+
+    public DogWalker(Integer id, String doc_identification, String name, String userName, String surname, String email, String password, String phone, Date birthdate,
+                     String availability, String address, Integer max_num_dogs, String weight_dogs, String sterilized,
                      String reviews, float assessment, float price_walk, String profile_picture, String gallery) {
         this.id = id;
         this.doc_identification = doc_identification;
         this.name = name;
         this.userName = userName;
-        this.first_surname = first_surname;
-        this.last_surname = last_surname;
+        this.surname = surname;
         this.email = email;
         this.password = password;
         this.phone = phone;
@@ -84,7 +84,6 @@ public class DogWalker implements Serializable {
         this.profile_picture = profile_picture;
         this.gallery = gallery;
     }
-
 
     // Getters and Setters
 
@@ -121,20 +120,12 @@ public class DogWalker implements Serializable {
         this.name = name;
     }
 
-    public String getFirst_surname() {
-        return first_surname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setFirst_surname(String first_surname) {
-        this.first_surname = first_surname;
-    }
-
-    public String getLast_surname() {
-        return last_surname;
-    }
-
-    public void setLast_surname(String last_surname) {
-        this.last_surname = last_surname;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {
@@ -201,11 +192,11 @@ public class DogWalker implements Serializable {
         this.weight_dogs = weight_dogs;
     }
 
-    public boolean isSterilized() {
+    public String getSterilized() {
         return sterilized;
     }
 
-    public void setSterilized(boolean sterilized) {
+    public void setSterilized(String sterilized) {
         this.sterilized = sterilized;
     }
 
