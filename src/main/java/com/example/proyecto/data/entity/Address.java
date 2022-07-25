@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+@Table(name = "address")
 public class Address implements Serializable {
     // Attributes
     @Id

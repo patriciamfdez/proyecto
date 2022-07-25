@@ -13,10 +13,8 @@ public class Daycare implements Serializable {
     private Integer id;
     @Column(nullable = false, length = 45)
     private String name;
-
     @Column (nullable = false)
     private float nightPrice;
-
     @Column(nullable = false, length = 15)
     private String phone;
     @Column(nullable = false, length = 150)
