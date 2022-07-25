@@ -34,6 +34,10 @@ public class Address implements Serializable {
     private Set<Daycare> daycares;
 
     //Constructores
+
+    public Address() {
+    }
+
     public Address(Integer id, String country, String province, String city, String postalCode, String address) {
         this.id = id;
         this.country = country;

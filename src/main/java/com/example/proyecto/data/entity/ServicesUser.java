@@ -41,6 +41,9 @@ public class ServicesUser implements Serializable {
 
     // Constructores
 
+    public ServicesUser() {
+    }
+
     public ServicesUser(Integer id, String username, String BookingStatus, Date CreationDate, String serviceName, Date bookingStartDate, Date bookingLastDate) {
         this.id = id;
         this.username = username;

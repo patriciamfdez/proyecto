@@ -15,6 +15,9 @@ public class PaymentMethod implements Serializable {
 
     //Constructores
 
+    public PaymentMethod() {
+    }
+
     public PaymentMethod(Integer id, String description) {
         this.id = id;
         this.description = description;
