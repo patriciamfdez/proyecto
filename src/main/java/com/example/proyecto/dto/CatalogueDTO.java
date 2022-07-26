@@ -1,5 +1,6 @@
 package com.example.proyecto.dto;
 
+// DTO Catalogo
 public class CatalogueDTO {
     private Integer id;
     private String serviceType;
