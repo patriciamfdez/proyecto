@@ -31,6 +31,9 @@ public class Invoice implements Serializable {
 
     //Constructor
 
+    public Invoice() {
+    }
+
     public Invoice(Integer id, Date invoiceDate, float amount, String status) {
         this.id = id;
         this.invoiceDate = invoiceDate;

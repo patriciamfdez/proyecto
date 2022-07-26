@@ -24,6 +24,10 @@ public class Catalogue implements Serializable {
 
     //Constructores
 
+
+    public Catalogue() {
+    }
+
     public Catalogue(Integer id, String serviceType) {
         this.id = id;
         this.serviceType = serviceType;

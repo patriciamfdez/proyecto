@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+@Table(name = "address")
 public class Address implements Serializable {
     // Attributes
     @Id
@@ -33,6 +34,10 @@ public class Address implements Serializable {
     private Set<Daycare> daycares;
 
     //Constructores
+
+    public Address() {
+    }
+
     public Address(Integer id, String country, String province, String city, String postalCode, String address) {
         this.id = id;
         this.country = country;
