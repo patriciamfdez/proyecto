@@ -69,14 +69,13 @@ public class UserController extends AbstractController<UserDTO>  {
         return "users/edit";
     }
 
-    @GetMapping("/users/create")
-    @PostAuthorize("hasRole('ROLE_ADMIN') ")
+    @GetMapping("/signup")
     public String create(ModelMap model) {
         final UserDTO dto = new UserDTO();
         final List<RoleDTO> all_roles = this.roleService.findAll();
         model.addAttribute("user", dto);
         model.addAttribute("roles", all_roles);
-        return "users/edit";
+        return "/signup";
     }
 
     @Transactional
