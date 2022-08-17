@@ -1,28 +1,16 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layout}"
-        lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head :: head}"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de paseadores</title>
+</head>
 
-<body>
-<!-- Fixed navbar -->
-<div th:replace="~{fragments/navBarIN :: navBarIndex}"> </div>
-<!-- /.navbar -->
-<header id="head" class="secondary"></header>
-
-<div layout:fragment="breadcrumb" th:object="${daycare}">
-    <h1>Tasks Management</h1>
-    <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/daycare"><i class="fa fa-tasks"></i> Daycares</a></li>
-        <li class="active" th:utext="@{'Daycare ID: <b>' + ${daycare.id}} + '</b>'"></li>
-    </ol>
-</div>
+<body class="home">
 
 <div layout:fragment="content">
-    <form role="form" th:object="${daycare}" method="post" action="#" th:action="@{'/daycare/' + ${daycare.id} + '/delete'}">
+    <h1>Gestión de paseadores</h1>
+    <form role="form" th:object="${dogwalker}" method="post" action="#" th:action="@{'/dogwalker/' + ${dogwalker.id} + '/delete'}">
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -31,8 +19,44 @@
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="name" th:text="#{Daycare.Name}"></label>
-                                        <p id="name" th:text="${daycare.daycareName}"/>
+                                        <label>Id</label>
+                                        <p id="id" th:text="${dogwalker.id}"/>
+                                        <label>Doc. Identificación</label>
+                                        <p id="doc_identification" th:text="${dogwalker.doc_identification}"/>
+                                        <label>Nombre</label>
+                                        <p id="name" th:text="${dogwalker.name}"/>
+                                        <label>Usuario</label>
+                                        <p id="userName" th:text="${dogwalker.userName}"/>
+                                        <label>Apellido</label>
+                                        <p id="surname" th:text="${dogwalker.surname}"/>
+                                        <label>Email</label>
+                                        <p id="email" th:text="${dogwalker.email}"/>
+                                        <label>Clave</label>
+                                        <p id="password" th:text="${dogwalker.password}"/>
+                                        <label>Teléfono</label>
+                                        <p id="phone" th:text="${dogwalker.phone}"/>
+                                        <label>Nacimiento</label>
+                                        <p id="birthdate" th:date="${dogwalker.birthdate}"/>
+                                        <label>Disponibilidad</label>
+                                        <p id="availability" th:text="${dogwalker.availability}"/>
+                                        <label>Dirección</label>
+                                        <p id="address" th:text="${dogwalker.address}"/>
+                                        <label>Máximo de perros</label>
+                                        <p id="max_num_dogs" th:number="${dogwalker.max_num_dogs}"/>
+                                        <label>Peso del perro</label>
+                                        <p id="weight_dogs" th:text="${dogwalker.weight_dogs}"/>
+                                        <label>Esterilizado</label>
+                                        <p id="sterilized" th:text="${dogwalker.sterilized}"/>
+                                        <label>Críticas</label>
+                                        <p id="reviews" th:text="${dogwalker.reviews}"/>
+                                        <label>Valoración</label>
+                                        <p id="assessment" th:text="${dogwalker.assessment}"/>
+                                        <label>Precio del paseo</label>
+                                        <p id="price_walk" th:text="${dogwalker.price_walk}"/>
+                                        <label>Foto de perfil</label>
+                                        <p id="profile_picture" th:text="${dogwalker.profile_picture}"/>
+                                        <label>Galería</label>
+                                        <p id="gallery" th:text="${dogwalker.gallery}"/>
                                     </div>
                                 </div>
                             </div>
@@ -40,11 +64,11 @@
                     </div>
                 </div>
                 <div class="box-footer with-border">
-                    <a th:href="@{/daycare}" class="btn btn-default" role="button"
+                    <a th:href="@{/dogwalker}" class="btn btn-default" role="button"
                        title="Back list" th:text="#{General.Back}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <a th:href="@{'/daycare/' + ${daycare.id} + '/edit'}" class="btn btn-primary" role="button"
+                    <a th:href="@{'/dogwalker/' + ${dogwalker.id} + '/edit'}" class="btn btn-primary" role="button"
                        title="Back list" th:text="#{General.Edit}">
                         <span aria-hidden="true"></span>
                     </a>

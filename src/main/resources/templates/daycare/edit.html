@@ -1,26 +1,23 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layout}"
-        lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head :: head}"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de residencias caninas</title>
+</head>
 
-<body>
-<!-- Fixed navbar -->
-<div th:replace="~{fragments/navBarIN :: navBarIndex}"> </div>
-<!-- /.navbar -->
-<header id="head" class="secondary"></header>
+<body class="home">
 
 <div layout:fragment="breadcrumb" th:object="${daycare}">
-    <h1>Daycares Management</h1>
+    <h1>Gestión de residencias caninas</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/daycare"><i class="fa fa-tasks"></i> Daycare</a></li>
-        <li class="active" th:utext="@{'Daycare ID: <b>' + ${daycare.id}} + '</b>'"></li>
+        <li><a href="/daycare"><i class="fa fa-tasks"></i> Cursos</a></li>
+        <li class="active" th:utext="@{'Residencia canina ID: <b>' + ${daycare.id}} + '</b>'"></li>
     </ol>
 </div>
 <div layout:fragment="content">
+    <h1>Gestión de residencias caninas</h1>
     <div class="row">
         <div class="col-md-12">
             <form role="form" th:object="${daycare}" method="post">
@@ -31,10 +28,30 @@
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="name" th:text="#{Daycares.Name}"></label>
+                                        <label>Nombre</label>
                                         <input type="text" class="form-control"
                                                id="name"
-                                               th:field="${daycare.Name}"
+                                               th:field="${daycare.name}"
+                                               maxlength="255">
+                                        <label>Precio/Noche</label>
+                                        <input type="text" class="form-control"
+                                               id="nightPrice"
+                                               th:field="${daycare.nightPrice}"
+                                               maxlength="255">
+                                        <label>Teléfono</label>
+                                        <input type="text" class="form-control"
+                                               id="phone"
+                                               th:field="${daycare.phone}"
+                                               maxlength="255">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control"
+                                               id="email"
+                                               th:field="${daycare.email}"
+                                               maxlength="255">
+                                        <label>Dirección</label>
+                                        <input type="text" class="form-control"
+                                               id="address"
+                                               th:field="${daycare.address}"
                                                maxlength="255">
                                     </div>
                                 </div>

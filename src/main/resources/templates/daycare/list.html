@@ -3,17 +3,17 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Book's management</title>
+    <title>Gestión de residencias caninas</title>
 </head>
 
 <body class="home">
 
 <div layout:fragment="content">
     <h1>Gestión de residencias caninas</h1>
-    <a th:href="@{/daycare/create}">Nueva residencia</a>
+    <a th:href="@{/daycare/create}">Nueva residencia canina</a>
     Mostrar <span sd:page-size-selector="javascript"></span> entradas
     <form action="#" th:action="@{'/'}" method="post">
-        <table>
+        <table style="border-collapse: collapse; width: 100%;">
             <thead>
             <tr>
                 <th>Id</th>
@@ -22,7 +22,7 @@
                 <th>Teléfono</th>
                 <th>Email</th>
                 <th>Dirección</th>
-                <th>Valoración</th>
+                <th>Clasificación</th>
                 <th>&nbsp;</th>
             </tr>
             </thead>
@@ -42,12 +42,10 @@
                        title="Edit">Modificar</a>
                     <button class="btn btn-danger" type="submit" value="Delete"
                             th:formaction="'/daycare/' + ${item.id} + '/delete'">Borrar</button>
-                    <!-- <a href="#" class="btn btn-default" th:href="@{'/tasks/' + ${task.id} + '/delete'}" -->
-                    <!-- title="Delete"><span class="glyphicon glyphicon-trash"></span></a> -->
                 </td>
             </tr>
             <tr th:if="${#lists.isEmpty(daycare.content)}">
-                <td colspan="13" class="text-center">No daycares</td>
+                <td colspan="13" class="text-center">No existen residencias caninas</td>
             </tr>
             </tbody>
         </table>
@@ -69,7 +67,5 @@
     </div>
 </div>
 </div>
-<!-- /Intro-->
-
 </body>
 </html>

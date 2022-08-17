@@ -1,16 +1,12 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layout}"
-        lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head :: head}"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de residencias caninas</title>
+</head>
 
-<body>
-<!-- Fixed navbar -->
-<div th:replace="~{fragments/navBarIN :: navBarIndex}"> </div>
-<!-- /.navbar -->
-<header id="head" class="secondary"></header>
+<body class="home">
 
 <div layout:fragment="breadcrumb">
     <h1 th:text="#{Eliminar.SubMessage}"></h1>
@@ -20,6 +16,7 @@
     </ol>
 </div>
 <div layout:fragment="content">
+    <h1>Gestión de residencias caninas</h1>
     <div class="row">
         <div class="col-md-6">
             <div class="box box-primary">
@@ -33,11 +30,11 @@
                     <div class="box-body">
 
                         <div class="form-group">
-                            <input th:type="hidden" th:field="${book.id}"/>
-                            <label for="daycare_name" th:text="#{Daycare.daycarename}"></label>
+                            <input th:type="hidden" th:field="${daycare.id}"/>
+                            <label for="daycare_nombre" th:text="#{Daycare.daycarenombre}"></label>
                             <input type="text"
-                                   th:field="${daycare.daycareName}"
-                                   name="daycare_name" class="form-control" id="daycare_name" placeholder="Nombre" disabled/>
+                                   th:field="${daycare.cursoNombre}"
+                                   name="daycare_nombre" class="form-control" id="daycare_nombre" placeholder="Nombre" disabled/>
                         </div>
                         <!-- /.box-body -->
                     </div>
