@@ -16,7 +16,7 @@ public class UserService extends AbstractBusinessService<User, Integer, UserDTO,
         super(repository, serviceMapper);
     }
 
-    //Obtener el listado del los libros
+    //Obtener el listado del los usuarios
     public Page<UserDTO> findAll(Pageable pageable) {
         return getRepository().findAll(pageable).map(getServiceMapper()::toDto);
     }
