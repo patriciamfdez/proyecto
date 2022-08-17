@@ -1,40 +1,122 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layout}"
-        lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head :: head}"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de paseadores</title>
+</head>
 
-<body>
-<!-- Fixed navbar -->
-<div th:replace="~{fragments/navBarIN :: navBarIndex}"> </div>
-<!-- /.navbar -->
-<header id="head" class="secondary"></header>
+<body class="home">
 
-<div layout:fragment="breadcrumb" th:object="${daycare}">
-    <h1>Daycares Management</h1>
+<div layout:fragment="breadcrumb" th:object="${dogwalker}">
+    <h1>Gestión de paseadores</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/daycare"><i class="fa fa-tasks"></i> Daycare</a></li>
-        <li class="active" th:utext="@{'Daycare ID: <b>' + ${daycare.id}} + '</b>'"></li>
+        <li><a href="/dogwalker"><i class="fa fa-tasks"></i> Paseadores</a></li>
+        <li class="active" th:utext="@{'Paseador ID: <b>' + ${dogwalker.id}} + '</b>'"></li>
     </ol>
 </div>
 <div layout:fragment="content">
+    <h1>Gestión de paseadores</h1>
     <div class="row">
         <div class="col-md-12">
-            <form role="form" th:object="${daycare}" method="post">
+            <form role="form" th:object="${dogwalker}" method="post">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="tab-content">
-                            <input th:type="hidden" th:field="${daycare.id}"/>
+                            <input th:type="hidden" th:field="${dogwalker.id}"/>
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="name" th:text="#{Daycares.Name}"></label>
+                                        <label>Doc. Identificación</label>
+                                        <input type="text" class="form-control"
+                                               id="doc_identification"
+                                               th:field="${dogwalker.doc_identification}"
+                                               maxlength="255">
+                                        <label>Nombre</label>
                                         <input type="text" class="form-control"
                                                id="name"
-                                               th:field="${daycare.Name}"
+                                               th:field="${dogwalker.name}"
+                                               maxlength="255">
+                                        <label>Usuario</label>
+                                        <input type="text" class="form-control"
+                                               id="userName"
+                                               th:field="${dogwalker.userName}"
+                                               maxlength="255">
+                                        <label>Apellido</label>
+                                        <input type="text" class="form-control"
+                                               id="surname"
+                                               th:field="${dogwalker.surname}"
+                                               maxlength="255">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control"
+                                               id="email"
+                                               th:field="${dogwalker.email}"
+                                               maxlength="255">
+                                        <label>Clave</label>
+                                        <input type="text" class="form-control"
+                                               id="password"
+                                               th:field="${dogwalker.password}"
+                                               maxlength="255">
+                                        <label>Teléfono</label>
+                                        <input type="text" class="form-control"
+                                               id="phone"
+                                               th:field="${dogwalker.phone}"
+                                               maxlength="255">
+                                        <label>Nacimiento</label>
+                                        <input type="date" class="form-control"
+                                               id="birthdate"
+                                               th:field="${dogwalker.birthdate}"
+                                               maxlength="255">
+                                        <label>Disponibilidad</label>
+                                        <input type="text" class="form-control"
+                                               id="availability"
+                                               th:field="${dogwalker.availability}"
+                                               maxlength="255">
+                                        <label>Dirección</label>
+                                        <input type="text" class="form-control"
+                                               id="address"
+                                               th:field="${dogwalker.address}"
+                                               maxlength="255">
+                                        <label>Máximo de perros</label>
+                                        <input type="number" class="form-control"
+                                               id="max_num_dogs"
+                                               th:field="${dogwalker.max_num_dogs}"
+                                               maxlength="255">
+                                        <label>Peso del perro</label>
+                                        <input type="text" class="form-control"
+                                               id="weight_dogs"
+                                               th:field="${dogwalker.weight_dogs}"
+                                               maxlength="255">
+                                        <label>Esterilizado</label>
+                                        <input type="text" class="form-control"
+                                               id="sterilized"
+                                               th:field="${dogwalker.sterilized}"
+                                               maxlength="255">
+                                        <label>Críticas</label>
+                                        <input type="text" class="form-control"
+                                               id="reviews"
+                                               th:field="${dogwalker.reviews}"
+                                               maxlength="255">
+                                        <label>Valoración</label>
+                                        <input type="text" class="form-control"
+                                               id="assessment"
+                                               th:field="${dogwalker.assessment}"
+                                               maxlength="255">
+                                        <label>Precio del paseo</label>
+                                        <input type="text" class="form-control"
+                                               id="price_walk"
+                                               th:field="${dogwalker.price_walk}"
+                                               maxlength="255">
+                                        <label>Foto de perfil</label>
+                                        <input type="text" class="form-control"
+                                               id="profile_picture"
+                                               th:field="${dogwalker.profile_picture}"
+                                               maxlength="255">
+                                        <label>Galería</label>
+                                        <input type="text" class="form-control"
+                                               id="gallery"
+                                               th:field="${dogwalker.gallery}"
                                                maxlength="255">
                                     </div>
                                 </div>
@@ -43,7 +125,7 @@
                     </div>
                 </div>
                 <div class="box-footer with-border">
-                    <a th:href="@{/daycare}" class="btn btn-default" role="button"
+                    <a th:href="@{/dogwalker}" class="btn btn-default" role="button"
                        title="Back list" th:text="#{General.Cancel}">
                         <span aria-hidden="true"></span>
                     </a>
