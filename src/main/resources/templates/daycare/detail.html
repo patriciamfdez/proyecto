@@ -1,27 +1,15 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layout}"
-        lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head :: head}"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de residencias caninas</title>
+</head>
 
-<body>
-<!-- Fixed navbar -->
-<div th:replace="~{fragments/navBarIN :: navBarIndex}"> </div>
-<!-- /.navbar -->
-<header id="head" class="secondary"></header>
-
-<div layout:fragment="breadcrumb" th:object="${daycare}">
-    <h1>Tasks Management</h1>
-    <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/daycare"><i class="fa fa-tasks"></i> Daycares</a></li>
-        <li class="active" th:utext="@{'Daycare ID: <b>' + ${daycare.id}} + '</b>'"></li>
-    </ol>
-</div>
+<body class="home">
 
 <div layout:fragment="content">
+    <h1>Gestión de residencias caninas</h1>
     <form role="form" th:object="${daycare}" method="post" action="#" th:action="@{'/daycare/' + ${daycare.id} + '/delete'}">
         <div class="row">
             <div class="col-md-12">
@@ -31,8 +19,18 @@
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="name" th:text="#{Daycare.Name}"></label>
-                                        <p id="name" th:text="${daycare.daycareName}"/>
+                                        <label>Id</label>
+                                        <p id="id" th:text="${daycare.id}"/>
+                                        <label>Nombre</label>
+                                        <p id="name" th:text="${daycare.name}"/>
+                                        <label>Precio/Noche</label>
+                                        <p id="nightPrice" th:text="${daycare.nightPrice}"/>
+                                        <label>Teléfono</label>
+                                        <p id="phone" th:text="${daycare.phone}"/>
+                                        <label>Email</label>
+                                        <p id="email" th:text="${daycare.email}"/>
+                                        <label>Dirección</label>
+                                        <p id="address" th:text="${daycare.address}"/>
                                     </div>
                                 </div>
                             </div>

@@ -1,8 +1,6 @@
 package com.example.proyecto.web.controller;
 
-import com.example.proyecto.dto.DaycareDTO;
 import com.example.proyecto.dto.DogWalkerDTO;
-import com.example.proyecto.service.DaycareService;
 import com.example.proyecto.service.DogWalkerService;
 import com.example.proyecto.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
