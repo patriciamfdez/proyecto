@@ -1,160 +1,720 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="https://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="https://www.thymeleaf.org" style="font-size: 16px;" lang="es">
 
-<head th:replace="~{fragments/head :: head}"></head>
+<head th:replace="~{fragments/headNice :: head}"></head>
 
-<body>
-<!-- Fixed navbar -->
-<nav th:replace="~{fragments/navBar :: navBarLogIn}"> </nav>
-<!-- /.navbar -->
-
-<header id="head" class="secondary"></header>
-
-<!-- container -->
-<div class="container">
-
-    <ol class="breadcrumb">
-        <li><a th:href="@{/index}">Inicio</a></li>
-        <li class="active">Acceso de usuario</li>
-    </ol>
-
-    <div class="row">
-
-        <!-- Article main content -->
-        <article class="col-xs-12 maincontent">
-            <header class="page-header">
-                <h1 class="page-title">Inicio de Sesión</h1>
-            </header>
-
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <form th:action="@{/login}" method="post">
-
-                    <!--p th:if="${errors}" th:text="#{Login.Error}"></p--> <!-- El que tiene JM -->
-
-                    <!-- form name='f' action="login" method='POST'-->    <!-- El básico que salía -->
-                    <!-- form action="#" th:action="@{/login}" method="post"-->   <!-- El que tiene JM -->
-                    <!-- form th:action="@{/login}" method="post"-->   <!-- El de Youtube -->
-
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h3 class="thin text-center">Inicia sesión en tu cuenta</h3>
-                            <p class="text-center text-muted">Si no estás dado de alta en nuestra página, <a th:href="@{/signup}">regístrate aquí</a> para disfrutar de nuestros servicios. </p>
-                            <hr>
-                            <p th:if="${errors}" style="color:red;">Usuario o contraseña incorrectos.</p>
-                            <form>
-                                <div class="top-margin">
-                                    <label>Usuario <span class="text-danger">*</span></label>
-                                    <input name="username" type="text" class="form-control">
-                                </div>
-                                <div class="top-margin">
-                                    <label>Contraseña <span class="text-danger">*</span></label>
-                                    <input name="password" type="password" class="form-control">
-                                </div>
-
-                                <hr>
-
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <b><a href="">He olvidado mi contraseña</a></b>        <!-- TODO -->
-                                    </div>
-                                    <div class="col-lg-4 text-right">
-                                        <button class="btn btn-action" type="submit">Acceder</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-        </article>
-        <!-- /Article -->
-
-    </div>
-</div>	<!-- /container -->
+<body data-home-page="Doggo.html" data-home-page-title="Doggo" class="u-body u-xl-mode" data-lang="es" data-style="login-template-1" data-posts="" data-global-section-properties="{&quot;code&quot;:&quot;LOGIN&quot;,&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;,&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;],&quot;dark&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;]},&quot;isPreset&quot;:true}" data-source="fix" data-page-sections-style="[{&quot;name&quot;:&quot;login-form-1&quot;,&quot;margin&quot;:&quot;both&quot;,&quot;repeat&quot;:false}]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;,&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;],&quot;dark&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;]}" data-page-category="&quot;Login&quot;">
 
 
-<footer id="footer" class="top-space">
+<header th:replace="~{fragments/header :: header}">  </header>
 
-    <div class="footer1">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-3 widget">
-                    <h3 class="widget-title">Contact</h3>
-                    <div class="widget-body">
-                        <p>+234 23 9873237<br>
-                            <a href="mailto:#">some.email@somewhere.com</a><br>
-                            <br>
-                            234 Hidden Pond Road, Ashland City, TN 37015
-                        </p>
-                    </div>
+<form th:action="@{/login}" method="post">
+<section class="u-align-center u-clearfix u-palette-1-base u-block-f9ab-1" custom-posts-hash="[]" data-style="blank" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" id="carousel_3f67" data-source="functional_fix" data-id="f9ab">
+    <img class="u-expanded-width u-image u-block-f9ab-2" th:src="@{/images/62e4d9f618eebe9e0a97ee13ba4c76881369e7f94e36e75f4262195ee6c4ceee4461c27b136116df809b4d32e04627b454f6a4b3ffc0c8caee196f_1280.jpg}" data-image-width="1280" data-image-height="847">
+    <div class="u-align-center u-container-style u-group u-radius-50 u-shape-round u-white u-block-f9ab-3">
+        <div class="u-container-layout u-block-f9ab-4"><span class="u-border-8 u-border-white u-file-icon u-icon u-icon-circle u-block-f9ab-5"><img th:src="@{/images/Logo.png}" alt="" data-original-src="np://user.desktop.nicepage.com/Site_76119565/images/Logo.png" data-color=""></span><h2 class="u-text u-text-default u-text-palette-2-base u-block-f9ab-6">Login Now</h2><div class="u-form u-login-control u-block-f9ab-7">
+            <form action="#" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
+                <div class="u-form-group u-form-name u-label-top u-block-f9ab-8">
+                    <label for="username-a30d" class="u-label u-text-grey-30 u-block-f9ab-9">Username *</label>
+                    <input type="text" placeholder="Enter your Username" id="username-a30d" name="username" class="u-border-10 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-50 u-block-f9ab-10" required="">
                 </div>
-
-                <div class="col-md-3 widget">
-                    <h3 class="widget-title">Follow me</h3>
-                    <div class="widget-body">
-                        <p class="follow-me-icons clearfix">
-                            <a href=""><i class="fa fa-twitter fa-2"></i></a>
-                            <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-                            <a href=""><i class="fa fa-github fa-2"></i></a>
-                            <a href=""><i class="fa fa-facebook fa-2"></i></a>
-                        </p>
-                    </div>
+                <div class="u-form-group u-form-password u-label-top u-block-f9ab-11">
+                    <label for="password-a30d" class="u-label u-text-grey-30 u-block-f9ab-12">Password *</label>
+                    <input type="text" placeholder="Enter your Password" id="password-a30d" name="password" class="u-border-10 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-50 u-block-f9ab-13" required="">
                 </div>
-
-
-                <div class="col-md-6 widget">
-                    <h3 class="widget-title">Text widget</h3>
-                    <div class="widget-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                        <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
-                    </div>
+                <div class="u-form-checkbox u-form-group u-label-top u-block-f9ab-14">
+                    <input type="checkbox" id="checkbox-a30d" name="remember" value="On">
+                    <label for="checkbox-a30d" class="u-label u-text-grey-30 u-block-f9ab-15">Remember me</label>
                 </div>
+                <div class="u-align-center u-form-group u-form-submit u-label-top u-block-f9ab-16">
 
-            </div> <!-- /row of widgets -->
-        </div>
-    </div>
-
-    <div class="footer2">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6 widget">
-                    <div class="widget-body">
-                        <p class="simplenav">
-                            <a href="#">Home</a> |
-                            <a href="about.html">About</a> |
-                            <a href="sidebar-right.html">Sidebar</a> |
-                            <a href="contact.html">Contact</a> |
-                            <b><a href="signup.html">Sign up</a></b>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 widget">
-                    <div class="widget-body">
-                        <p class="text-right">
-                            Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
-                        </p>
-                    </div>
-                </div>
-
-            </div> <!-- /row of widgets -->
-        </div>
-    </div>
-</footer>
+                    <input type="submit" value="submit" class="u-form-control-hidden">
+                    <a href="#" class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-base u-palette-2-base u-radius-50 u-block-f9ab-17">Login</a></div>
+                <input type="hidden" value="" name="recaptchaResponse">
 
 
+            </form>
+        </div><a href="https://nicepage.com/website-design" class="u-border-active-palette-2-base u-border-hover-palette-2-base u-border-none u-btn u-button-style u-login-control u-login-create-account u-none u-text-palette-2-base u-block-f9ab-18">Don't have an account?</a><a href="https://nicepage.com/k/youtube-website-templates" class="u-border-active-palette-2-base u-border-hover-palette-2-base u-border-none u-btn u-button-style u-login-control u-login-create-account u-none u-text-palette-2-base u-block-f9ab-19">Forgot password?</a><p class="u-text u-block-f9ab-20">Image from <a href="https://www.freepik.com/vectors/background" class="u-active-none u-border-1 u-border-active-palette-2-base u-border-black u-border-hover-palette-2-base u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-block-f9ab-21">Freepik</a></p></div>
+    </div><style data-mode="XL" data-visited="true">@media (min-width: 1200px) {
+  .u-block-f9ab-1 {
+    background-image: none;
+    min-height: 1011px;
+  }
+  .u-block-f9ab-2 {
+    height: 452px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-3 {
+    width: 726px;
+    min-height: 787px;
+    box-shadow: 5px 5px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    height: auto;
+    margin-top: -256px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+  .u-block-f9ab-4 {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .u-block-f9ab-5 {
+    width: 165px;
+    height: 162px;
+    box-shadow: 5px -10px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 245px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-6 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: none;
+    margin-top: 43px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-7 {
+    height: 363px;
+    width: 570px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-9 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-10 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-12 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-13 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-15 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-17 {
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-image: none;
+    width: 100%;
+    font-size: 1.125rem;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .u-block-f9ab-18 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 48px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-19 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: -29px;
+    margin-right: 48px;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-20 {
+    margin-top: 38px;
+    margin-right: 256px;
+    margin-bottom: 0;
+    margin-left: 264px;
+  }
+  .u-block-f9ab-21 {
+    border-style: none none solid;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}</style><style data-mode="LG" data-visited="true">@media (max-width: 1199px) and (min-width: 992px) {
+  .u-block-f9ab-1 {
+    background-image: none;
+    min-height: 1011px;
+  }
+  .u-block-f9ab-2 {
+    height: 426px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-3 {
+    box-shadow: 5px 5px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 726px;
+    min-height: 787px;
+    margin-top: -256px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+  .u-block-f9ab-4 {
+    padding-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 0;
+  }
+  .u-block-f9ab-5 {
+    box-shadow: 5px -10px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 165px;
+    height: 162px;
+    margin-top: 0;
+    margin-left: 245px;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-6 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: none;
+    margin-top: 43px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-7 {
+    height: 363px;
+    width: 570px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-9 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-10 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-12 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-13 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-15 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-17 {
+    background-image: none;
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    font-size: 1.125rem;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .u-block-f9ab-18 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 48px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-19 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: -29px;
+    margin-right: 48px;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-20 {
+    margin-top: 38px;
+    margin-right: 256px;
+    margin-bottom: 0;
+    margin-left: 264px;
+  }
+  .u-block-f9ab-21 {
+    border-style: none none solid;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}</style><style data-mode="MD">@media (max-width: 991px) and (min-width: 768px) {
+  .u-block-f9ab-1 {
+    background-image: none;
+    min-height: 1011px;
+  }
+  .u-block-f9ab-2 {
+    height: 426px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-3 {
+    box-shadow: 5px 5px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 720px;
+    min-height: 787px;
+    margin-top: -256px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+  .u-block-f9ab-4 {
+    padding-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 0;
+  }
+  .u-block-f9ab-5 {
+    box-shadow: 5px -10px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 165px;
+    height: 162px;
+    margin-top: 0;
+    margin-left: 243px;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-6 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: none;
+    margin-top: 43px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-7 {
+    height: 363px;
+    width: 570px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-9 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-10 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-12 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-13 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-15 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-17 {
+    background-image: none;
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    font-size: 1.125rem;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .u-block-f9ab-18 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 42px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-19 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: -29px;
+    margin-right: 42px;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-20 {
+    margin-top: 38px;
+    margin-right: 253px;
+    margin-bottom: 0;
+    margin-left: 261px;
+  }
+  .u-block-f9ab-21 {
+    border-style: none none solid;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}</style><style data-mode="SM" data-visited="true">@media (max-width: 767px) and (min-width: 576px) {
+  .u-block-f9ab-1 {
+    background-image: none;
+    min-height: 1011px;
+  }
+  .u-block-f9ab-2 {
+    height: 426px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-3 {
+    box-shadow: 5px 5px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 540px;
+    min-height: 787px;
+    margin-top: -256px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+  .u-block-f9ab-4 {
+    padding-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 0;
+  }
+  .u-block-f9ab-5 {
+    box-shadow: 5px -10px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 165px;
+    height: 162px;
+    margin-top: 0;
+    margin-left: 191px;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-6 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: none;
+    margin-top: 43px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-7 {
+    height: 363px;
+    width: 480px;
+    margin-top: 35px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-9 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-10 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-12 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-13 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-15 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-17 {
+    background-image: none;
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    font-size: 1.125rem;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .u-block-f9ab-18 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-19 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: -29px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 323px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-20 {
+    width: 178px;
+    margin-top: 38px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-21 {
+    border-style: none none solid;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}</style><style data-mode="XS" data-visited="true">@media (max-width: 575px) {
+  .u-block-f9ab-1 {
+    background-image: none;
+    min-height: 1011px;
+  }
+  .u-block-f9ab-2 {
+    height: 426px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-3 {
+    box-shadow: 5px 5px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 340px;
+    min-height: 787px;
+    margin-top: -256px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+  }
+  .u-block-f9ab-4 {
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0;
+  }
+  .u-block-f9ab-5 {
+    box-shadow: 5px -10px 20px 0 rgba(var(--black-r),var(--black-g),var(--black-b),0.4);
+    width: 165px;
+    height: 162px;
+    margin-top: 0;
+    margin-left: 118px;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-6 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: none;
+    margin-top: 43px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-7 {
+    height: 363px;
+    width: 300px;
+    margin-top: 35px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .u-block-f9ab-9 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-10 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-12 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-13 {
+    background-image: none;
+    font-size: 1.125rem;
+  }
+  .u-block-f9ab-15 {
+    font-size: 1.125rem;
+    letter-spacing: 0px;
+    text-transform: none;
+  }
+  .u-block-f9ab-17 {
+    background-image: none;
+    border-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    font-size: 1.125rem;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .u-block-f9ab-18 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-19 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    border-style: none;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .u-block-f9ab-20 {
+    margin-top: 38px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    width: 178px;
+  }
+  .u-block-f9ab-21 {
+    border-style: none none solid;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}</style></section>
+</form>
 
 
 
+
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-184c"><div class="u-clearfix u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1">Texto de muestra. Haz click para seleccionar el elemento de Texto.</p>
+</div></footer>
+<section class="u-backlink u-clearfix u-grey-80">
+    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Template</span>
+    </a>
+    <p class="u-text">
+        <span>created with</span>
+    </p>
+    <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
+        <span>HTML Layout generator</span>
+    </a>.
+</section>
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script th:src="@{/js/headroom.min.js}"></script>
-<script th:src="@{/js/jQuery.headroom.min.js}"></script>
-<script th:src="@{/js/template.js}"></script>
-</body>
-</html>
+<script class="u-script" type="text/javascript" th:src="@{/js/jquery.js}"></script>
+<script class="u-script" type="text/javascript" th:src="@{/js/nicepage.js}"></script>
+</body></html>

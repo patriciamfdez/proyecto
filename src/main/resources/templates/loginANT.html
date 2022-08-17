@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="~{fragments/head :: head}"></head>
+
+<body>
+<!-- Fixed navbar -->
+<nav th:replace="~{fragments/navBar :: navBarLogIn}"> </nav>
+<!-- /.navbar -->
+
+<header id="head" class="secondary"></header>
+
+<!-- container -->
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li><a th:href="@{/index}">Inicio</a></li>
+        <li class="active">Acceso de usuario</li>
+    </ol>
+
+    <div class="row">
+
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Inicio de Sesión</h1>
+            </header>
+
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <form th:action="@{/login}" method="post">
+
+                    <!--p th:if="${errors}" th:text="#{Login.Error}"></p--> <!-- El que tiene JM -->
+
+                    <!-- form name='f' action="login" method='POST'-->    <!-- El básico que salía -->
+                    <!-- form action="#" th:action="@{/login}" method="post"-->   <!-- El que tiene JM -->
+                    <!-- form th:action="@{/login}" method="post"-->   <!-- El de Youtube -->
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="thin text-center">Inicia sesión en tu cuenta</h3>
+                            <p class="text-center text-muted">Si no estás dado de alta en nuestra página, <a th:href="@{/signup}">regístrate aquí</a> para disfrutar de nuestros servicios. </p>
+                            <hr>
+                            <p th:if="${errors}" style="color:red;">Usuario o contraseña incorrectos.</p>
+                            <form>
+                                <div class="top-margin">
+                                    <label>Usuario <span class="text-danger">*</span></label>
+                                    <input name="username" type="text" class="form-control">
+                                </div>
+                                <div class="top-margin">
+                                    <label>Contraseña <span class="text-danger">*</span></label>
+                                    <input name="password" type="password" class="form-control">
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <b><a href="">He olvidado mi contraseña</a></b>        <!-- TODO -->
+                                    </div>
+                                    <div class="col-lg-4 text-right">
+                                        <button class="btn btn-action" type="submit">Acceder</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </article>
+        <!-- /Article -->
+
+    </div>
+</div>	<!-- /container -->
+
+
+<footer id="footer" class="top-space">
+
+    <div class="footer1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3 widget">
+                    <h3 class="widget-title">Contact</h3>
+                    <div class="widget-body">
+                        <p>+234 23 9873237<br>
+                            <a href="mailto:#">some.email@somewhere.com</a><br>
+                            <br>
+                            234 Hidden Pond Road, Ashland City, TN 37015
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 widget">
+                    <h3 class="widget-title">Follow me</h3>
+                    <div class="widget-body">
+                        <p class="follow-me-icons clearfix">
+                            <a href=""><i class="fa fa-twitter fa-2"></i></a>
+                            <a href=""><i class="fa fa-dribbble fa-2"></i></a>
+                            <a href=""><i class="fa fa-github fa-2"></i></a>
+                            <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 widget">
+                    <h3 class="widget-title">Text widget</h3>
+                    <div class="widget-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+                        <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+                    </div>
+                </div>
+
+            </div> <!-- /row of widgets -->
+        </div>
+    </div>
+
+    <div class="footer2">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 widget">
+                    <div class="widget-body">
+                        <p class="simplenav">
+                            <a href="#">Home</a> |
+                            <a href="about.html">About</a> |
+                            <a href="sidebar-right.html">Sidebar</a> |
+                            <a href="contact.html">Contact</a> |
+                            <b><a href="signup.html">Sign up</a></b>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 widget">
+                    <div class="widget-body">
+                        <p class="text-right">
+                            Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div> <!-- /row of widgets -->
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/headroom.min.js}"></script>
+<script th:src="@{/js/jQuery.headroom.min.js}"></script>
+<script th:src="@{/js/template.js}"></script>
+</body>
+</html>

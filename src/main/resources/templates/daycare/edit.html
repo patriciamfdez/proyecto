@@ -1,14 +1,14 @@
 <!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-        layout:decorate="~{layout}"
-        lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      xmlns:="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="~{fragments/head :: head}"></head>
 
 <body>
 <!-- Fixed navbar -->
-<div th:replace="~{fragments/navBarIN :: navBarIndex}"> </div>
+<div th:replace="~{fragments/navBar :: navBarIndex}"> </div>
 <!-- /.navbar -->
 <header id="head" class="secondary"></header>
 
