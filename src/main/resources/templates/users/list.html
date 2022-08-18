@@ -16,35 +16,52 @@
             <table class="u-table-entity u-table-entity-1">
                 <tbody class="u-table-body">
                 <tr style="height: 64px;">
-                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-1">Id</th>
-                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-2">Nombre</th>
-                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-3">Precio/Noche</th>
-                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Teléfono</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-1">ID</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-2">Usuario</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-3">Fecha último login</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Fecha de nacimiento</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Nombre</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Apellidos</th>
                     <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Email</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Teléfono móvil</th>
                     <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Dirección</th>
-                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Valoración</th>
+                    <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
 
-                <tr th:each="item,iter : ${daycare}" style="height: 65px;">
+                <tr th:each="item,iter : ${users}" style="height: 65px;">
                     <td class="u-border-1 u-border-grey-30 u-palette-1-base u-table-cell u-table-cell-9" th:text="${item.id}">R</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.userName}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.date}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.birthDate}"></td>
                     <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.name}"></td>
-                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.nightPrice}"></td>
-                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.phone}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.surname}"></td>
                     <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.email}"></td>
-                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.address}"></td>
-                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.ranking}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.phone}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.addresses}"></td>
+                    <td></td>
+                    <!--td>
+                        <a href="#" class="btn btn-default" th:href="@{'/users/' + ${item.id}}"
+                           title="View"><span class="glyphicon glyphicon glyphicon-eye-open"></span></a>
+                        <a href="#" class="btn btn-default" th:href="@{'/users/' + ${item.id} + '/edit'}"
+                           title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                        <button class="btn btn-danger" type="submit" value="Delete"
+                                th:formaction="'/users/' + ${item.id} + '/delete'">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                     </td-->
+
                     <td>
-                        <a class="btn btn-default" th:href="@{'/daycare/' + ${item.id}}"
+                        <a class="btn btn-default" th:href="@{'/users/' + ${item.id}}"
                            title="View">Ver</a>
-                        <a  class="btn btn-default" th:href="@{'/daycare/' + ${item.id} + '/edit'}"
+                        <a  class="btn btn-default" th:href="@{'/users/' + ${item.id} + '/edit'}"
                            title="Edit">Modificar</a>
                         <button class="btn btn-danger" type="submit" value="Delete"
-                                th:formaction="'/daycare/' + ${item.id} + '/delete'">Borrar</button>
+                                th:formaction="'/users/' + ${item.id} + '/delete'">Borrar</button>
                     </td>
                 </tr>
-                <tr th:if="${#lists.isEmpty(daycare.content)}">
-                    <td colspan="13" class="text-center">No daycares</td>
+                <tr th:if="${#lists.isEmpty(users.content)}">
+                    <td colspan="13" class="text-center">No users</td>
                 </tr>
                 </tbody>
             </table>
@@ -52,14 +69,14 @@
 </form>
 </div>
 
-<div th:if="${not #lists.isEmpty(daycare.content)}">
+<div th:if="${not #lists.isEmpty(users.content)}">
     <div class="text-center">
         <nav>
             <ul class="pagination" sd:pagination="full">
-                <div th:if="${daycare.totalPages > 0}" class="pagination"
+                <div th:if="${users.totalPages > 0}" class="pagination"
                      th:each="pageNumber : ${pageNumbers}">
-                    <li th:class="${pageNumber==daycare.number + 1} ? active">
-                        <a href="#" th:href="@{/daycare(size=${daycare.size}, page=${pageNumber})}"
+                    <li th:class="${pageNumber==users.number + 1} ? active">
+                        <a href="#" th:href="@{/users(size=${users.size}, page=${pageNumber})}"
                            th:text=${pageNumber}></a>
                     </li>
                 </div>
