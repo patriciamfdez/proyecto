@@ -1,33 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="https://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" style="font-size: 16px;" lang="es">
 
-<head th:replace="~{fragments/head :: head}"></head>
+<head th:replace="~{fragments/headNice :: head}"></head>
 
-<body class="home">
+<body data-home-page="Doggo.html" data-home-page-title="Doggo" class="u-body u-xl-mode" data-lang="es">
 
-<!-- Fixed navbar -->
-<!--nav th:replace="~{fragments/navBar :: navBarIndexIn}"> </nav-->
-<!-- /.navbar -->
 
-<!-- Header -->
-<header id="head">
-
-</header>
-<!-- /Header -->
+<header th:replace="~{fragments/header :: header}">  </header>
 
 
 
 
-<!-- footer -->
-<div th:replace="~{fragments/footer :: nuestroFooter}"> </div>
-<!-- /footer -->
+
+
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-184c"><div class="u-clearfix u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1">Texto de muestra. Haz click para seleccionar el elemento de Texto.</p>
+</div></footer>
+<section class="u-backlink u-clearfix u-grey-80">
+    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Template</span>
+    </a>
+    <p class="u-text">
+        <span>created with</span>
+    </p>
+    <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
+        <span>HTML Layout generator</span>
+    </a>.
+</section>
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script th:src="@{/js/headroom.min.js}"></script>
-<script th:src="@{/js/jQuery.headroom.min.js}"></script>
-<script th:src="@{/js/template.js}"></script>
-
-</body>
-</html>
+<script class="u-script" type="text/javascript" src="js/jquery.js"></script>
+<script class="u-script" type="text/javascript" src="js/nicepage.js"></script>
+</body></html>

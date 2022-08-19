@@ -1,160 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="https://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns="https://www.thymeleaf.org" style="font-size: 16px;" lang="es"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 
-<head th:replace="~{fragments/head :: head}"></head>
 
-<body>
-<!-- Fixed navbar -->
-<nav th:replace="~{fragments/navBar :: navBarLogIn}"> </nav>
-<!-- /.navbar -->
 
-<header id="head" class="secondary"></header>
+<body data-home-page="Doggo.html" data-home-page-title="Doggo" class="u-body u-xl-mode" data-lang="es" data-style="login-template-1" data-posts="" data-global-section-properties="{&quot;code&quot;:&quot;LOGIN&quot;,&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;,&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;],&quot;dark&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;]},&quot;isPreset&quot;:true}" data-source="fix" data-page-sections-style="[{&quot;name&quot;:&quot;login-form-1&quot;,&quot;margin&quot;:&quot;both&quot;,&quot;repeat&quot;:false}]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;,&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;],&quot;dark&quot;:[&quot;clean&quot;,&quot;clean&quot;,&quot;clean&quot;]}" data-page-category="&quot;Login&quot;">
 
-<!-- container -->
-<div class="container">
+<div layout:fragment="content">
 
-    <ol class="breadcrumb">
-        <li><a th:href="@{/index}">Inicio</a></li>
-        <li class="active">Acceso de usuario</li>
-    </ol>
 
-    <div class="row">
 
-        <!-- Article main content -->
-        <article class="col-xs-12 maincontent">
-            <header class="page-header">
-                <h1 class="page-title">Inicio de Sesión</h1>
-            </header>
+    <section class="u-align-center u-clearfix u-palette-1-base u-block-f9ab-1" custom-posts-hash="[]" data-style="blank" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" id="carousel_3f67" data-source="functional_fix" data-id="f9ab">
+        <img class="u-expanded-width u-image u-block-f9ab-2" th:src="@{/images/62e4d9f618eebe9e0a97ee13ba4c76881369e7f94e36e75f4262195ee6c4ceee4461c27b136116df809b4d32e04627b454f6a4b3ffc0c8caee196f_1280.jpg}" data-image-width="1280" data-image-height="847">
 
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <form th:action="@{/login}" method="post">
+        <div class="u-align-center u-container-style u-group u-radius-50 u-shape-round u-white u-block-f9ab-3">
+            <div class="u-container-layout u-block-f9ab-4"><span class="u-border-8 u-border-white u-file-icon u-icon u-icon-circle u-block-f9ab-5"><img th:src="@{/images/Logo.png}" alt="" data-original-src="np://user.desktop.nicepage.com/Site_76119565/images/Logo.png" data-color=""></span><h2 class="u-text u-text-default u-text-palette-2-base u-block-f9ab-6">Iniciar sesión</h2><div class="u-form u-login-control u-block-f9ab-7">
+                <form th:action="@{/login}" method="post" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom"  style="padding: 0px;">
 
-                    <!--p th:if="${errors}" th:text="#{Login.Error}"></p--> <!-- El que tiene JM -->
-
-                    <!-- form name='f' action="login" method='POST'-->    <!-- El básico que salía -->
-                    <!-- form action="#" th:action="@{/login}" method="post"-->   <!-- El que tiene JM -->
-                    <!-- form th:action="@{/login}" method="post"-->   <!-- El de Youtube -->
-
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h3 class="thin text-center">Inicia sesión en tu cuenta</h3>
-                            <p class="text-center text-muted">Si no estás dado de alta en nuestra página, <a th:href="@{/signup}">regístrate aquí</a> para disfrutar de nuestros servicios. </p>
-                            <hr>
-                            <p th:if="${errors}" style="color:red;">Usuario o contraseña incorrectos.</p>
-                            <form>
-                                <div class="top-margin">
-                                    <label>Usuario <span class="text-danger">*</span></label>
-                                    <input name="username" type="text" class="form-control">
-                                </div>
-                                <div class="top-margin">
-                                    <label>Contraseña <span class="text-danger">*</span></label>
-                                    <input name="password" type="password" class="form-control">
-                                </div>
-
-                                <hr>
-
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <b><a href="">He olvidado mi contraseña</a></b>        <!-- TODO -->
-                                    </div>
-                                    <div class="col-lg-4 text-right">
-                                        <button class="btn btn-action" type="submit">Acceder</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                    <p th:if="${errors}" style="color:red;">Usuario o contraseña incorrectos.</p>
+                    <div class="u-form-group u-form-name u-label-top u-block-f9ab-8">
+                        <label for="user-a30d" class="u-label u-text-grey-30 u-block-f9ab-9">Usuario</label>
+                        <input name="username" type="text" placeholder="usuario" id="usuario-a30d"  class="u-border-10 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-50 u-block-f9ab-10" required="">
                     </div>
+                    <div class="u-form-group u-form-password u-label-top u-block-f9ab-11">
+                        <label for="password-a30d" class="u-label u-text-grey-30 u-block-f9ab-12">Contraseña</label>
+                        <input name="password" type="password" placeholder="contraseña" id="contraseña-a30d"  class="u-border-10 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-50 u-block-f9ab-13" required="">
+                        <!--div class="input-group-append"-->
+                            <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+
+                    </div>
+                    <hr>
+                    <div class="u-form-checkbox u-form-group u-label-top u-block-f9ab-14">
+                        <input type="checkbox" id="checkbox-a30d" name="checkbox" value="On">
+                        <label for="checkbox-a30d" class="u-label u-text-grey-30 u-block-f9ab-15">Recuérdame</label>
+                    </div>
+                    <hr>
+                    <div class="u-align-center u-form-group u-form-submit u-label-top u-block-f9ab-16">
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                        <a href="#" class="u-active-palette-1-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-base u-palette-2-base u-radius-50 u-block-f9ab-17">Iniciar sesión</a>
+                    </div>
+
+                    <!--input type="hidden" value="" name="recaptchaResponse"-->
+
                 </form>
-            </div>
-
-        </article>
-        <!-- /Article -->
-
-    </div>
-</div>	<!-- /container -->
-
-
-<footer id="footer" class="top-space">
-
-    <div class="footer1">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-3 widget">
-                    <h3 class="widget-title">Contact</h3>
-                    <div class="widget-body">
-                        <p>+234 23 9873237<br>
-                            <a href="mailto:#">some.email@somewhere.com</a><br>
-                            <br>
-                            234 Hidden Pond Road, Ashland City, TN 37015
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 widget">
-                    <h3 class="widget-title">Follow me</h3>
-                    <div class="widget-body">
-                        <p class="follow-me-icons clearfix">
-                            <a href=""><i class="fa fa-twitter fa-2"></i></a>
-                            <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-                            <a href=""><i class="fa fa-github fa-2"></i></a>
-                            <a href=""><i class="fa fa-facebook fa-2"></i></a>
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 widget">
-                    <h3 class="widget-title">Text widget</h3>
-                    <div class="widget-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                        <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
-                    </div>
-                </div>
-
-            </div> <!-- /row of widgets -->
+            </div><a href="https://nicepage.com/website-design" class="u-border-active-palette-2-base u-border-hover-palette-2-base u-border-none u-btn u-button-style u-login-control u-login-create-account u-none u-text-palette-2-base u-block-f9ab-18">¿No tienes cuenta? Regístrate aquí</a><a href="https://nicepage.com/k/youtube-website-templates" class="u-border-active-palette-2-base u-border-hover-palette-2-base u-border-none u-btn u-button-style u-login-control u-login-create-account u-none u-text-palette-2-base u-block-f9ab-19">¿Olvidaste la contraseña?</a><p class="u-text u-block-f9ab-20"><a href="https://www.freepik.com/vectors/background" class="u-active-none u-border-1 u-border-active-palette-2-base u-border-black u-border-hover-palette-2-base u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-block-f9ab-21"></a></p></div>
         </div>
-    </div>
+    </section>
 
-    <div class="footer2">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6 widget">
-                    <div class="widget-body">
-                        <p class="simplenav">
-                            <a href="#">Home</a> |
-                            <a href="about.html">About</a> |
-                            <a href="sidebar-right.html">Sidebar</a> |
-                            <a href="contact.html">Contact</a> |
-                            <b><a href="signup.html">Sign up</a></b>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 widget">
-                    <div class="widget-body">
-                        <p class="text-right">
-                            Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a>
-                        </p>
-                    </div>
-                </div>
-
-            </div> <!-- /row of widgets -->
-        </div>
-    </div>
-</footer>
+</div>
 
 
 
+<script type="text/javascript">
+function mostrarPassword(){
+		var cambio = document.getElementById("contraseña-a30d");
+		if(cambio.type == "password"){
+			cambio.type = "text";
+			$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+		}else{
+			cambio.type = "password";
+			$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+		}
+	}
+</script>
 
 
-
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script th:src="@{/js/headroom.min.js}"></script>
-<script th:src="@{/js/jQuery.headroom.min.js}"></script>
-<script th:src="@{/js/template.js}"></script>
-</body>
-</html>
+</body></html>

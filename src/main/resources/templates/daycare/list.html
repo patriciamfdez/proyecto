@@ -1,56 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      style="font-size: 16px;" lang="es"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
-<head>
-    <title>Gestión de residencias caninas</title>
-</head>
+
 
 <body class="home">
 
 <div layout:fragment="content">
     <h1>Gestión de residencias caninas</h1>
-    <a th:href="@{/daycare/create}">Nueva residencia canina</a>
+    <a href="/daycare/create">Nueva residencia</a>
     Mostrar <span sd:page-size-selector="javascript"></span> entradas
     <form action="#" th:action="@{'/'}" method="post">
-        <table style="border-collapse: collapse; width: 100%;">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Precio/Noche</th>
-                <th>Teléfono</th>
-                <th>Email</th>
-                <th>Dirección</th>
-                <th>Clasificación</th>
-                <th>&nbsp;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="item,iter : ${daycare}">
-                <td th:text="${item.id}"></td>
-                <td th:text="${item.name}"></td>
-                <td th:text="${item.nightPrice}"></td>
-                <td th:text="${item.phone}"></td>
-                <td th:text="${item.email}"></td>
-                <td th:text="${item.address}"></td>
-                <td th:text="${item.ranking}"></td>
-                <td>
-                    <a href="#" class="btn btn-default" th:href="@{'/daycare/' + ${item.id}}"
-                       title="View">Ver</a>
-                    <a href="#" class="btn btn-default" th:href="@{'/daycare/' + ${item.id} + '/edit'}"
-                       title="Edit">Modificar</a>
-                    <button class="btn btn-danger" type="submit" value="Delete"
-                            th:formaction="'/daycare/' + ${item.id} + '/delete'">Borrar</button>
-                </td>
-            </tr>
-            <tr th:if="${#lists.isEmpty(daycare.content)}">
-                <td colspan="13" class="text-center">No existen residencias caninas</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+            <table class="u-table-entity u-table-entity-1">
+                <tbody class="u-table-body">
+                <tr style="height: 64px;">
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-1">Id</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-2">Nombre</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-3">Precio/Noche</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Teléfono</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Email</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Dirección</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Valoración</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                </tr>
+
+                <tr th:each="item,iter : ${daycare}" style="height: 65px;">
+                    <td class="u-border-1 u-border-grey-30 u-palette-1-base u-table-cell u-table-cell-9" th:text="${item.id}">R</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.name}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.nightPrice}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.phone}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.email}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.address}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.ranking}"></td>
+                    <td></td>
+                    <td>
+                        <a class="btn btn-default" th:href="@{'/daycare/' + ${item.id}}"
+                           title="View">Ver</a>
+                        <a  class="btn btn-default" th:href="@{'/daycare/' + ${item.id} + '/edit'}"
+                           title="Edit">Modificar</a>
+                        <button class="btn btn-danger" type="submit" value="Delete"
+                                th:formaction="'/daycare/' + ${item.id} + '/delete'">Borrar</button>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(daycare.content)}">
+                    <td colspan="13" class="text-center">No daycares</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 </form>
 </div>
+
 <div th:if="${not #lists.isEmpty(daycare.content)}">
     <div class="text-center">
         <nav>

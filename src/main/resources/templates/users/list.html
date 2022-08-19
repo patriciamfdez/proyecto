@@ -1,66 +1,74 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:sd="http://www.w3.org/1999/xhtml"
-        lang="en" xmlns="https://www.thymeleaf.org"
-        xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head :: head}"></head>
+<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      style="font-size: 16px;" lang="es"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 
-<body>
-<!-- Fixed navbar -->
-<nav th:replace="~{fragments/navBar :: navBarIndex}"> </nav>
-<!-- /.navbar -->
 
-<h1>Gestión de usuarios</h1>
-<a th:href="@{/users/create}">Nuevo usuario</a>
-Show <span sd:page-size-selector="javascript"></span> entries
-<form action="#" th:action="@{'/'}" method="post">
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre usuario</th>
-            <th>Fecha último login</th>
-            <th>Fecha de nacimiento</th>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Email</th>
-            <th>Teléfono móvil</th>
-            <th>Dirección</th>
-            <th>&nbsp</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="item,iter : ${users}">
-            <td th:text="${item.id}"></td>
-            <td th:text="${item.userName}"></td>
-            <td th:text="${item.date}"></td>
-            <td th:text="${item.birthDate}"></td>
-            <td th:text="${item.name}"></td>
-            <td th:text="${item.surname}"></td>
-            <td th:text="${item.email}"></td>
-            <td th:text="${item.phone}"></td>
-            <td th:text="${item.addresses}"></td>
-            <td>
-                <a href="#" class="btn btn-default" th:href="@{'/users/' + ${item.id}}"
-                   title="View"><span class="glyphicon glyphicon glyphicon-eye-open"></span></a>
-                <a href="#" class="btn btn-default" th:href="@{'/users/' + ${item.id} + '/edit'}"
-                   title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
-                <button class="btn btn-danger" type="submit" value="Delete"
-                        th:formaction="'/users/' + ${item.id} + '/delete'">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </button>
-                <!-- <a href="#" class="btn btn-default" th:href="@{'/tasks/' + ${task.id} + '/delete'}" -->
-                <!-- title="Delete"><span class="glyphicon glyphicon-trash"></span></a> -->
-            </td>
-        </tr>
-        <tr th:if="${#lists.isEmpty(users.content)}">
-            <td colspan="13" class="text-center">No users</td>
-        </tr>
-        </tbody>
-    </table>
-    </div>
+<body class="home">
+
+<div layout:fragment="content">
+    <h1>Gestión de residencias caninas</h1>
+    <a href="/daycare/create">Nueva residencia</a>
+    Mostrar <span sd:page-size-selector="javascript"></span> entradas
+    <form action="#" th:action="@{'/'}" method="post">
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+            <table class="u-table-entity u-table-entity-1">
+                <tbody class="u-table-body">
+                <tr style="height: 64px;">
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-1">ID</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-2">Usuario</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-3">Fecha último login</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Fecha de nacimiento</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Nombre</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Apellidos</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Email</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Teléfono móvil</th>
+                    <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Dirección</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                </tr>
+
+                <tr th:each="item,iter : ${users}" style="height: 65px;">
+                    <td class="u-border-1 u-border-grey-30 u-palette-1-base u-table-cell u-table-cell-9" th:text="${item.id}">R</td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.userName}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.date}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.birthDate}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.name}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.surname}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.email}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.phone}"></td>
+                    <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.addresses}"></td>
+                    <td></td>
+                    <!--td>
+                        <a href="#" class="btn btn-default" th:href="@{'/users/' + ${item.id}}"
+                           title="View"><span class="glyphicon glyphicon glyphicon-eye-open"></span></a>
+                        <a href="#" class="btn btn-default" th:href="@{'/users/' + ${item.id} + '/edit'}"
+                           title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                        <button class="btn btn-danger" type="submit" value="Delete"
+                                th:formaction="'/users/' + ${item.id} + '/delete'">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                     </td-->
+
+                    <td>
+                        <a class="btn btn-default" th:href="@{'/users/' + ${item.id}}"
+                           title="View">Ver</a>
+                        <a  class="btn btn-default" th:href="@{'/users/' + ${item.id} + '/edit'}"
+                           title="Edit">Modificar</a>
+                        <button class="btn btn-danger" type="submit" value="Delete"
+                                th:formaction="'/users/' + ${item.id} + '/delete'">Borrar</button>
+                    </td>
+                </tr>
+                <tr th:if="${#lists.isEmpty(users.content)}">
+                    <td colspan="13" class="text-center">No users</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 </form>
 </div>
+
 <div th:if="${not #lists.isEmpty(users.content)}">
     <div class="text-center">
         <nav>
@@ -76,20 +84,8 @@ Show <span sd:page-size-selector="javascript"></span> entries
         </nav>
     </div>
 </div>
-
-<!-- footer -->
-<footer th:replace="~{fragments/footer :: nuestroFooter}"></footer>
-<!-- /footer -->
-
-
-
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script th:src="@{/js/headroom.min.js}"></script>
-<script th:src="@{/js/jQuery.headroom.min.js}"></script>
-<script th:src="@{/js/template.js}"></script>
+</div>
+<!-- /Intro-->
 
 </body>
 </html>
-
