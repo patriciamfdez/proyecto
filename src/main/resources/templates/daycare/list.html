@@ -24,6 +24,7 @@
                     <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Dirección</th>
                     <th class="u-border-1 u-border-grey-30 u-palette-2-base u-table-cell u-table-cell-4">Valoración</th>
                     <th>&nbsp;</th>
+                    <th>&nbsp;</th>
                 </tr>
 
                 <tr th:each="item,iter : ${daycare}" style="height: 65px;">
@@ -34,6 +35,7 @@
                     <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.email}"></td>
                     <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.address}"></td>
                     <td class="u-border-1 u-border-grey-30 u-table-cell" th:text="${item.ranking}"></td>
+                    <td></td>
                     <td>
                         <a class="btn btn-default" th:href="@{'/daycare/' + ${item.id}}"
                            title="View">Ver</a>
