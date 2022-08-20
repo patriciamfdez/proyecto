@@ -1,114 +1,113 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
 <!DOCTYPE html>
-<html   xmlns:sd="http://www.w3.org/1999/xhtml"
-        lang="en" xmlns="https://www.thymeleaf.org"
-        xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{fragments/head :: head}"></head>
+<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      style="font-size: 16px;" lang="es"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 
-<body>
-<!-- Fixed navbar -->
-<nav th:replace="~{fragments/navBar :: navBarIndexIn}"> </nav>
-<!-- /.navbar -->
 
-<h1>Gestión de residencias caninas</h1>
-<a th:href="@{/dogwalker/create}">Nueva paseador</a>
-Mostrar <span sd:page-size-selector="javascript"></span> entradas
-<form action="#" th:action="@{'/'}" method="post">
-    <table>
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Doc. Identificación</th>
-            <th>Nombre</th>
-            <th>Nombre de usuario</th>
-            <th>Apellidos</th>
-            <th>Email</th>
-            <th>Clave</th>
-            <th>Teléfono</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Disponibilidad</th>
-            <th>Dirección</th>
-            <th>Máximo número de perros</th>
-            <th>Peso de perros</th>
-            <th>Esterilizado</th>
-            <th>Críticas</th>
-            <th>Valoración</th>
-            <th>Precio del paseo</th>
-            <th>Foto de perfil</th>
-            <th>Galería</th>
-            <th>&nbsp;</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="item,iter : ${dogwalker}">
-            <td th:text="${item.id}"></td>
-            <td th:text="${item.doc_identification}"></td>
-            <td th:text="${item.name}"></td>
-            <td th:text="${item.userName}"></td>
-            <td th:text="${item.surname}"></td>
-            <td th:text="${item.email}"></td>
-            <td th:text="${item.password}"></td>
-            <td th:text="${item.phone}"></td>
-            <td th:text="${item.birthdate}"></td>
-            <td th:text="${item.availability}"></td>
-            <td th:text="${item.address}"></td>
-            <td th:text="${item.max_num_dogs}"></td>
-            <td th:text="${item.weight_dogs}"></td>
-            <td th:text="${item.sterilized}"></td>
-            <td th:text="${item.reviews}"></td>
-            <td th:text="${item.assessment}"></td>
-            <td th:text="${item.price_walk}"></td>
-            <td th:text="${item.profile_picture}"></td>
-            <td th:text="${item.gallery}"></td>
-            <td>
-                <a href="#" class="btn btn-default" th:href="@{'/dogwalker/' + ${item.id}}"
-                   title="View"><span class="glyphicon glyphicon glyphicon-eye-open"></span></a>
-                <a href="#" class="btn btn-default" th:href="@{'/dogwalker/' + ${item.id} + '/edit'}"
-                   title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
-                <button class="btn btn-danger" type="submit" value="Delete"
-                        th:formaction="'/dogwalker/' + ${item.id} + '/delete'">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </button>
-                <!-- <a href="#" class="btn btn-default" th:href="@{'/tasks/' + ${task.id} + '/delete'}" -->
-                <!-- title="Delete"><span class="glyphicon glyphicon-trash"></span></a> -->
-            </td>
-        </tr>
-        <tr th:if="${#lists.isEmpty(dogwalker.content)}">
-            <td colspan="13" class="text-center">No dogwalkers</td>
-        </tr>
-        </tbody>
-    </table>
+<body class="home">
+
+<div layout:fragment="content">
+
+    <h1>Gestión de residencias caninas</h1>
+    <a th:href="@{/dogwalker/create}">Nueva paseador</a>
+    Mostrar <span sd:page-size-selector="javascript"></span> entradas
+    <form action="#" th:action="@{'/'}" method="post">
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Doc. Identificación</th>
+                <th>Nombre</th>
+                <th>Nombre de usuario</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Clave</th>
+                <th>Teléfono</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Disponibilidad</th>
+                <th>Dirección</th>
+                <th>Máximo número de perros</th>
+                <th>Peso de perros</th>
+                <th>Esterilizado</th>
+                <th>Críticas</th>
+                <th>Valoración</th>
+                <th>Precio del paseo</th>
+                <th>Foto de perfil</th>
+                <th>Galería</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item,iter : ${dogwalker}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.doc_identification}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.userName}"></td>
+                <td th:text="${item.surname}"></td>
+                <td th:text="${item.email}"></td>
+                <td th:text="${item.password}"></td>
+                <td th:text="${item.phone}"></td>
+                <td th:text="${item.birthdate}"></td>
+                <td th:text="${item.availability}"></td>
+                <td th:text="${item.address}"></td>
+                <td th:text="${item.max_num_dogs}"></td>
+                <td th:text="${item.weight_dogs}"></td>
+                <td th:text="${item.sterilized}"></td>
+                <td th:text="${item.reviews}"></td>
+                <td th:text="${item.assessment}"></td>
+                <td th:text="${item.price_walk}"></td>
+                <td th:text="${item.profile_picture}"></td>
+                <td th:text="${item.gallery}"></td>
+                <td>
+                    <a href="#" class="btn btn-default" th:href="@{'/dogwalker/' + ${item.id}}"
+                       title="View"><span class="glyphicon glyphicon glyphicon-eye-open"></span></a>
+                    <a href="#" class="btn btn-default" th:href="@{'/dogwalker/' + ${item.id} + '/edit'}"
+                       title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                    <button class="btn btn-danger" type="submit" value="Delete"
+                            th:formaction="'/dogwalker/' + ${item.id} + '/delete'">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                    <!-- <a href="#" class="btn btn-default" th:href="@{'/tasks/' + ${task.id} + '/delete'}" -->
+                    <!-- title="Delete"><span class="glyphicon glyphicon-trash"></span></a> -->
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(dogwalker.content)}">
+                <td colspan="13" class="text-center">No dogwalkers</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </form>
     </div>
-</form>
-</div>
-<div th:if="${not #lists.isEmpty(dogwalker.content)}">
-    <div class="text-center">
-        <nav>
-            <ul class="pagination" sd:pagination="full">
-                <div th:if="${dogwalker.totalPages > 0}" class="pagination"
-                     th:each="pageNumber : ${pageNumbers}">
-                    <li th:class="${pageNumber==dogwalker.number + 1} ? active">
-                        <a href="#" th:href="@{/dogwalker(size=${dogwalker.size}, page=${pageNumber})}"
-                           th:text=${pageNumber}></a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+    <div th:if="${not #lists.isEmpty(dogwalker.content)}">
+        <div class="text-center">
+            <nav>
+                <ul class="pagination" sd:pagination="full">
+                    <div th:if="${dogwalker.totalPages > 0}" class="pagination"
+                         th:each="pageNumber : ${pageNumbers}">
+                        <li th:class="${pageNumber==dogwalker.number + 1} ? active">
+                            <a href="#" th:href="@{/dogwalker(size=${dogwalker.size}, page=${pageNumber})}"
+                               th:text=${pageNumber}></a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
     </div>
+
+    <!-- footer -->
+    <footer th:replace="~{fragments/footer :: nuestroFooter}"></footer>
+    <!-- /footer -->
+
+
+
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/headroom.min.js}"></script>
+    <script th:src="@{/js/jQuery.headroom.min.js}"></script>
+    <script th:src="@{/js/template.js}"></script>
 </div>
-
-<!-- footer -->
-<footer th:replace="~{fragments/footer :: nuestroFooter}"></footer>
-<!-- /footer -->
-
-
-
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script th:src="@{/js/headroom.min.js}"></script>
-<script th:src="@{/js/jQuery.headroom.min.js}"></script>
-<script th:src="@{/js/template.js}"></script>
-
 </body>
 </html>

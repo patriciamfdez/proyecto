@@ -10,13 +10,13 @@ public class LoginController {
 
     @GetMapping("/login")
     public String getLogin() {
-        return "login";
+        return "userView/login";
     }
 
     // Login form with error
     @RequestMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("errors", true);
-        return "login";
+        return "userView/login";
     }
 }
