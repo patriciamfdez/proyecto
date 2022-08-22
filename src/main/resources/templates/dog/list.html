@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de perros</title>
+</head>
+
+<body class="home">
+
+<div layout:fragment="content">
+    <h1>Gestión de perros</h1>
+    <a th:href="@{/dog/create}">Nuevo perro</a>
+    Mostrar <span sd:page-size-selector="javascript"></span> entradas
+    <form action="#" th:action="@{'/'}" method="post">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Peso en kg</th>
+                <th>Edad</th>
+                <th>Género</th>
+                <th>Raza</th>
+                <th>Microchip</th>
+                <th>Esterilizado</th>
+                <th>Información adicional</th>
+                <th>Compatible</th>
+                <th>Alergias</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item,iter : ${dog}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.weightKg}"></td>
+                <td th:text="${item.age}"></td>
+                <td th:text="${item.gender}"></td>
+                <td th:text="${item.race}"></td>
+                <td th:text="${item.microchip}"></td>
+                <td th:text="${item.sterilized}"></td>
+                <td th:text="${item.infAdditional}"></td>
+                <td th:text="${item.compatible}"></td>
+                <td th:text="${item.allergies}"></td>
+                <td>
+                    <a href="#" class="btn btn-default" th:href="@{'/dog/' + ${item.id}}"
+                       title="View">Ver</a>
+                    <a href="#" class="btn btn-default" th:href="@{'/dog/' + ${item.id} + '/edit'}"
+                       title="Edit">Modificar</a>
+                    <button class="btn btn-danger" type="submit" value="Delete"
+                            th:formaction="'/dog/' + ${item.id} + '/delete'">Borrar</button>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(dog.content)}">
+                <td colspan="13" class="text-center">No hay perros</td>
+            </tr>
+            </tbody>
+        </table>
+</form>
+</div>
+<div th:if="${not #lists.isEmpty(dog.content)}">
+    <div class="text-center">
+        <nav>
+            <ul class="pagination" sd:pagination="full">
+                <div th:if="${dog.totalPages > 0}" class="pagination"
+                     th:each="pageNumber : ${pageNumbers}">
+                    <li th:class="${pageNumber==dog.number + 1} ? active">
+                        <a href="#" th:href="@{/dog(size=${dog.size}, page=${pageNumber})}"
+                           th:text=${pageNumber}></a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</div>
+</div>
+</body>
+</html>

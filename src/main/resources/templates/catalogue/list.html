@@ -1,0 +1,95 @@
+<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sd="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+<head>
+    <title>Lista del catálogo</title>
+</head>
+<body>
+<div layout:fragment="breadcrumb">
+    <h1>Gestión del catálogo</h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Catalogue</li>
+    </ol>
+</div>
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="box-title btn btn-primary" th:href="@{/catalogue/create}">Contratar residencias</a>
+
+                    <div th:switch="${idrole}">
+                        <span th:case="2">Usuario estándar  </span>
+                        <span th:case="1" >Usuario administrador</span>
+                        <span th:case="*">Tipo usuario desconocido </span>
+                    </div>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body">
+                    Show <span sd:page-size-selector="javascript"></span> entries
+                    <form action="#" class="form" th:action="@{'/'}" method="post">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Tipo de servicio</th>
+                                    <th>Descripción del servicio</th>
+                                    <th>Id del producto</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="item,iter : ${catalogue}">
+                                    <td th:text="${item.serviceType}"></td>
+                                    <td th:text="${item.serviceDescription}"></td>
+                                    <td th:text="${item.id_product}"></td>
+                                    <td>
+                                        <a href="#" class="btn btn-default" th:href="@{'/catalogue/' + ${item.id}}"
+                                           title="View"><span class="glyphicon glyphicon glyphicon-eye-open"></span></a>
+                                    </td>
+                                    <td th:if="${admin == 1}">
+                                        <a  href="#" class="btn btn-default"  th:href="@{'/catalogue/' + ${item.id} + '/edit'}"
+                                            title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                                        <button class="btn btn-danger" type="submit" value="Delete"
+                                                th:formaction="'/catalogue/' + ${item.id} + '/delete'">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr th:if="${#lists.isEmpty(catalogue.content)}">
+                                    <td colspan="13" class="text-center">No hay servicios disponibles</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div th:if="${not #lists.isEmpty(catalogue.content)}">
+                    <div class="text-center">
+                        <nav>
+                            <ul class="pagination" sd:pagination="full">
+                                <div th:if="${catalogue.totalPages > 0}" class="pagination"
+                                     th:each="pageNumber : ${pageNumbers}">
+                                    <li th:class="${pageNumber==catalogue.number + 1} ? active">
+                                        <a href="#" th:href="@{/catalogue(size=${catalogue.size}, page=${pageNumber})}"
+                                           th:text=${pageNumber}></a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

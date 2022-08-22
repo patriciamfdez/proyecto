@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión del catálogo</title>
+</head>
+
+<body class="home">
+
+<div layout:fragment="breadcrumb" th:object="${catalogue}">
+    <h1>Gestión del catálogo</h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/catalogue"><i class="fa fa-tasks"></i> Catálogo</a></li>
+        <li class="active" th:utext="@{'Catálogo ID: <b>' + ${catalogue.id}} + '</b>'"></li>
+    </ol>
+</div>
+<div layout:fragment="content">
+    <h1>Gestión del catálogo</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <form role="form" th:object="${catalogue}" method="post">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <div class="tab-content">
+                            <input th:type="hidden" th:field="${catalogue.id}"/>
+                            <div class="tab-pane active" id="1a">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="serviceType" th:text="#{Catalogo.serviceType}"></label>
+                                        <input type="text" class="form-control"
+                                               id="serviceType"
+                                               th:field="${catalogue.serviceType}"
+                                               maxlength="255">
+                                        <label for="serviceDescription" th:text="#{Catalogo.serviceDescription}"></label>
+                                        <input type="text" class="form-control"
+                                               id="serviceDescription"
+                                               th:field="${catalogue.serviceDescription}"
+                                               maxlength="255">
+                                        <label for="id_product" th:text="#{Catalogo.id_product}"></label>
+                                        <input type="text" class="form-control"
+                                               id="id_product"
+                                               th:field="${catalogue.id_product}"
+                                               maxlength="255">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer with-border">
+                    <a th:href="@{/catalogue}" class="btn btn-default" role="button"
+                       title="Back list" th:text="#{General.Cancel}">
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <button type="submit" class="box-title btn btn-primary"
+                            title="Save Data" th:text="#{General.Save}">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/headroom.min.js}"></script>
+<script th:src="@{/js/jQuery.headroom.min.js}"></script>
+<script th:src="@{/js/template.js}"></script>
+</body>
+</html>

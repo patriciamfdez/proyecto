@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de perros</title>
+</head>
+
+<body class="home">
+
+<div layout:fragment="content">
+    <h1>Gestión de perros</h1>
+    <form role="form" th:object="${dog}" method="post" action="#" th:action="@{'/dog/' + ${dog.id} + '/delete'}">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="1a">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <!--<label>Id</label>-->
+                                        <p id="id" style="display:none" th:text="${dog.id}"/>
+                                        <label>Nombre</label>
+                                        <p id="name" th:text="${dog.name}"/>
+                                        <label>Peso en kg</label>
+                                        <p id="weightKg" th:text="${dog.weightKg}"/>
+                                        <label>Edad</label>
+                                        <p id="age" th:text="${dog.age}"/>
+                                        <label>Género</label>
+                                        <p id="gender" th:text="${dog.gender}"/>
+                                        <label>Raza</label>
+                                        <p id="race" th:text="${dog.race}"/>
+                                        <label>Microchip</label>
+                                        <p id="microchip" th:text="${dog.microchip}"/>
+                                        <label>Esterilizado</label>
+                                        <p id="sterilized" th:text="${dog.sterilized}"/>
+                                        <label>Información adicional</label>
+                                        <p id="infAdditional" th:text="${dog.infAdditional}"/>
+                                        <label>Compatible</label>
+                                        <p id="compatible" th:text="${dog.compatible}"/>
+                                        <label>Alergias</label>
+                                        <p id="allergies" th:text="${dog.allergies}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer with-border">
+                    <a th:href="@{/dog}" class="btn btn-default" role="button"
+                       title="Back list" th:text="#{General.Back}">
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <a th:href="@{'/dog/' + ${dog.id} + '/edit'}" class="btn btn-primary" role="button"
+                       title="Back list" th:text="#{General.Edit}">
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <button type="submit" class="box-title btn btn-danger"
+                            title="Save Data" th:text="#{General.Delete}">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/headroom.min.js}"></script>
+<script th:src="@{/js/jQuery.headroom.min.js}"></script>
+<script th:src="@{/js/template.js}"></script>
+</body>
+</html>

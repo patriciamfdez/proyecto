@@ -2,14 +2,14 @@ delete from `menu_role`;
 delete from `user_role`;
 delete from `menu`;
 delete from `role`;
-delete from `daycare_addresses`;
+delete from `services_user`;
+delete from `catalogue`;
 delete from `daycare`;
-delete from `dog_walker_addresses`;
+delete from `dog_walker_address`;
 delete from `dog_walker`;
 delete from `users`;
 delete from `dog`;
 delete from `address`;
-delete from `catalogue`;
 delete from `invoice`;
 
 INSERT INTO users (id, active, birth_date, date_initial, email, surname, name, password, phone, user_name)
@@ -90,17 +90,30 @@ VALUES
 ( 4, 7, 'yes',1,'F','X', 1,'Don Dog','beagle',1, 14),
 ( 5, 8, 'no',1,'F','X', 1,'Juanita','galgo', 1,18);
 
-INSERT INTO daycare (id,name,night_price,phone,email,ranking,address)
+INSERT INTO address (id,address,city,country,postal_code,province)
 VALUES
-  ( 1, 'pets junior',25,'666777888','pruebaguarderia@gmail.com', 7,'cipreses 124'),
-  ( 2, 'pets seniors',23,'666777888','pruebaguarderia@gmail.com', 7,'malaga 90'),
-  ( 3, 'dogs seniors',15,'666777888','pruebaguarderia@gmail.com', 7,'cinturon 66'),
-  ( 4, 'dogs junios',10,'666777888','pruebaguarderia@gmail.com', 7,'alcorcon 39'),
-  ( 5, 'pipi junios',5,'666777888','pruebaguarderia@gmail.com', 7,'sevilla 8');
+  ( 1, '1','Don Dog','Rumania','22178', 'Sevilla'),
+  ( 2, '2','Don Dog','Rumania','22178', 'Sevilla'),
+  ( 3, '3','Don Dog','Rumania','22178', 'Sevilla'),
+  ( 4, '4','Don Dog','Rumania','22178', 'Sevilla'),
+  ( 5, '5','Don Dog','Rumania','22178', 'Sevilla');
 
-INSERT INTO dog_walker (id, address, assessment, availability, birthdate, doc_identification, email, gallery, max_num_dogs, name, password, phone, price_walk, profile_picture, reviews, sterilized, user_name, weight_dogs, surname)
+INSERT INTO daycare (id,name,night_price,phone,email,ranking,address_id)
 VALUES
-  (1,'Calle Manzana, 1', 4.1, 'Todo el año', '2022-05-08','87653976G','pepe@gmail.com', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro');
+  ( -1, 'dummy',25,'dummy','dummy', 7, 5),
+  ( 1, 'pets junior',25,'666777888','pruebaguarderia@gmail.com', 7, 5),
+  ( 2, 'pets seniors',23,'666777888','pruebaguarderia@gmail.com', 7, 4),
+  ( 3, 'dogs seniors',15,'666777888','pruebaguarderia@gmail.com', 7, 3),
+  ( 4, 'dogs junios',10,'666777888','pruebaguarderia@gmail.com', 7, 2),
+  ( 5, 'pipi junios',5,'666777888','pruebaguarderia@gmail.com', 7, 1);
+
+INSERT INTO dog_walker (id, assessment, availability, birthdate, doc_identification, email, gallery, max_num_dogs, name, password, phone, price_walk, profile_picture, reviews, sterilized, user_name, weight_dogs, surname)
+VALUES
+  (-1, 4.1, 'dummy', '2022-05-08','87653976G','dummy', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro'),
+  (1, 4.1, 'Todo el año', '2022-05-08','87653976G','pepe@gmail.com', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro');
+
+INSERT INTO catalogue (`id`, `service_type`, `daycare_id`, `dogwalker_id`, `id_product`, `service_description`) VALUES ('1', 'daycare', '1', '-1', '1', 'residencia canina 1');
+INSERT INTO catalogue (`id`, `service_type`, `daycare_id`, `dogwalker_id`, `id_product`, `service_description`) VALUES ('2', 'dogwalker', '-1', '1', '1', 'paseador 1');
 
 UPDATE users SET dog_id = 1 WHERE id = 1 AND id = 5;
 UPDATE users SET dog_id = 2 WHERE id = 3;

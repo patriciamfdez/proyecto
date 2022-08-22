@@ -3,60 +3,55 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Gestión de residencias caninas</title>
+    <title>Gestión de direcciones</title>
 </head>
 
 <body class="home">
 
-<div layout:fragment="breadcrumb" th:object="${daycare}">
+<div layout:fragment="breadcrumb" th:object="${address}">
     <h1>Gestión de residencias caninas</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/daycare"><i class="fa fa-tasks"></i> Residencias caninas</a></li>
-        <li class="active" th:utext="@{'Residencia canina ID: <b>' + ${daycare.id}} + '</b>'"></li>
+        <li><a href="/address"><i class="fa fa-tasks"></i> Cursos</a></li>
+        <li class="active" th:utext="@{'Dirección ID: <b>' + ${address.id}} + '</b>'"></li>
     </ol>
 </div>
 <div layout:fragment="content">
-    <h1>Gestión de residencias caninas</h1>
+    <h1>Gestión de direcciones</h1>
     <div class="row">
         <div class="col-md-12">
-            <form role="form" th:object="${daycare}" method="post">
+            <form role="form" th:object="${address}" method="post">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="tab-content">
-                            <input th:type="hidden" th:field="${daycare.id}"/>
+                            <input th:type="hidden" th:field="${address.id}"/>
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label>Nombre</label>
+                                        <label>País</label>
                                         <input type="text" class="form-control"
-                                               id="name"
-                                               th:field="${daycare.name}"
+                                               id="country"
+                                               th:field="${address.country}"
                                                maxlength="255">
-                                        <label>Precio/Noche</label>
+                                        <label>Provincia</label>
                                         <input type="text" class="form-control"
-                                               id="nightPrice"
-                                               th:field="${daycare.nightPrice}"
+                                               id="province"
+                                               th:field="${address.province}"
                                                maxlength="255">
-                                        <label>Teléfono</label>
+                                        <label>Ciudad</label>
                                         <input type="text" class="form-control"
-                                               id="phone"
-                                               th:field="${daycare.phone}"
+                                               id="city"
+                                               th:field="${address.city}"
                                                maxlength="255">
-                                        <label>Email</label>
+                                        <label>Código postal</label>
                                         <input type="text" class="form-control"
-                                               id="email"
-                                               th:field="${daycare.email}"
+                                               id="postalCode"
+                                               th:field="${address.postalCode}"
                                                maxlength="255">
                                         <label>Dirección</label>
                                         <input type="text" class="form-control"
                                                id="address"
-                                               th:field="${daycare.address}"
-                                               maxlength="255">
-                                        <label>Clasificación</label>
-                                        <input type="text" class="form-control"
-                                               id="ranking"
-                                               th:field="${daycare.ranking}"
+                                               th:field="${address.address}"
                                                maxlength="255">
                                     </div>
                                 </div>
@@ -65,7 +60,7 @@
                     </div>
                 </div>
                 <div class="box-footer with-border">
-                    <a th:href="@{/daycare}" class="btn btn-default" role="button"
+                    <a th:href="@{/address}" class="btn btn-default" role="button"
                        title="Back list" th:text="#{General.Cancel}">
                         <span aria-hidden="true"></span>
                     </a>

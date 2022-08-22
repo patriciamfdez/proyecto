@@ -8,9 +8,8 @@ public class DaycareDTO {
     private float nightPrice;
     private String phone;
     private String email;
-    private String address;
     private float ranking;
-    private Set<AddressDTO> addresses;
+    private Set<AddressDTO> address;
 
     public Integer getId() {
         return id;
@@ -52,14 +51,6 @@ public class DaycareDTO {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public float getRanking() {
         return ranking;
     }
@@ -68,11 +59,11 @@ public class DaycareDTO {
         this.ranking = ranking;
     }
 
-    public Set<AddressDTO> getAddresses() {
-        return addresses;
+    public Set<AddressDTO> getAddress() {
+        return address;
     }
 
-    public void setAddresses(Set<AddressDTO> addresses) {
-        this.addresses = addresses;
+    public void setAddress(Set<AddressDTO> address) {
+        this.address = address;
     }
 }

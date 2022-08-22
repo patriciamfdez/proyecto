@@ -3,14 +3,14 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Gestión de residencias caninas</title>
+    <title>Gestión de servicios de usuarios</title>
 </head>
 
 <body class="home">
 
 <div layout:fragment="content">
     <h1>Gestión de residencias caninas</h1>
-    <form role="form" th:object="${daycare}" method="post" action="#" th:action="@{'/daycare/' + ${daycare.id} + '/delete'}">
+    <form role="form" th:object="${servicesuser}" method="post" action="#" th:action="@{'/servicesuser/' + ${servicesuser.id} + '/delete'}">
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -20,19 +20,19 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label>Id</label>
-                                        <p id="id" th:text="${daycare.id}"/>
-                                        <label>Nombre</label>
-                                        <p id="name" th:text="${daycare.name}"/>
-                                        <label>Precio/Noche</label>
-                                        <p id="nightPrice" th:text="${daycare.nightPrice}"/>
-                                        <label>Teléfono</label>
-                                        <p id="phone" th:text="${daycare.phone}"/>
-                                        <label>Email</label>
-                                        <p id="email" th:text="${daycare.email}"/>
-                                        <label>Dirección</label>
-                                        <p id="address" th:text="${daycare.address}"/>
-                                        <label>Clasificación</label>
-                                        <p id="ranking" th:text="${daycare.ranking}"/>
+                                        <p id="id" th:text="${servicesuser.id}"/>
+                                        <label>Usuario</label>
+                                        <p id="username" th:text="${servicesuser.username}"/>
+                                        <label>Estado de la reserva</label>
+                                        <p id="bookingStatus" th:text="${servicesuser.bookingStatus}"/>
+                                        <label>Día de creación</label>
+                                        <p id="creationDate" th:date="${servicesuser.creationDate}"/>
+                                        <label>Nombre del servicio</label>
+                                        <p id="serviceName" th:text="${servicesuser.serviceName}"/>
+                                        <label>Día de inicio de reserva</label>
+                                        <p id="bookingStartDate" th:date="${servicesuser.bookingStartDate}"/>
+                                        <label>Día final de reserva</label>
+                                        <p id="bookingLastDate" th:date="${servicesuser.bookingLastDate}"/>
                                     </div>
                                 </div>
                             </div>
@@ -40,11 +40,11 @@
                     </div>
                 </div>
                 <div class="box-footer with-border">
-                    <a th:href="@{/daycare}" class="btn btn-default" role="button"
+                    <a th:href="@{/servicesuser}" class="btn btn-default" role="button"
                        title="Back list" th:text="#{General.Back}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <a th:href="@{'/daycare/' + ${daycare.id} + '/edit'}" class="btn btn-primary" role="button"
+                    <a th:href="@{'/servicesuser/' + ${servicesuser.id} + '/edit'}" class="btn btn-primary" role="button"
                        title="Back list" th:text="#{General.Edit}">
                         <span aria-hidden="true"></span>
                     </a>

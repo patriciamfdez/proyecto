@@ -7,10 +7,10 @@ public class DogDTO {
     private String age;
     private String gender;
     private String race;
-    private boolean microchip;
-    private boolean sterilized;
+    private String microchip;
+    private String sterilized;
     private String infAdditional;
-    private boolean compatible;
+    private String compatible;
     private String allergies;
 
     public Integer getId() {
@@ -61,19 +61,19 @@ public class DogDTO {
         this.race = race;
     }
 
-    public boolean isMicrochip() {
+    public String getMicrochip() {
         return microchip;
     }
 
-    public void setMicrochip(boolean microchip) {
+    public void setMicrochip(String microchip) {
         this.microchip = microchip;
     }
 
-    public boolean isSterilized() {
+    public String getSterilized() {
         return sterilized;
     }
 
-    public void setSterilized(boolean sterilized) {
+    public void setSterilized(String sterilized) {
         this.sterilized = sterilized;
     }
 
@@ -85,11 +85,11 @@ public class DogDTO {
         this.infAdditional = infAdditional;
     }
 
-    public boolean isCompatible() {
+    public String getCompatible() {
         return compatible;
     }
 
-    public void setCompatible(boolean compatible) {
+    public void setCompatible(String compatible) {
         this.compatible = compatible;
     }
 
