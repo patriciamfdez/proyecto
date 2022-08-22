@@ -3,60 +3,45 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Gestión de residencias caninas</title>
+    <title>Gestión del catálogo</title>
 </head>
 
 <body class="home">
 
-<div layout:fragment="breadcrumb" th:object="${daycare}">
-    <h1>Gestión de residencias caninas</h1>
+<div layout:fragment="breadcrumb" th:object="${catalogue}">
+    <h1>Gestión del catálogo</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/daycare"><i class="fa fa-tasks"></i> Residencias caninas</a></li>
-        <li class="active" th:utext="@{'Residencia canina ID: <b>' + ${daycare.id}} + '</b>'"></li>
+        <li><a href="/catalogue"><i class="fa fa-tasks"></i> Catálogo</a></li>
+        <li class="active" th:utext="@{'Catálogo ID: <b>' + ${catalogue.id}} + '</b>'"></li>
     </ol>
 </div>
 <div layout:fragment="content">
-    <h1>Gestión de residencias caninas</h1>
+    <h1>Gestión del catálogo</h1>
     <div class="row">
         <div class="col-md-12">
-            <form role="form" th:object="${daycare}" method="post">
+            <form role="form" th:object="${catalogue}" method="post">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="tab-content">
-                            <input th:type="hidden" th:field="${daycare.id}"/>
+                            <input th:type="hidden" th:field="${catalogue.id}"/>
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label>Nombre</label>
+                                        <label for="serviceType" th:text="#{Catalogo.serviceType}"></label>
                                         <input type="text" class="form-control"
-                                               id="name"
-                                               th:field="${daycare.name}"
+                                               id="serviceType"
+                                               th:field="${catalogue.serviceType}"
                                                maxlength="255">
-                                        <label>Precio/Noche</label>
+                                        <label for="serviceDescription" th:text="#{Catalogo.serviceDescription}"></label>
                                         <input type="text" class="form-control"
-                                               id="nightPrice"
-                                               th:field="${daycare.nightPrice}"
+                                               id="serviceDescription"
+                                               th:field="${catalogue.serviceDescription}"
                                                maxlength="255">
-                                        <label>Teléfono</label>
+                                        <label for="id_product" th:text="#{Catalogo.id_product}"></label>
                                         <input type="text" class="form-control"
-                                               id="phone"
-                                               th:field="${daycare.phone}"
-                                               maxlength="255">
-                                        <label>Email</label>
-                                        <input type="text" class="form-control"
-                                               id="email"
-                                               th:field="${daycare.email}"
-                                               maxlength="255">
-                                        <label>Dirección</label>
-                                        <input type="text" class="form-control"
-                                               id="address"
-                                               th:field="${daycare.address}"
-                                               maxlength="255">
-                                        <label>Clasificación</label>
-                                        <input type="text" class="form-control"
-                                               id="ranking"
-                                               th:field="${daycare.ranking}"
+                                               id="id_product"
+                                               th:field="${catalogue.id_product}"
                                                maxlength="255">
                                     </div>
                                 </div>
@@ -65,7 +50,7 @@
                     </div>
                 </div>
                 <div class="box-footer with-border">
-                    <a th:href="@{/daycare}" class="btn btn-default" role="button"
+                    <a th:href="@{/catalogue}" class="btn btn-default" role="button"
                        title="Back list" th:text="#{General.Cancel}">
                         <span aria-hidden="true"></span>
                     </a>

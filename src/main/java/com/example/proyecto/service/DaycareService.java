@@ -19,12 +19,12 @@ public class DaycareService extends AbstractBusinessService<Daycare, Integer, Da
         super(repository, serviceMapper);
         this.userRepository = userRepository;
     }
-    //Obtener el listado del las guarderías para perros
+    //Obtener el listado de residencias caninas
     public Page<DaycareDTO> findAll(Pageable pageable) {
         return getRepository().findAll(pageable).map(getServiceMapper()::toDto);
     }
 
-    //Modificar una guardería para perros
+    //Modificar una residencia canina
     @Override
     public DaycareDTO save(DaycareDTO dto) {
         final Daycare entity = getServiceMapper().toEntity(dto);

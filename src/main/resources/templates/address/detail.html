@@ -3,14 +3,14 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Gestión de residencias caninas</title>
+    <title>Gestión de direcciones</title>
 </head>
 
 <body class="home">
 
 <div layout:fragment="content">
     <h1>Gestión de residencias caninas</h1>
-    <form role="form" th:object="${daycare}" method="post" action="#" th:action="@{'/daycare/' + ${daycare.id} + '/delete'}">
+    <form role="form" th:object="${address}" method="post" action="#" th:action="@{'/address/' + ${address.id} + '/delete'}">
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -20,19 +20,17 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label>Id</label>
-                                        <p id="id" th:text="${daycare.id}"/>
-                                        <label>Nombre</label>
-                                        <p id="name" th:text="${daycare.name}"/>
-                                        <label>Precio/Noche</label>
-                                        <p id="nightPrice" th:text="${daycare.nightPrice}"/>
-                                        <label>Teléfono</label>
-                                        <p id="phone" th:text="${daycare.phone}"/>
-                                        <label>Email</label>
-                                        <p id="email" th:text="${daycare.email}"/>
+                                        <p id="id" th:text="${address.id}"/>
+                                        <label>País</label>
+                                        <p id="country" th:text="${address.country}"/>
+                                        <label>Provincia</label>
+                                        <p id="province" th:text="${address.province}"/>
+                                        <label>Ciudad</label>
+                                        <p id="city" th:text="${address.city}"/>
+                                        <label>Código postal</label>
+                                        <p id="postalCode" th:text="${address.postalCode}"/>
                                         <label>Dirección</label>
-                                        <p id="address" th:text="${daycare.address}"/>
-                                        <label>Clasificación</label>
-                                        <p id="ranking" th:text="${daycare.ranking}"/>
+                                        <p id="address" th:text="${address.address}"/>
                                     </div>
                                 </div>
                             </div>
@@ -40,11 +38,11 @@
                     </div>
                 </div>
                 <div class="box-footer with-border">
-                    <a th:href="@{/daycare}" class="btn btn-default" role="button"
+                    <a th:href="@{/address}" class="btn btn-default" role="button"
                        title="Back list" th:text="#{General.Back}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <a th:href="@{'/daycare/' + ${daycare.id} + '/edit'}" class="btn btn-primary" role="button"
+                    <a th:href="@{'/address/' + ${address.id} + '/edit'}" class="btn btn-primary" role="button"
                        title="Back list" th:text="#{General.Edit}">
                         <span aria-hidden="true"></span>
                     </a>

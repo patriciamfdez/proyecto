@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de perros</title>
+</head>
+
+<body class="home">
+
+<div layout:fragment="breadcrumb" th:object="${dog}">
+    <h1>Gestión de perros</h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/dog"><i class="fa fa-tasks"></i> Perros</a></li>
+        <li class="active" th:utext="@{'Perro ID: <b>' + ${dog.id}} + '</b>'"></li>
+    </ol>
+</div>
+<div layout:fragment="content">
+    <h1>Gestión de perros</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <form role="form" th:object="${dog}" method="post">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <div class="tab-content">
+                            <input th:type="hidden" th:field="${dog.id}"/>
+                            <div class="tab-pane active" id="1a">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control"
+                                               id="name"
+                                               th:field="${dog.name}"
+                                               maxlength="255">
+                                        <label>Peso en kg</label>
+                                        <input type="text" class="form-control"
+                                               id="weightKg"
+                                               th:field="${dog.weightKg}"
+                                               maxlength="255">
+                                        <label>Edad</label>
+                                        <input type="text" class="form-control"
+                                               id="age"
+                                               th:field="${dog.age}"
+                                               maxlength="255">
+                                        <label>Género</label>
+                                        <input type="text" class="form-control"
+                                               id="gender"
+                                               th:field="${dog.gender}"
+                                               maxlength="255">
+                                        <label>Raza</label>
+                                        <input type="text" class="form-control"
+                                               id="race"
+                                               th:field="${dog.race}"
+                                               maxlength="255">
+                                        <label>Microchip</label>
+                                        <input type="text" class="form-control"
+                                               id="microchip"
+                                               th:field="${dog.microchip}"
+                                               maxlength="255">
+                                        <label>Esterilizado</label>
+                                        <input type="text" class="form-control"
+                                               id="sterilized"
+                                               th:field="${dog.sterilized}"
+                                               maxlength="255">
+                                        <label>Información adicional</label>
+                                        <input type="text" class="form-control"
+                                               id="infAdditional"
+                                               th:field="${dog.infAdditional}"
+                                               maxlength="255">
+                                        <label>Compatible</label>
+                                        <input type="text" class="form-control"
+                                               id="compatible"
+                                               th:field="${dog.compatible}"
+                                               maxlength="255">
+                                        <label>Alergias</label>
+                                        <input type="text" class="form-control"
+                                               id="allergies"
+                                               th:field="${dog.allergies}"
+                                               maxlength="255">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer with-border">
+                    <a th:href="@{/dog}" class="btn btn-default" role="button"
+                       title="Back list" th:text="#{General.Cancel}">
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <button type="submit" class="box-title btn btn-primary"
+                            title="Save Data" th:text="#{General.Save}">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/headroom.min.js}"></script>
+<script th:src="@{/js/jQuery.headroom.min.js}"></script>
+<script th:src="@{/js/template.js}"></script>
+</body>
+</html>

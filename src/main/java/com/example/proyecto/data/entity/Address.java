@@ -24,14 +24,14 @@ public class Address implements Serializable {
     private String address;
 
     //Relations
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "addresses")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "address")
     private Set<User> users;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "addresses")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "address")
     private Set<DogWalker> dogWalkers;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "addresses")
-    private Set<Daycare> daycares;
+    @OneToOne(mappedBy = "address")
+    private Daycare daycare;
 
     //Constructores
 
@@ -112,12 +112,11 @@ public class Address implements Serializable {
         this.dogWalkers = dogWalkers;
     }
 
-    public Set<Daycare> getDaycares() {
-        return daycares;
+    public Daycare getDaycare() {
+        return daycare;
     }
 
-    public void setDaycares(Set<Daycare> daycares) {
-        this.daycares = daycares;
+    public void setDaycare(Daycare daycare) {
+        this.daycare = daycare;
     }
-
 }

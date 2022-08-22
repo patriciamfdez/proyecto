@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de servicios de usuarios</title>
+</head>
+
+<body class="home">
+
+<div layout:fragment="breadcrumb" th:object="${servicesuser}">
+    <h1>Gestión de servicios de usuarios</h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/servicesuser"><i class="fa fa-tasks"></i> Servicios de usuarios</a></li>
+        <li class="active" th:utext="@{'Servicios de usuario ID: <b>' + ${servicesuser.id}} + '</b>'"></li>
+    </ol>
+</div>
+<div layout:fragment="content">
+    <h1>Gestión de servicios de usuarios</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <form role="form" th:object="${servicesuser}" method="post">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <div class="tab-content">
+                            <input th:type="hidden" th:field="${servicesuser.id}"/>
+                            <div class="tab-pane active" id="1a">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="bookingStatus" th:text="#{Servicio.bookingStatus}"></label>
+                                        <input type="text" class="form-control"
+                                               id="bookingStatus"
+                                               th:field="${servicesuser.bookingStatus}"
+                                               maxlength="255">
+                                        <label for="creationDate" th:text="#{Servicio.creationDate}"></label>
+                                        <div class="input-group date datetimepicker">
+                                            <input id="creationDate" type="text" th:field="${servicesuser.creationDate}"
+                                                   th:value="${servicesuser.creationDate}" class="form-control" required/>
+                                            <div class="input-group-addon input-group-append">
+                                                <div class="input-group-text">
+                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="bookingStartDate" th:text="#{Servicio.bookingStartDate}"></label>
+                                        <div class="input-group date datetimepicker">
+                                            <input id="bookingStartDate" type="text" th:field="${servicesuser.bookingStartDate}"
+                                                   th:value="${servicesuser.bookingStartDate}" class="form-control" required/>
+                                            <div class="input-group-addon input-group-append">
+                                                <div class="input-group-text">
+                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label for="bookingLastDate" th:text="#{Servicio.bookingLastDate}"></label>
+                                        <div class="input-group date datetimepicker">
+                                            <input id="bookingLastDate" type="text" th:field="${servicesuser.bookingLastDate}"
+                                                   th:value="${servicesuser.bookingLastDate}" class="form-control" required/>
+                                            <div class="input-group-addon input-group-append">
+                                                <div class="input-group-text">
+                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div th:unless="${#lists.isEmpty(catalogue)}">
+                                            <label for="serviceDescription" th:text="#{Servicio.serviceDescription}"></label>
+                                            <select  th:field="${servicesuser.cataloguesId}" class="form-control" id="serviceDescription">
+                                                <option value="0">select option</option>
+                                                <option th:each="catalogo : ${catalogue}" th:value="${catalogo.id}" th:text="${catalogo.serviceDescription}"></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer with-border">
+                    <a th:href="@{/servicesuser}" class="btn btn-default" role="button"
+                       title="Back list" th:text="#{General.Cancel}">
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <button type="submit" class="box-title btn btn-primary"
+                            title="Save Data" th:text="#{General.Save}">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script th:src="@{/js/headroom.min.js}"></script>
+<script th:src="@{/js/jQuery.headroom.min.js}"></script>
+<script th:src="@{/js/template.js}"></script>
+</body>
+</html>

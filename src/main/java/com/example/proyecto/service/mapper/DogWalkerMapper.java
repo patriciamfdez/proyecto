@@ -28,7 +28,6 @@ public class DogWalkerMapper extends  AbstractServiceMapper<DogWalker, DogWalker
         entity.setPrice_walk(dogwalkerDTO.getPrice_walk());
         entity.setProfile_picture(dogwalkerDTO.getProfile_picture());
         entity.setGallery(dogwalkerDTO.getGallery());
-        entity.setAddress(dogwalkerDTO.getAddress());
         return entity;
     }
 
@@ -53,7 +52,6 @@ public class DogWalkerMapper extends  AbstractServiceMapper<DogWalker, DogWalker
         dto.setPrice_walk(dogwalker.getPrice_walk());
         dto.setProfile_picture(dogwalker.getProfile_picture());
         dto.setGallery(dogwalker.getGallery());
-        dto.setAddress(dogwalker.getAddress());
         return dto;
     }
 }
