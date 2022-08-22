@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de servicios de usuarios</title>
+</head>
+
+<body class="home">
+
+<div layout:fragment="content">
+    <h1>Gestión de servicios de usuarios</h1>
+    <a th:href="@{/servicesuser/createresidencias}">Contratar residencia</a>
+    <a th:href="@{/servicesuser/createpaseadores}">Contratar paseador</a>
+    Mostrar <span sd:page-size-selector="javascript"></span> entradas
+    <form action="#" th:action="@{'/'}" method="post">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Usuario</th>
+                <th>Estado de la reserva</th>
+                <th>Día de creación</th>
+                <th>Nombre del servicio</th>
+                <th>Día de inicio de reserva</th>
+                <th>Día final de reserva</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item,iter : ${servicesuser}">
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.username}"></td>
+                <td th:text="${item.bookingStatus}"></td>
+                <td th:date="${item.creationDate}"></td>
+                <td th:text="${item.serviceName}">
+
+                </td> <!-- Aquí muestro el listado del catálogo -->
+                <td th:date="${item.bookingStartDate}"></td>
+                <td th:date="${item.bookingLastDate}"></td>
+                <td>
+                    <a href="#" class="btn btn-default" th:href="@{'/servicesuser/' + ${item.id}}"
+                       title="View">Ver</a>
+                    <a href="#" class="btn btn-default" th:href="@{'/servicesuser/' + ${item.id} + '/edit'}"
+                       title="Edit">Modificar</a>
+                    <button class="btn btn-danger" type="submit" value="Delete"
+                            th:formaction="'/servicesuser/' + ${item.id} + '/delete'">Borrar</button>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(servicesuser.content)}">
+                <td colspan="13" class="text-center">No existen servicios de usuario</td>
+            </tr>
+            </tbody>
+        </table>
+</form>
+</div>
+<div th:if="${not #lists.isEmpty(servicesuser.content)}">
+    <div class="text-center">
+        <nav>
+            <ul class="pagination" sd:pagination="full">
+                <div th:if="${servicesuser.totalPages > 0}" class="pagination"
+                     th:each="pageNumber : ${pageNumbers}">
+                    <li th:class="${pageNumber==servicesuser.number + 1} ? active">
+                        <a href="#" th:href="@{/servicesuser(size=${servicesuser.size}, page=${pageNumber})}"
+                           th:text=${pageNumber}></a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</div>
+</div>
+</body>
+</html>

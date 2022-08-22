@@ -15,7 +15,6 @@ public class DaycareMapper extends  AbstractServiceMapper<Daycare, DaycareDTO> {
         entity.setNightPrice(daycareDTO.getNightPrice());
         entity.setPhone(daycareDTO.getPhone());
         entity.setEmail(daycareDTO.getEmail());
-        entity.setAddress(daycareDTO.getAddress());
         entity.setRanking(daycareDTO.getRanking());
         return entity;
     }
@@ -28,7 +27,6 @@ public class DaycareMapper extends  AbstractServiceMapper<Daycare, DaycareDTO> {
         dto.setNightPrice(daycare.getNightPrice());
         dto.setPhone(daycare.getPhone());
         dto.setEmail(daycare.getEmail());
-        dto.setAddress(daycare.getAddress());
         dto.setRanking(daycare.getRanking());
         return dto;
     }

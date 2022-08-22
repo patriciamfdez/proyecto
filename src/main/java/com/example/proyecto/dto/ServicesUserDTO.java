@@ -1,18 +1,21 @@
 package com.example.proyecto.dto;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 public class ServicesUserDTO {
     private Integer id;
     private String username;
     private String bookingStatus;
-    private Date creationDate;
+    private String creationDate;
     private String serviceName;
-    private Date bookingStartDate;
-    private Date bookingLastDate;
+    private String bookingStartDate;
+    private String bookingLastDate;
     private Integer userId;
     private Integer cataloguesId;
     private Integer dogsId;
+
+    // Getters and Setters
+
 
     public Integer getId() {
         return id;
@@ -38,11 +41,11 @@ public class ServicesUserDTO {
         this.bookingStatus = bookingStatus;
     }
 
-    public Date getCreationDate() {
+    public String getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -54,19 +57,19 @@ public class ServicesUserDTO {
         this.serviceName = serviceName;
     }
 
-    public Date getBookingStartDate() {
+    public String getBookingStartDate() {
         return bookingStartDate;
     }
 
-    public void setBookingStartDate(Date bookingStartDate) {
+    public void setBookingStartDate(String bookingStartDate) {
         this.bookingStartDate = bookingStartDate;
     }
 
-    public Date getBookingLastDate() {
+    public String getBookingLastDate() {
         return bookingLastDate;
     }
 
-    public void setBookingLastDate(Date bookingLastDate) {
+    public void setBookingLastDate(String bookingLastDate) {
         this.bookingLastDate = bookingLastDate;
     }
 

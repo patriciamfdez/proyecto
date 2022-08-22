@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Entity
@@ -19,14 +20,13 @@ public class ServicesUser implements Serializable {
     @Column(nullable = false, length = 100)
     private String bookingStatus;
     @Column(nullable = false)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date creationDate;
+    private ZonedDateTime creationDate;
     @Column(nullable = false, length = 45)
     private String serviceName;
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date bookingStartDate;
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date bookingLastDate;
+    @Column(nullable = false)
+    private ZonedDateTime bookingStartDate;
+    @Column(nullable = false)
+    private ZonedDateTime bookingLastDate;
 
     // Relations
 
@@ -44,42 +44,21 @@ public class ServicesUser implements Serializable {
     public ServicesUser() {
     }
 
-    public ServicesUser(Integer id, String username, String BookingStatus, Date CreationDate, String serviceName, Date bookingStartDate, Date bookingLastDate) {
+    public ServicesUser(Integer id, String username, String bookingStatus, ZonedDateTime creationDate, String serviceName, ZonedDateTime bookingStartDate, ZonedDateTime bookingLastDate, User users, Catalogue catalogues, Dog dogs) {
         this.id = id;
         this.username = username;
-        this.bookingStatus = BookingStatus;
-        this.creationDate = CreationDate;
+        this.bookingStatus = bookingStatus;
+        this.creationDate = creationDate;
         this.serviceName = serviceName;
         this.bookingStartDate = bookingStartDate;
         this.bookingLastDate = bookingLastDate;
+        this.users = users;
+        this.catalogues = catalogues;
+        this.dogs = dogs;
     }
-
 
     // Getter and Setters
 
-    public User getUsers() {
-        return users;
-    }
-
-    public void setUsers(User users) {
-        this.users = users;
-    }
-
-    public Catalogue getCatalogues() {
-        return catalogues;
-    }
-
-    public void setCatalogues(Catalogue catalogues) {
-        this.catalogues = catalogues;
-    }
-
-    public Dog getDogs() {
-        return dogs;
-    }
-
-    public void setDogs(Dog dogs) {
-        this.dogs = dogs;
-    }
 
     public Integer getId() {
         return id;
@@ -105,11 +84,11 @@ public class ServicesUser implements Serializable {
         this.bookingStatus = bookingStatus;
     }
 
-    public Date getCreationDate() {
+    public ZonedDateTime getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(ZonedDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -121,19 +100,43 @@ public class ServicesUser implements Serializable {
         this.serviceName = serviceName;
     }
 
-    public Date getBookingStartDate() {
+    public ZonedDateTime getBookingStartDate() {
         return bookingStartDate;
     }
 
-    public void setBookingStartDate(Date bookingStartDate) {
+    public void setBookingStartDate(ZonedDateTime bookingStartDate) {
         this.bookingStartDate = bookingStartDate;
     }
 
-    public Date getBookingLastDate() {
+    public ZonedDateTime getBookingLastDate() {
         return bookingLastDate;
     }
 
-    public void setBookingLastDate(Date bookingLastDate) {
+    public void setBookingLastDate(ZonedDateTime bookingLastDate) {
         this.bookingLastDate = bookingLastDate;
+    }
+
+    public User getUsers() {
+        return users;
+    }
+
+    public void setUsers(User users) {
+        this.users = users;
+    }
+
+    public Catalogue getCatalogues() {
+        return catalogues;
+    }
+
+    public void setCatalogues(Catalogue catalogues) {
+        this.catalogues = catalogues;
+    }
+
+    public Dog getDogs() {
+        return dogs;
+    }
+
+    public void setDogs(Dog dogs) {
+        this.dogs = dogs;
     }
 }

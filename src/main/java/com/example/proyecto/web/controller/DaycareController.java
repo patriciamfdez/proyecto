@@ -1,5 +1,6 @@
 package com.example.proyecto.web.controller;
 
+import com.example.proyecto.dto.AddressDTO;
 import com.example.proyecto.dto.DaycareDTO;
 import com.example.proyecto.service.DaycareService;
 import com.example.proyecto.service.MenuService;
@@ -62,14 +63,18 @@ public class DaycareController extends AbstractController<DaycareDTO>  {
     @PostAuthorize("hasRole('ROLE_ADMIN') ")
     public String create(ModelMap model) {
         final DaycareDTO dto = new DaycareDTO();
+        final AddressDTO dtoaddress = new AddressDTO();
         model.addAttribute("daycare", dto);
+        model.addAttribute("address", dtoaddress);
         return "daycare/edit";
     }
 
     @Transactional
     @PostMapping(value = { "/daycare/{id}/edit", "/daycare/create" })
     @PostAuthorize("hasRole('ROLE_ADMIN') ")
-    public String save(DaycareDTO dto) {
+    public String save(DaycareDTO dto, AddressDTO dtoaddress) {
+        // Grabamos la dirección
+        //
         return String.format("redirect:/daycare/%s", this.service.save(dto).getId());
     }
 

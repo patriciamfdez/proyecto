@@ -14,13 +14,12 @@ public class Catalogue implements Serializable {
     @Column(nullable = false, length = 45)
     private String serviceType;
 
-    // Relations
+    @Column(nullable = false)
+    private String id_product;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Daycare daycares;
+    @Column(nullable = false)
+    private String serviceDescription;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private DogWalker dogWalkers;
 
     //Constructores
 
@@ -28,11 +27,12 @@ public class Catalogue implements Serializable {
     public Catalogue() {
     }
 
-    public Catalogue(Integer id, String serviceType) {
+    public Catalogue(Integer id, String serviceType, String id_product, String serviceDescription) {
         this.id = id;
         this.serviceType = serviceType;
+        this.id_product = id_product;
+        this.serviceDescription = serviceDescription;
     }
-
 
     //GetterSetter
 
@@ -52,21 +52,19 @@ public class Catalogue implements Serializable {
         this.serviceType = serviceType;
     }
 
-    public Daycare getDaycares() {
-        return daycares;
+    public String getId_product() {
+        return id_product;
     }
 
-    public void setDaycares(Daycare daycares) {
-        this.daycares = daycares;
+    public void setId_product(String id_product) {
+        this.id_product = id_product;
     }
 
-    public DogWalker getDogWalkers() {
-        return dogWalkers;
+    public String getServiceDescription() {
+        return serviceDescription;
     }
 
-    public void setDogWalkers(DogWalker dogWalkers) {
-        this.dogWalkers = dogWalkers;
+    public void setServiceDescription(String serviceDescription) {
+        this.serviceDescription = serviceDescription;
     }
-
-
 }

@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Gestión de residencias caninas</title>
+    <title>Gestión de perros</title>
 </head>
 
 <body class="home">
@@ -16,7 +16,7 @@
     </ol>
 </div>
 <div layout:fragment="content">
-    <h1>Gestión de residencias caninas</h1>
+    <h1>Gestión de perros</h1>
     <div class="row">
         <div class="col-md-6">
             <div class="box box-primary">
@@ -25,16 +25,16 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form" th:object="${daycare}" method="post">
+                <form role="form" th:object="${dog}" method="post">
 
                     <div class="box-body">
 
                         <div class="form-group">
-                            <input th:type="hidden" th:field="${daycare.id}"/>
-                            <label for="daycare_nombre" th:text="#{Daycare.daycarenombre}"></label>
+                            <input th:type="hidden" th:field="${dog.id}"/>
+                            <label for="dog_nombre" th:text="#{Dog.dognombre}"></label>
                             <input type="text"
-                                   th:field="${daycare.daycareNombre}"
-                                   name="daycare_nombre" class="form-control" id="daycare_nombre" placeholder="Nombre" disabled/>
+                                   th:field="${dog.dogNombre}"
+                                   name="dog_nombre" class="form-control" id="dog_nombre" placeholder="Nombre" disabled/>
                         </div>
                         <!-- /.box-body -->
                     </div>

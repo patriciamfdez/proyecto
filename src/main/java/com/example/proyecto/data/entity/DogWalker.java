@@ -31,8 +31,6 @@ public class DogWalker implements Serializable {
     private Date birthdate;
     @Column(nullable = false, length = 200)
     private String availability;
-    @Column(nullable = false, length = 150)
-    private String address;
     @Column(nullable = false)
     private Integer max_num_dogs;
     @Column(nullable = false, length = 45)
@@ -50,10 +48,10 @@ public class DogWalker implements Serializable {
     // Relations
 
     @ManyToMany (fetch = FetchType.EAGER)
-    private Set<Address> addresses;
+    private Set<Address> address;
 
-    @OneToMany (mappedBy = "dogWalkers")
-    private Set<Catalogue> catalogue;
+//    @OneToMany (mappedBy = "dogwalker")
+//    private Set<Catalogue> catalogue;
 
     // Constructor
 
@@ -62,7 +60,7 @@ public class DogWalker implements Serializable {
     }
 
     public DogWalker(Integer id, String doc_identification, String name, String userName, String surname, String email, String password, String phone, Date birthdate,
-                     String availability, String address, Integer max_num_dogs, String weight_dogs, String sterilized,
+                     String availability, Integer max_num_dogs, String weight_dogs, String sterilized,
                      String reviews, float assessment, float price_walk, String profile_picture, String gallery) {
         this.id = id;
         this.doc_identification = doc_identification;
@@ -74,7 +72,6 @@ public class DogWalker implements Serializable {
         this.phone = phone;
         this.birthdate = birthdate;
         this.availability = availability;
-        this.address = address;
         this.max_num_dogs = max_num_dogs;
         this.weight_dogs = weight_dogs;
         this.sterilized = sterilized;
@@ -168,11 +165,11 @@ public class DogWalker implements Serializable {
         this.availability = availability;
     }
 
-    public String getAddress() {
+    public Set<Address> getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Set<Address> address) {
         this.address = address;
     }
 
@@ -240,19 +237,11 @@ public class DogWalker implements Serializable {
         this.gallery = gallery;
     }
 
-    public Set<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(Set<Address> addresses) {
-        this.addresses = addresses;
-    }
-
-    public Set<Catalogue> getCatalogue() {
-        return catalogue;
-    }
-
-    public void setCatalogue(Set<Catalogue> catalogue) {
-        this.catalogue = catalogue;
-    }
+//    public Set<Catalogue> getCatalogue() {
+//        return catalogue;
+//    }
+//
+//    public void setCatalogue(Set<Catalogue> catalogue) {
+//        this.catalogue = catalogue;
+//    }
 }

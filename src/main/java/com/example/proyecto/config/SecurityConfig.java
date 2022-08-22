@@ -74,12 +74,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/users/*").hasAnyRole("ROLE_ADMIN")
                 .antMatchers("/api/*").authenticated()
                 .antMatchers("/daycare/*").permitAll()
+                .antMatchers("/dog/*").permitAll()
+                .antMatchers("/catalogue/*").permitAll()
+                .antMatchers("/servicesuser/*").permitAll()
                 .antMatchers("/user/create").permitAll()
                 .antMatchers("/index").permitAll()
-                .antMatchers("/signup").permitAll()
-        //   .antMatchers("/wellcome").permitAll()
-        //   .antMatchers("/landing").permitAll()
-        ;
+                .antMatchers("/signup").permitAll();
     }
 
     @Override

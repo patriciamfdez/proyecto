@@ -23,13 +23,13 @@ public class Dog implements Serializable {
     @Column(nullable = false, length = 45)
     private String race;
     @Column(nullable = false)
-    private boolean microchip;
+    private String microchip;
     @Column(nullable = false)
-    private boolean sterilized;
+    private String sterilized;
     @Column(length = 400)
     private String infAdditional;
     @Column(nullable = false)
-    private boolean compatible; // Este atributo identifica si el perro puede pasear con otros perros (true) o si tiene que pasear solo (false)
+    private String compatible; // Este atributo identifica si el perro puede pasear con otros perros (true) o si tiene que pasear solo (false)
     @Column(length = 512)
     private String allergies;
 
@@ -44,7 +44,7 @@ public class Dog implements Serializable {
     public Dog() {
     }
 
-    public Dog(Integer id, String name, float weightKg, String age, String gender, String race, boolean microchip, boolean sterilized, String infAdditional, boolean compatible, String allergies) {
+    public Dog(Integer id, String name, float weightKg, String age, String gender, String race, String microchip, String sterilized, String infAdditional, String compatible, String allergies) {
         this.id = id;
         this.name = name;
         this.weightKg = weightKg;
@@ -116,19 +116,19 @@ public class Dog implements Serializable {
         this.race = race;
     }
 
-    public boolean isMicrochip() {
+    public String getMicrochip() {
         return microchip;
     }
 
-    public void setMicrochip(boolean microchip) {
+    public void setMicrochip(String microchip) {
         this.microchip = microchip;
     }
 
-    public boolean isSterilized() {
+    public String getSterilized() {
         return sterilized;
     }
 
-    public void setSterilized(boolean esterilizado) {
+    public void setSterilized(String sterilized) {
         this.sterilized = sterilized;
     }
 
@@ -140,11 +140,11 @@ public class Dog implements Serializable {
         this.infAdditional = infAdditional;
     }
 
-    public boolean isCompatible() {
+    public String getCompatible() {
         return compatible;
     }
 
-    public void setCompatible(boolean compatible) {
+    public void setCompatible(String compatible) {
         this.compatible = compatible;
     }
 

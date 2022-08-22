@@ -19,29 +19,27 @@ public class Daycare implements Serializable {
     private String phone;
     @Column(nullable = false, length = 150)
     private String email;
-    @Column(nullable = false, length = 150)
-    private String address;
     @Column(nullable = false)
     private float ranking;
     // Relations
 
-    @ManyToMany (fetch = FetchType.EAGER)
-    private Set<Address> addresses;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
 
-    @OneToMany (mappedBy = "daycares")
-    private Set<Catalogue> catalogue;
+//    @OneToMany (mappedBy = "daycare")
+//    private Set<Catalogue> catalogue;
 
     // Constructor
     public Daycare() {
     }
 
-    public Daycare(Integer id, String name, float nightPrice, String phone, String email, String address, float ranking) {
+    public Daycare(Integer id, String name, float nightPrice, String phone, String email, float ranking) {
         this.id = id;
         this.name = name;
         this.nightPrice = nightPrice;
         this.phone = phone;
         this.email = email;
-        this.address = address;
         this.ranking = ranking;
     }
 
@@ -77,14 +75,6 @@ public class Daycare implements Serializable {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public float getNightPrice() {
         return nightPrice;
     }
@@ -101,18 +91,18 @@ public class Daycare implements Serializable {
         this.ranking = ranking;
     }
 
-    public Set<Address> getAddresses() {
-        return addresses;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddresses(Set<Address> addresses) {
-        this.addresses = addresses;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    public Set<Catalogue> getCatalogue() {
-        return catalogue;
-    }
-    public void setCatalogue(Set<Catalogue> catalogue) {
-        this.catalogue = catalogue;
-    }
+//    public Set<Catalogue> getCatalogue() {
+//        return catalogue;
+//    }
+//    public void setCatalogue(Set<Catalogue> catalogue) {
+//        this.catalogue = catalogue;
+//    }
 }

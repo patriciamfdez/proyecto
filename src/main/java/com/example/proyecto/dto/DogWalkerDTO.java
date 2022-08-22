@@ -14,7 +14,6 @@ public class DogWalkerDTO {
     private String phone;
     private Date birthdate;
     private String availability;
-    private String address;
     private Integer max_num_dogs;
     private String weight_dogs;
     private String sterilized;
@@ -23,7 +22,7 @@ public class DogWalkerDTO {
     private float price_walk;
     private String profile_picture;
     private String gallery;
-    private Set<AddressDTO> addresses;
+    private Set<AddressDTO> address;
 
     public Integer getId() {
         return id;
@@ -105,14 +104,6 @@ public class DogWalkerDTO {
         this.availability = availability;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public Integer getMax_num_dogs() {
         return max_num_dogs;
     }
@@ -178,11 +169,11 @@ public class DogWalkerDTO {
         this.gallery = gallery;
     }
 
-    public Set<AddressDTO> getAddresses() {
-        return addresses;
+    public Set<AddressDTO> getAddress() {
+        return address;
     }
 
-    public void setAddresses(Set<AddressDTO> addresses) {
-        this.addresses = addresses;
+    public void setAddress(Set<AddressDTO> address) {
+        this.address = address;
     }
 }

@@ -4,8 +4,8 @@ package com.example.proyecto.dto;
 public class CatalogueDTO {
     private Integer id;
     private String serviceType;
-    private Integer daycaresId;
-    private Integer dogWlakersId;
+    private String id_product;
+    private String serviceDescription;
 
     public Integer getId() {
         return id;
@@ -23,19 +23,19 @@ public class CatalogueDTO {
         this.serviceType = serviceType;
     }
 
-    public Integer getDaycaresId() {
-        return daycaresId;
+    public String getId_product() {
+        return id_product;
     }
 
-    public void setDaycaresId(Integer daycaresId) {
-        this.daycaresId = daycaresId;
+    public void setId_product(String id_product) {
+        this.id_product = id_product;
     }
 
-    public Integer getDogWlakersId() {
-        return dogWlakersId;
+    public String getServiceDescription() {
+        return serviceDescription;
     }
 
-    public void setDogWlakersId(Integer dogWlakersId) {
-        this.dogWlakersId = dogWlakersId;
+    public void setServiceDescription(String serviceDescription) {
+        this.serviceDescription = serviceDescription;
     }
 }

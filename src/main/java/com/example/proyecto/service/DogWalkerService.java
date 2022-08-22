@@ -18,12 +18,12 @@ public class DogWalkerService extends AbstractBusinessService<DogWalker, Integer
         super(repository, serviceMapper);
         this.userRepository = userRepository;
     }
-    //Obtener el listado del las guarderías para perros
+    //Obtener el listado de paseadores
     public Page<DogWalkerDTO> findAll(Pageable pageable) {
         return getRepository().findAll(pageable).map(getServiceMapper()::toDto);
     }
 
-    //Modificar una guardería para perros
+    //Modificar un paseador
     @Override
     public DogWalkerDTO save(DogWalkerDTO dto) {
         final DogWalker entity = getServiceMapper().toEntity(dto);

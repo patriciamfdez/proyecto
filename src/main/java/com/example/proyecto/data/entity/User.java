@@ -41,7 +41,7 @@ public class User implements Serializable {
     Set<Role> role;
 
     @ManyToMany (fetch = FetchType.EAGER)
-    private Set<Address> addresses;
+    private Set<Address> address;
 
     @ManyToOne()
     @JoinColumn(name="dog_id")
@@ -52,15 +52,6 @@ public class User implements Serializable {
     private DogWalker dogWalker;
 
     // Getters and Setters
-
-
-    public Set<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(Set<Address> addresses) {
-        this.addresses = addresses;
-    }
 
     public DogWalker getDogWalker() {
         return dogWalker;
@@ -164,5 +155,13 @@ public class User implements Serializable {
 
     public void setDog(Dog dog) {
         this.dog = dog;
+    }
+
+    public Set<Address> getAddress() {
+        return address;
+    }
+
+    public void setAddress(Set<Address> address) {
+        this.address = address;
     }
 }
