@@ -57,6 +57,7 @@
           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Paseadores.html">Paseadores</a></li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contacto.html">Contacto</a></li>
           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Acerca-de.html">Acerca de</a></li>
           <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#"></a></li>
+            <!-- botón administrar -->
           <li class="u-nav-item">
               <div class="dropdown" sec:authorize="hasRole('ROLE_ADMIN')">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
@@ -71,6 +72,7 @@
                   </ul>
               </div>
           </li>
+            <!-- botones iniciar sesión y cerrar sesión -->
             <li class="u-nav-item">
                 <div sec:authorize="isAuthenticated()">
                     <form th:action="@{/logout}" method="post">
