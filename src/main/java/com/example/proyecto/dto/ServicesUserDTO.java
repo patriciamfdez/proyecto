@@ -1,15 +1,17 @@
 package com.example.proyecto.dto;
 
-import java.time.ZonedDateTime;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 public class ServicesUserDTO {
     private Integer id;
     private String username;
     private String bookingStatus;
-    private String creationDate;
+    private Date creationDate;
     private String serviceName;
-    private String bookingStartDate;
-    private String bookingLastDate;
+    private Date bookingStartDate;
+    private Date bookingLastDate;
     private Integer userId;
     private Integer cataloguesId;
     private Integer dogsId;
@@ -41,11 +43,11 @@ public class ServicesUserDTO {
         this.bookingStatus = bookingStatus;
     }
 
-    public String getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(String creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -57,19 +59,19 @@ public class ServicesUserDTO {
         this.serviceName = serviceName;
     }
 
-    public String getBookingStartDate() {
+    public Date getBookingStartDate() {
         return bookingStartDate;
     }
 
-    public void setBookingStartDate(String bookingStartDate) {
+    public void setBookingStartDate(Date bookingStartDate) {
         this.bookingStartDate = bookingStartDate;
     }
 
-    public String getBookingLastDate() {
+    public Date getBookingLastDate() {
         return bookingLastDate;
     }
 
-    public void setBookingLastDate(String bookingLastDate) {
+    public void setBookingLastDate(Date bookingLastDate) {
         this.bookingLastDate = bookingLastDate;
     }
 

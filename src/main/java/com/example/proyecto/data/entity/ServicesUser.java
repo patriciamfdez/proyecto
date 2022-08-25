@@ -19,14 +19,17 @@ public class ServicesUser implements Serializable {
     private String username;
     @Column(nullable = false, length = 100)
     private String bookingStatus;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(nullable = false)
-    private ZonedDateTime creationDate;
+    private Date creationDate;
     @Column(nullable = false, length = 45)
     private String serviceName;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(nullable = false)
-    private ZonedDateTime bookingStartDate;
+    private Date bookingStartDate;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(nullable = false)
-    private ZonedDateTime bookingLastDate;
+    private Date bookingLastDate;
 
     // Relations
 
@@ -44,7 +47,7 @@ public class ServicesUser implements Serializable {
     public ServicesUser() {
     }
 
-    public ServicesUser(Integer id, String username, String bookingStatus, ZonedDateTime creationDate, String serviceName, ZonedDateTime bookingStartDate, ZonedDateTime bookingLastDate, User users, Catalogue catalogues, Dog dogs) {
+    public ServicesUser(Integer id, String username, String bookingStatus, Date creationDate, String serviceName, Date bookingStartDate, Date bookingLastDate, User users, Catalogue catalogues, Dog dogs) {
         this.id = id;
         this.username = username;
         this.bookingStatus = bookingStatus;
@@ -84,11 +87,11 @@ public class ServicesUser implements Serializable {
         this.bookingStatus = bookingStatus;
     }
 
-    public ZonedDateTime getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(ZonedDateTime creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -100,19 +103,19 @@ public class ServicesUser implements Serializable {
         this.serviceName = serviceName;
     }
 
-    public ZonedDateTime getBookingStartDate() {
+    public Date getBookingStartDate() {
         return bookingStartDate;
     }
 
-    public void setBookingStartDate(ZonedDateTime bookingStartDate) {
+    public void setBookingStartDate(Date bookingStartDate) {
         this.bookingStartDate = bookingStartDate;
     }
 
-    public ZonedDateTime getBookingLastDate() {
+    public Date getBookingLastDate() {
         return bookingLastDate;
     }
 
-    public void setBookingLastDate(ZonedDateTime bookingLastDate) {
+    public void setBookingLastDate(Date bookingLastDate) {
         this.bookingLastDate = bookingLastDate;
     }
 

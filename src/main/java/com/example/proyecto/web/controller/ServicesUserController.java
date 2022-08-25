@@ -1,6 +1,8 @@
 package com.example.proyecto.web.controller;
 
+import com.example.proyecto.data.entity.Catalogue;
 import com.example.proyecto.dto.CatalogueDTO;
+import com.example.proyecto.dto.DaycareDTO;
 import com.example.proyecto.dto.ServicesUserDTO;
 import com.example.proyecto.service.CatalogueService;
 import com.example.proyecto.service.MenuService;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -22,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -65,24 +67,21 @@ public class ServicesUserController extends AbstractController<ServicesUserDTO> 
 
     @GetMapping("/servicesuser/createresidencias")
     @PostAuthorize("hasRole('ROLE_ADMIN') ")
-    public String createresidencias(ModelMap model) {
+    public String createresidencias(ModelMap model,@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size) {
         final ServicesUserDTO dto = new ServicesUserDTO();
-        // Enviar el catálogo como atributo para seleccionar un elemento
-        final List<CatalogueDTO> catalog = this.catalogueService.findAll();
-        System.out.println("Número de elementos del catálogo: " + catalog.size());
-        System.out.println("Número de elementos del catálogo: " + catalog.get(0).getId());
-        System.out.println("Número de elementos del catálogo: " + catalog.get(0).getServiceDescription());
-        model.addAttribute("servicesuser", dto);
-        model.addAttribute("catalogue", catalog);
+        final Page<CatalogueDTO> catalog = this.catalogueService.findByServiceType("daycare",PageRequest.of(page.orElse(1) - 1, size.orElse(10)));
+        model
+                .addAttribute("servicesuser", dto)
+                .addAttribute("catalogue", catalog);
         return "servicesuser/edit";
     }
 
     @GetMapping("/servicesuser/createpaseadores")
     @PostAuthorize("hasRole('ROLE_ADMIN') ")
-    public String createpaseadores(ModelMap model) {
+    public String createpaseadores(ModelMap model,@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size) {
         final ServicesUserDTO dto = new ServicesUserDTO();
         // Enviar el catálogo como atributo para seleccionar un elemento
-        final List<CatalogueDTO> catalog = this.catalogueService.findAll();
+        final Page<CatalogueDTO> catalog = this.catalogueService.findByServiceType("dogwalker", PageRequest.of(page.orElse(1) - 1, size.orElse(10)));
         model.addAttribute("servicesuser", dto);
         model.addAttribute("catalogue", catalog);
         return "servicesuser/edit";

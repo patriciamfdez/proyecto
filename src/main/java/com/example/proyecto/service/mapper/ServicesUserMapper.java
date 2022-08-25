@@ -14,10 +14,10 @@ public class ServicesUserMapper extends  AbstractServiceMapper<ServicesUser, Ser
         entity.setId(servicesUserDTO.getId());
         entity.setUsername(servicesUserDTO.getUsername());
         entity.setBookingStatus(servicesUserDTO.getBookingStatus());
-        entity.setCreationDate(DateUtil.stringToDate(servicesUserDTO.getCreationDate()));
+        entity.setCreationDate(servicesUserDTO.getCreationDate());
         entity.setServiceName(servicesUserDTO.getServiceName());
-        entity.setBookingStartDate(DateUtil.stringToDate(servicesUserDTO.getBookingStartDate()));
-        entity.setBookingLastDate(DateUtil.stringToDate(servicesUserDTO.getBookingLastDate()));
+        entity.setBookingStartDate(servicesUserDTO.getBookingStartDate());
+        entity.setBookingLastDate(servicesUserDTO.getBookingLastDate());
         return entity;
     }
 
@@ -27,10 +27,10 @@ public class ServicesUserMapper extends  AbstractServiceMapper<ServicesUser, Ser
         dto.setId(servicesUser.getId());
         dto.setUsername(servicesUser.getUsername());
         dto.setBookingStatus(servicesUser.getBookingStatus());
-        dto.setCreationDate(DateUtil.dateToString(servicesUser.getCreationDate()));
+        dto.setCreationDate(servicesUser.getCreationDate());
         dto.setServiceName(servicesUser.getServiceName());
-        dto.setBookingStartDate(DateUtil.dateToString(servicesUser.getBookingStartDate()));
-        dto.setBookingLastDate(DateUtil.dateToString(servicesUser.getBookingLastDate()));
+        dto.setBookingStartDate(servicesUser.getBookingStartDate());
+        dto.setBookingLastDate(servicesUser.getBookingLastDate());
         return dto;
     }
 }

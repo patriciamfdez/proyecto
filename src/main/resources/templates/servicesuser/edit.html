@@ -34,35 +34,14 @@
                                                th:field="${servicesuser.bookingStatus}"
                                                maxlength="255">
                                         <label for="creationDate" th:text="#{Servicio.creationDate}"></label>
-                                        <div class="input-group date datetimepicker">
-                                            <input id="creationDate" type="text" th:field="${servicesuser.creationDate}"
-                                                   th:value="${servicesuser.creationDate}" class="form-control" required/>
-                                            <div class="input-group-addon input-group-append">
-                                                <div class="input-group-text">
-                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <input id="creationDate" class="form-control" type="date" th:field="${servicesuser.creationDate}"/>
+
                                         <label for="bookingStartDate" th:text="#{Servicio.bookingStartDate}"></label>
-                                        <div class="input-group date datetimepicker">
-                                            <input id="bookingStartDate" type="text" th:field="${servicesuser.bookingStartDate}"
-                                                   th:value="${servicesuser.bookingStartDate}" class="form-control" required/>
-                                            <div class="input-group-addon input-group-append">
-                                                <div class="input-group-text">
-                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <input id="bookingStartDate" class="form-control" type="date" th:field="${servicesuser.bookingStartDate}"/>
+
                                         <label for="bookingLastDate" th:text="#{Servicio.bookingLastDate}"></label>
-                                        <div class="input-group date datetimepicker">
-                                            <input id="bookingLastDate" type="text" th:field="${servicesuser.bookingLastDate}"
-                                                   th:value="${servicesuser.bookingLastDate}" class="form-control" required/>
-                                            <div class="input-group-addon input-group-append">
-                                                <div class="input-group-text">
-                                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <input id="bookingLastDate" class="form-control" type="date" th:field="${servicesuser.bookingLastDate}"/>
+
                                         <div th:unless="${#lists.isEmpty(catalogue)}">
                                             <label for="serviceDescription" th:text="#{Servicio.serviceDescription}"></label>
                                             <select  th:field="${servicesuser.cataloguesId}" class="form-control" id="serviceDescription">

@@ -4,7 +4,7 @@ package com.example.proyecto.dto;
 public class CatalogueDTO {
     private Integer id;
     private String serviceType;
-    private String id_product;
+    private Integer id_product;
     private String serviceDescription;
 
     public Integer getId() {
@@ -23,11 +23,11 @@ public class CatalogueDTO {
         this.serviceType = serviceType;
     }
 
-    public String getId_product() {
+    public Integer getId_product() {
         return id_product;
     }
 
-    public void setId_product(String id_product) {
+    public void setId_product(Integer id_product) {
         this.id_product = id_product;
     }
 
@@ -38,4 +38,6 @@ public class CatalogueDTO {
     public void setServiceDescription(String serviceDescription) {
         this.serviceDescription = serviceDescription;
     }
+
+
 }

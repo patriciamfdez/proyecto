@@ -15,7 +15,7 @@ public class Catalogue implements Serializable {
     private String serviceType;
 
     @Column(nullable = false)
-    private String id_product;
+    private Integer id_product;
 
     @Column(nullable = false)
     private String serviceDescription;
@@ -27,7 +27,7 @@ public class Catalogue implements Serializable {
     public Catalogue() {
     }
 
-    public Catalogue(Integer id, String serviceType, String id_product, String serviceDescription) {
+    public Catalogue(Integer id, String serviceType, Integer id_product, String serviceDescription) {
         this.id = id;
         this.serviceType = serviceType;
         this.id_product = id_product;
@@ -35,6 +35,7 @@ public class Catalogue implements Serializable {
     }
 
     //GetterSetter
+
 
     public Integer getId() {
         return id;
@@ -52,11 +53,11 @@ public class Catalogue implements Serializable {
         this.serviceType = serviceType;
     }
 
-    public String getId_product() {
+    public Integer getId_product() {
         return id_product;
     }
 
-    public void setId_product(String id_product) {
+    public void setId_product(Integer id_product) {
         this.id_product = id_product;
     }
 

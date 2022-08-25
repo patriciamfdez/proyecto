@@ -112,8 +112,10 @@ VALUES
   (-1, 4.1, 'dummy', '2022-05-08','87653976G','dummy', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro'),
   (1, 4.1, 'Todo el año', '2022-05-08','87653976G','pepe@gmail.com', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro');
 
-INSERT INTO catalogue (`id`, `service_type`, `daycare_id`, `dogwalker_id`, `id_product`, `service_description`) VALUES ('1', 'daycare', '1', '-1', '1', 'residencia canina 1');
-INSERT INTO catalogue (`id`, `service_type`, `daycare_id`, `dogwalker_id`, `id_product`, `service_description`) VALUES ('2', 'dogwalker', '-1', '1', '1', 'paseador 1');
+INSERT INTO catalogue (id, service_type, id_product, service_description)
+VALUES
+    (1, 'daycare', '1', 'residencia canina 1'),
+    (2, 'dogwalker', '1', 'paseador 1');
 
 UPDATE users SET dog_id = 1 WHERE id = 1 AND id = 5;
 UPDATE users SET dog_id = 2 WHERE id = 3;
