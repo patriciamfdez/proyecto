@@ -7,6 +7,7 @@ import com.example.proyecto.dto.CatalogueDTO;
 import com.example.proyecto.service.mapper.CatalogueMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -35,4 +36,14 @@ public class CatalogueService extends AbstractBusinessService<Catalogue, Integer
         final Catalogue savedEntity = this.getRepository().save(entity);
         return getServiceMapper().toDto(savedEntity);
     }
+
+    //Alta en el catálogo
+    public void alta() {
+        getRepository().altaCatalogo();
+    }
+    /*  DUDAS: seguro que es un void y no devuelkve nada? porque el save tiene eso del toentity y todto
+
+    Desde luego un void me facilita la otra duda, si no es un void, entonces que es, un CatalogueDTO o un Page<..>?
+
+     */
 }

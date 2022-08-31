@@ -32,7 +32,7 @@ public class DaycareController extends AbstractController<DaycareDTO>  {
         this.service = servicio;
     }
     @GetMapping("/daycare")
-    @PreAuthorize("hasAuthority('ROLE_USER') or hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String getAll(@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size,
                          Model model) {
         //final User user = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
@@ -92,5 +92,21 @@ public class DaycareController extends AbstractController<DaycareDTO>  {
         }
         status.setComplete();
         return "redirect:/daycare";
+    }
+
+    // Controladores de la vista usuario
+
+    @GetMapping("/daycareuser")
+    //@PreAuthorize("hasAuthority('ROLE_USER') or hasRole('ROLE_ADMIN')")
+    public String getAll1(@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size,
+                         Model model) {
+        //final User user = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        final Page<DaycareDTO> all1 = this.service.findAll( PageRequest.of(page.orElse(1) - 1,
+                size.orElse(10)));
+        model
+                //.addAttribute("username", user.getUserName())
+                .addAttribute("daycareuser", all1)
+                .addAttribute(pageNumbersAttributeKey, getPageNumbers(all1));
+        return "daycareuser/list";
     }
 }

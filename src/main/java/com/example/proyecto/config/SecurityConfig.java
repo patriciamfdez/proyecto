@@ -79,7 +79,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/servicesuser/*").permitAll()
                 .antMatchers("/user/create").permitAll()
                 .antMatchers("/index").permitAll()
-                .antMatchers("/signup").permitAll();
+                .antMatchers("/signup").permitAll()
+                .antMatchers("/daycareuser/*").permitAll();
     }
 
     @Override

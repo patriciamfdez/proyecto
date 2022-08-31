@@ -2,6 +2,20 @@ package com.example.proyecto.data.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+//@NamedNativeQueries({                                         este me pide SessionFactory
+//        @NamedNativeQuery(
+//                name = "callAltaCatalogo",
+//                query = "CALL alta_catalogo()",
+//                resultClass = Catalogue.class)
+//})
+@NamedStoredProcedureQueries({                                      // usando  @NamedStoredProcedureQuery
+        @NamedStoredProcedureQuery(
+                name = "AltaCatalogo",
+                procedureName = "doggo.alta_catalogo"
+                )
+})
+
+
 
 @Entity
 public class Catalogue implements Serializable {

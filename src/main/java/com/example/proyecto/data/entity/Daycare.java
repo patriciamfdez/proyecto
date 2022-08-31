@@ -21,6 +21,8 @@ public class Daycare implements Serializable {
     private String email;
     @Column(nullable = false)
     private float ranking;
+
+
     // Relations
 
     @OneToOne(cascade = CascadeType.ALL)

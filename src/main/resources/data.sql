@@ -110,12 +110,14 @@ VALUES
 INSERT INTO dog_walker (id, assessment, availability, birthdate, doc_identification, email, gallery, max_num_dogs, name, password, phone, price_walk, profile_picture, reviews, sterilized, user_name, weight_dogs, surname)
 VALUES
   (-1, 4.1, 'dummy', '2022-05-08','87653976G','dummy', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro'),
-  (1, 4.1, 'Todo el año', '2022-05-08','87653976G','pepe@gmail.com', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro');
+  (1, 4.1, 'Todo el año', '1998-05-08','87653976G','pepe@gmail.com', null, 2, 'pepe', '123', '956783542', 10.7, null, 'Buena persona', 'No', 'pepe', 14.6, 'castro'),
+  (2, 3.8, 'Todo el año', '2005-06-22','56890425D','maria@gmail.com', null, 1, 'maria', '456', '958627705', 12, null, 'Buena mano con los perros', 'No', 'maria', 30, 'pombo'),
+  (3, 4.4, 'Todo el año', '1991-11-05','94854676S','lucia@gmail.com', null, 4, 'lucia', '789', '956783542', 10.7, null, 'Muy responsable', 'Si', 'lucia', 20, 'perez');
 
-INSERT INTO catalogue (id, service_type, id_product, service_description)
-VALUES
-    (1, 'daycare', '1', 'residencia canina 1'),
-    (2, 'dogwalker', '1', 'paseador 1');
+--INSERT INTO catalogue (id, service_type, id_product, service_description)
+--VALUES
+--    (1, 'daycare', '1', 'residencia canina 1'),
+--    (2, 'dogwalker', '1', 'paseador 1');
 
 UPDATE users SET dog_id = 1 WHERE id = 1 AND id = 5;
 UPDATE users SET dog_id = 2 WHERE id = 3;
