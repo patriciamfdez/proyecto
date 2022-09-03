@@ -1,5 +1,6 @@
 package com.example.proyecto.service.mapper;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
