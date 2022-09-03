@@ -32,7 +32,7 @@ public class DaycareController extends AbstractController<DaycareDTO>  {
         this.service = servicio;
     }
     @GetMapping("/daycare")
-    @PreAuthorize("hasAuthority('ROLE_USER') or hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String getAll(@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size,
                          Model model) {
         //final User user = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());

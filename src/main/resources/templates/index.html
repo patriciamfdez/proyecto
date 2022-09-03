@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org" style="font-size: 16px;" lang="es">
+<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+	  style="font-size: 16px;" lang="es"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}">
 
-<head th:replace="~{fragments/headNice :: head}"></head>
 
-<body data-home-page="Doggo.html" data-home-page-title="Doggo" class="u-body u-xl-mode" data-lang="es">
-
-
-<header th:replace="~{fragments/header :: header}">  </header>
+<body class="home">
+<div layout:fragment="content">
 
 
 <section class="u-clearfix u-image u-section-1" id="sec-b5c5" data-image-width="1280" data-image-height="847">
@@ -113,21 +113,8 @@
 </section>
 
 
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-184c"><div class="u-clearfix u-sheet u-sheet-1">
-	<p class="u-small-text u-text u-text-variant u-text-1">Texto de muestra. Haz click para seleccionar el elemento de Texto.</p>
-</div></footer>
-<section class="u-backlink u-clearfix u-grey-80">
-	<a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-		<span>Website Template</span>
-	</a>
-	<p class="u-text">
-		<span>created with</span>
-	</p>
-	<a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
-		<span>HTML Layout generator</span>
-	</a>.
-</section>
 
+</div>
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script class="u-script" type="text/javascript" src="js/jquery.js"></script>
 <script class="u-script" type="text/javascript" src="js/nicepage.js"></script>
