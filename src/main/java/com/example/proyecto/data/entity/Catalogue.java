@@ -2,21 +2,24 @@ package com.example.proyecto.data.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-//@NamedNativeQueries({                                         este me pide SessionFactory
-//        @NamedNativeQuery(
-//                name = "callAltaCatalogo",
-//                query = "CALL alta_catalogo()",
-//                resultClass = Catalogue.class)
-//})
-@NamedStoredProcedureQueries({                                      // usando  @NamedStoredProcedureQuery
-        @NamedStoredProcedureQuery(
-                name = "AltaCatalogo",
-                procedureName = "doggo.alta_catalogo"
-                )
-})
+
+/* Procedimiento almacenado en BB.DD. */
 
 
-
+@NamedStoredProcedureQuery(name = "ActualizarCatalogo", procedureName = "altacatalogo",resultClasses = {
+        Catalogue.class }
+)
+@NamedStoredProcedureQuery(name = "BorradoLogicoCatalogo", procedureName = "borradologicocatalogo",resultClasses = {
+        Catalogue.class }, parameters = {
+        @StoredProcedureParameter(name = "id_product", type = Integer.class, mode = ParameterMode.IN),
+        @StoredProcedureParameter(name = "serviceType", type = String.class, mode = ParameterMode.IN)}
+)
+@NamedStoredProcedureQuery(name = "RestauragoLogicoCatalogo", procedureName = "restauradologicocatalogo",resultClasses = {
+        Catalogue.class }, parameters = {
+        @StoredProcedureParameter(name = "id_product", type = Integer.class, mode = ParameterMode.IN),
+        @StoredProcedureParameter(name = "serviceType", type = String.class, mode = ParameterMode.IN)
+}
+)
 
 
 @Entity
@@ -53,8 +56,9 @@ public class Catalogue implements Serializable {
 
     @Column(nullable = false, columnDefinition = "integer default 1")
     private Integer active;
-    //Constructores
 
+
+    //Constructores
 
     public Catalogue() {
     }
@@ -99,5 +103,13 @@ public class Catalogue implements Serializable {
 
     public void setServiceDescription(String serviceDescription) {
         this.serviceDescription = serviceDescription;
+    }
+
+    public Integer getActive() {
+        return active;
+    }
+
+    public void setActive(Integer active) {
+        this.active = active;
     }
 }

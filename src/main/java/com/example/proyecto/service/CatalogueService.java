@@ -43,6 +43,7 @@ public class CatalogueService extends AbstractBusinessService<Catalogue, Integer
     }
 
     //Alta en el catálogo
+    //Alta en el catálogo
     public void  ActualizarCatalogo() {
         StoredProcedureQuery sp = em.createNamedStoredProcedureQuery("ActualizarCatalogo");
         sp.execute();

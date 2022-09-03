@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      style="font-size: 16px;" lang="es"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
-<head>
-    <title>Gestión de servicios de usuarios</title>
-</head>
+
 
 <body class="home">
 
-<div layout:fragment="breadcrumb" th:object="${servicesuser}">
-    <h1>Gestión de servicios de usuarios</h1>
-    <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/servicesuser"><i class="fa fa-tasks"></i> Servicios de usuarios</a></li>
-        <li class="active" th:utext="@{'Servicios de usuario ID: <b>' + ${servicesuser.id}} + '</b>'"></li>
-    </ol>
-</div>
 <div layout:fragment="content">
     <h1>Gestión de servicios de usuarios</h1>
     <div class="row">
@@ -70,11 +61,6 @@
 </div>
 
 
-<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script th:src="@{/js/headroom.min.js}"></script>
-<script th:src="@{/js/jQuery.headroom.min.js}"></script>
-<script th:src="@{/js/template.js}"></script>
+
 </body>
 </html>

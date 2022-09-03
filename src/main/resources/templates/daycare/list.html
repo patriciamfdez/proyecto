@@ -4,7 +4,6 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 
-
 <body class="home">
 
 <div layout:fragment="content">
@@ -51,24 +50,24 @@
                 </tbody>
             </table>
         </div>
-</form>
-</div>
+    </form>
 
-<div th:if="${not #lists.isEmpty(daycare.content)}">
-    <div class="text-center">
-        <nav>
-            <ul class="pagination" sd:pagination="full">
-                <div th:if="${daycare.totalPages > 0}" class="pagination"
-                     th:each="pageNumber : ${pageNumbers}">
-                    <li th:class="${pageNumber==daycare.number + 1} ? active">
-                        <a href="#" th:href="@{/daycare(size=${daycare.size}, page=${pageNumber})}"
-                           th:text=${pageNumber}></a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+
+    <div th:if="${not #lists.isEmpty(daycare.content)}">
+        <div class="text-center">
+            <nav>
+                <ul class="pagination" sd:pagination="full">
+                    <div th:if="${daycare.totalPages > 0}" class="pagination"
+                         th:each="pageNumber : ${pageNumbers}">
+                        <li th:class="${pageNumber==daycare.number + 1} ? active">
+                            <a href="#" th:href="@{/daycare(size=${daycare.size}, page=${pageNumber})}"
+                               th:text=${pageNumber}></a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
 </div>
 </body>
 </html>

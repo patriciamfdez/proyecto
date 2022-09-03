@@ -97,19 +97,12 @@ public class CatalogueController extends AbstractController<CatalogueDTO>  {
         return "redirect:/catalogue";
     }
 
-    //Alta catálogo
-    /*  DUDAS: seguro que no devuelve nada? Lo que hace el método es comprobar si el id esta ya registrado,
-      y si no lo registra. Pero en el caso que vimos con JM, lo hacía con TODOS los nuevos. Si yo quiero que lo haga uno a uno
-      (con la idea de poner un botón en cada elemento nuevo), tendré que pasarle los parámetros de servicetyoe y de id_producto.
-
-      OTRA: No devuelve nada la función? Podría retornar a catálogo para ver lo que se ha agregado, o que simplemente el botón se volviera inactivo.
-      O que saliese un texto que diga "agregado", pero esto es todo del HTML
-
-      OTRA: qué clase de método es alta? un string o un object? Dado que aquñí no devuelve nada
-      SI que devuelve, devuelve la dirección, una url, por eso es tipo String
-      Otra opción es que sea un tipo OPBJECT porque puede devolver un error.
-
+    /* Procedimientos almacenados:
+                - Alta catálogo
+                - Borrado lógico
+                - Restaurado lógico
      */
+
     @GetMapping("/catalogue/alta")
     @PostAuthorize("hasRole('ROLE_ADMIN') ")
     public String alta(){
@@ -128,24 +121,6 @@ public class CatalogueController extends AbstractController<CatalogueDTO>  {
         this.service.RestauradoLogicoCatalogo(id,serv);
         return "redirect:/catalogue";
     }
-    /*
-    @Transactional
-    @PostMapping("/catalogue/alta")
-    @PostAuthorize("hasRole('ROLE_ADMIN') ")
-    public Object alta(SessionStatus status) {
-        try {
-            this.service.alta();
-        } catch (DataIntegrityViolationException exception) {
-            status.setComplete();
-            return new ModelAndView("error/errorHapus")
-                    .addObject("entityName", "catalogue")
-                    .addObject("errorCause", exception.getRootCause().getMessage())
-                    .addObject("backLink", "/catalogue");
-        }
-        status.setComplete();
-        return "redirect:/catalogue";
-    }
-    */
 
 
 }

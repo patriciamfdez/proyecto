@@ -1,19 +1,15 @@
-<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
-<html xmlns:th="http://www.thymeleaf.org"
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      style="font-size: 16px;" lang="es"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:sd="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}">
+
 <head>
     <title>Lista del catálogo</title>
 </head>
-<body>
-<div layout:fragment="breadcrumb">
-    <h1>Gestión del catálogo</h1>
-    <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Catalogue</li>
-    </ol>
-</div>
+
+<body class="home">
+
 <div layout:fragment="content">
     <div class="row">
         <div class="col-xs-12">

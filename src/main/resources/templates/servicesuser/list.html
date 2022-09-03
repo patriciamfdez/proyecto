@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      style="font-size: 16px;" lang="es"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
-<head>
-    <title>Gestión de servicios de usuarios</title>
-</head>
+
 
 <body class="home">
 
@@ -53,22 +52,22 @@
             </tbody>
         </table>
     </form>
-</div>
-<div th:if="${not #lists.isEmpty(servicesuser.content)}">
-    <div class="text-center">
-        <nav>
-            <ul class="pagination" sd:pagination="full">
-                <div th:if="${servicesuser.totalPages > 0}" class="pagination"
-                     th:each="pageNumber : ${pageNumbers}">
-                    <li th:class="${pageNumber==servicesuser.number + 1} ? active">
-                        <a href="#" th:href="@{/servicesuser(size=${servicesuser.size}, page=${pageNumber})}"
-                           th:text=${pageNumber}></a>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+
+    <div th:if="${not #lists.isEmpty(servicesuser.content)}">
+        <div class="text-center">
+            <nav>
+                <ul class="pagination" sd:pagination="full">
+                    <div th:if="${servicesuser.totalPages > 0}" class="pagination"
+                         th:each="pageNumber : ${pageNumbers}">
+                        <li th:class="${pageNumber==servicesuser.number + 1} ? active">
+                            <a href="#" th:href="@{/servicesuser(size=${servicesuser.size}, page=${pageNumber})}"
+                               th:text=${pageNumber}></a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
 </div>
 </body>
 </html>
