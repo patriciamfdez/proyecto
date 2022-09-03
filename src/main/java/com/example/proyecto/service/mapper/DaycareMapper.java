@@ -4,6 +4,9 @@ import com.example.proyecto.data.entity.Daycare;
 import com.example.proyecto.dto.DaycareDTO;
 import org.springframework.stereotype.Service;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
 @Service
 public class DaycareMapper extends  AbstractServiceMapper<Daycare, DaycareDTO> {
 

@@ -2,17 +2,10 @@
 <html lang="en" xmlns="https://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-    <!-- Custom styles for our template -->
-    <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
+ </head>
 <body>
 
-<footer id="footer" class="top-space" th:fragment="nuestroFooter"></footer>>
+<footer id="footer" class="top-space" th:fragment="FooterProgressus"></footer>>
 <div class="footer1">
     <div class="container">
         <div class="row">
@@ -84,6 +77,22 @@
 </footer>
 
 
+<footer id="footer"  th:fragment="FooterNice" class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-184c">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Texto de muestra. Haz click para seleccionar el elemento de Texto.</p>
+    </div>
+</footer>
+<section id="bottom-section"  th:fragment="BottomNice" class="u-backlink u-clearfix u-grey-80">
+    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span>Website Template</span>
+    </a>
+    <p class="u-text">
+        <span>created with</span>
+    </p>
+    <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
+        <span>HTML Layout generator</span>
+    </a>.
+</section>
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

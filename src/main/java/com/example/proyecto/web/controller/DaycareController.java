@@ -93,4 +93,32 @@ public class DaycareController extends AbstractController<DaycareDTO>  {
         status.setComplete();
         return "redirect:/daycare";
     }
+
+    // Vista usuario
+    @GetMapping("/daycareuser")
+    public String getAll1(@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size,
+                         Model model) {
+        //final User user = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        final Page<DaycareDTO> all1 = this.service.findAll( PageRequest.of(page.orElse(1) - 1,
+                size.orElse(10)));
+        model
+                //.addAttribute("username", user.getUserName())
+                .addAttribute("daycare", all1)
+                .addAttribute(pageNumbersAttributeKey, getPageNumbers(all1));
+        return "daycareuser/cards";
+    }
+
+    @GetMapping("/daycareuser/{id}")
+    public String detail1(@PathVariable("id") Integer id, ModelMap model) {
+        model.addAttribute("daycare", this.service.findById(id).get());
+        return "daycareuser/detail";
+    }
+
+    @GetMapping("/daycareuser/{id}/edit")
+    @PostAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    public String edit1(@PathVariable("id") Integer id, ModelMap model) {
+        model.addAttribute("daycare", this.service.findById(id).get());
+        return "daycareuser/edit";
+    }
+
 }

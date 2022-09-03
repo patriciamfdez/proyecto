@@ -4,7 +4,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Entity
@@ -47,18 +46,8 @@ public class ServicesUser implements Serializable {
     public ServicesUser() {
     }
 
-    public ServicesUser(Integer id, String username, String bookingStatus, Date creationDate, String serviceName, Date bookingStartDate, Date bookingLastDate, User users, Catalogue catalogues, Dog dogs) {
-        this.id = id;
-        this.username = username;
-        this.bookingStatus = bookingStatus;
-        this.creationDate = creationDate;
-        this.serviceName = serviceName;
-        this.bookingStartDate = bookingStartDate;
-        this.bookingLastDate = bookingLastDate;
-        this.users = users;
-        this.catalogues = catalogues;
-        this.dogs = dogs;
-    }
+
+
 
     // Getter and Setters
 

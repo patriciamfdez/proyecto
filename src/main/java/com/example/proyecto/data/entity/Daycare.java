@@ -2,7 +2,6 @@ package com.example.proyecto.data.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 @Entity
 @Table(name = "daycare")
@@ -31,17 +30,22 @@ public class Daycare implements Serializable {
 //    private Set<Catalogue> catalogue;
 
     // Constructor
+
+
     public Daycare() {
     }
 
-    public Daycare(Integer id, String name, float nightPrice, String phone, String email, float ranking) {
+    public Daycare(Integer id, String name, float nightPrice, String phone, String email, float ranking, Address address) {
         this.id = id;
         this.name = name;
         this.nightPrice = nightPrice;
         this.phone = phone;
         this.email = email;
         this.ranking = ranking;
+        this.address = address;
     }
+
+    // Getters and Setters
 
     public Integer getId() {
         return id;
@@ -57,6 +61,14 @@ public class Daycare implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public float getNightPrice() {
+        return nightPrice;
+    }
+
+    public void setNightPrice(float nightPrice) {
+        this.nightPrice = nightPrice;
     }
 
     public String getPhone() {
@@ -75,14 +87,6 @@ public class Daycare implements Serializable {
         this.email = email;
     }
 
-    public float getNightPrice() {
-        return nightPrice;
-    }
-
-    public void setNightPrice(float nightPrice) {
-        this.nightPrice = nightPrice;
-    }
-
     public float getRanking() {
         return ranking;
     }
@@ -98,6 +102,7 @@ public class Daycare implements Serializable {
     public void setAddress(Address address) {
         this.address = address;
     }
+
 
 //    public Set<Catalogue> getCatalogue() {
 //        return catalogue;

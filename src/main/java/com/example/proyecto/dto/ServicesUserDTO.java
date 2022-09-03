@@ -1,17 +1,13 @@
 package com.example.proyecto.dto;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
-
 public class ServicesUserDTO {
     private Integer id;
     private String username;
     private String bookingStatus;
-    private Date creationDate;
+    private String creationDate;
     private String serviceName;
-    private Date bookingStartDate;
-    private Date bookingLastDate;
+    private String bookingStartDate;
+    private String bookingLastDate;
     private Integer userId;
     private Integer cataloguesId;
     private Integer dogsId;
@@ -43,13 +39,6 @@ public class ServicesUserDTO {
         this.bookingStatus = bookingStatus;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
 
     public String getServiceName() {
         return serviceName;
@@ -59,21 +48,6 @@ public class ServicesUserDTO {
         this.serviceName = serviceName;
     }
 
-    public Date getBookingStartDate() {
-        return bookingStartDate;
-    }
-
-    public void setBookingStartDate(Date bookingStartDate) {
-        this.bookingStartDate = bookingStartDate;
-    }
-
-    public Date getBookingLastDate() {
-        return bookingLastDate;
-    }
-
-    public void setBookingLastDate(Date bookingLastDate) {
-        this.bookingLastDate = bookingLastDate;
-    }
 
     public Integer getUserId() {
         return userId;
@@ -97,5 +71,29 @@ public class ServicesUserDTO {
 
     public void setDogsId(Integer dogsId) {
         this.dogsId = dogsId;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public String getBookingStartDate() {
+        return bookingStartDate;
+    }
+
+    public void setBookingStartDate(String bookingStartDate) {
+        this.bookingStartDate = bookingStartDate;
+    }
+
+    public String getBookingLastDate() {
+        return bookingLastDate;
+    }
+
+    public void setBookingLastDate(String bookingLastDate) {
+        this.bookingLastDate = bookingLastDate;
     }
 }

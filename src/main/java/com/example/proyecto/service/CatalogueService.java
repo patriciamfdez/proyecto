@@ -7,13 +7,19 @@ import com.example.proyecto.dto.CatalogueDTO;
 import com.example.proyecto.service.mapper.CatalogueMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.StoredProcedureQuery;
 
 @Service
 public class CatalogueService extends AbstractBusinessService<Catalogue, Integer, CatalogueDTO, CatalogueRepository, CatalogueMapper> {
 
     private final UserRepository userRepository;
-
+    @PersistenceContext
+    EntityManager em;
     protected CatalogueService(CatalogueRepository repository, CatalogueMapper serviceMapper, UserRepository userRepository) {
         super(repository, serviceMapper);
         this.userRepository = userRepository;
@@ -35,4 +41,21 @@ public class CatalogueService extends AbstractBusinessService<Catalogue, Integer
         final Catalogue savedEntity = this.getRepository().save(entity);
         return getServiceMapper().toDto(savedEntity);
     }
+
+    //Alta en el catálogo
+    public void  ActualizarCatalogo() {
+        StoredProcedureQuery sp = em.createNamedStoredProcedureQuery("ActualizarCatalogo");
+        sp.execute();
+    }
+    public void BorradoLogicoCatalogo(Integer id,String tiposervicio) {
+        StoredProcedureQuery sp = em.createNamedStoredProcedureQuery("BorradoLogicoCatalogo")
+                .setParameter("id_product", id).setParameter("serviceType",tiposervicio );
+        sp.execute();
+    }
+    public void RestauradoLogicoCatalogo(Integer id,String tiposervicio) {
+        StoredProcedureQuery sp = em.createNamedStoredProcedureQuery("RestauragoLogicoCatalogo")
+                .setParameter("id_product", id).setParameter("serviceType",tiposervicio );
+        sp.execute();
+    }
+
 }
