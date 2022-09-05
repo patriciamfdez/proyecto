@@ -43,7 +43,6 @@ public class CatalogueService extends AbstractBusinessService<Catalogue, Integer
     }
 
     //Alta en el catálogo
-    //Alta en el catálogo
     public void  ActualizarCatalogo() {
         StoredProcedureQuery sp = em.createNamedStoredProcedureQuery("ActualizarCatalogo");
         sp.execute();
@@ -54,7 +53,7 @@ public class CatalogueService extends AbstractBusinessService<Catalogue, Integer
         sp.execute();
     }
     public void RestauradoLogicoCatalogo(Integer id,String tiposervicio) {
-        StoredProcedureQuery sp = em.createNamedStoredProcedureQuery("RestauragoLogicoCatalogo")
+        StoredProcedureQuery sp = em.createNamedStoredProcedureQuery("RestauradoLogicoCatalogo")
                 .setParameter("id_product", id).setParameter("serviceType",tiposervicio );
         sp.execute();
     }

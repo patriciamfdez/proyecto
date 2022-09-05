@@ -27,11 +27,11 @@ public class Address implements Serializable {
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "address")
     private Set<User> users;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "address")
-    private Set<DogWalker> dogWalkers;
-
-    @OneToOne(mappedBy = "address")
-    private Daycare daycare;
+//    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "address")
+//    private Set<DogWalker> dogWalkers;
+//
+//    @OneToOne(mappedBy = "address")
+//    private Daycare daycare;
 
     //Constructores
 

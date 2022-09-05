@@ -24,9 +24,9 @@ public class Daycare implements Serializable {
 
     // Relations
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private Address address;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "address_id", referencedColumnName = "id")
+//    private Address address;
 
 //    @OneToMany (mappedBy = "daycare")
 //    private Set<Catalogue> catalogue;
@@ -37,14 +37,14 @@ public class Daycare implements Serializable {
     public Daycare() {
     }
 
-    public Daycare(Integer id, String name, float nightPrice, String phone, String email, float ranking, Address address) {
+    public Daycare(Integer id, String name, float nightPrice, String phone, String email, float ranking /*,Address address*/) {
         this.id = id;
         this.name = name;
         this.nightPrice = nightPrice;
         this.phone = phone;
         this.email = email;
         this.ranking = ranking;
-        this.address = address;
+        // this.address = address;
     }
 
     // Getters and Setters
@@ -97,13 +97,13 @@ public class Daycare implements Serializable {
         this.ranking = ranking;
     }
 
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+//    public Address getAddress() {
+//        return address;
+//    }
+//
+//    public void setAddress(Address address) {
+//        this.address = address;
+//    }
 
 
 //    public Set<Catalogue> getCatalogue() {

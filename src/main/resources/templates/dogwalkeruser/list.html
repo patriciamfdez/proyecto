@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Gestión de servicios de usuarios</title>
+</head>
+
+<body class="home">
+
+<div layout:fragment="content">
+    <section class="u-align-center u-clearfix u-section-10" id="carousel_1d69" style="background-color:LightBlue;">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <h2 class="u-align-center u-custom-font u-font-montserrat u-text  u-text-2">Lista de paseadores</h2>
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="container-fluid">
+                <form action="#" th:action="@{'/'}" method="post">
+                    <table style="width: 100%" >
+                        <tr th:each="item : ${dogwalkeruser}">
+                            <div class="card border-secondary custom-card text-center mr-2 mt-2 ml-2 mb-2"
+                                 style="width: 15rem; display: inline-block; margin-left: 25px">
+                                <div class="card-body">
+                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-2" style="text-align:center;" th:text="${item.name}">Id</h4>
+                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-2" style="text-align:center;" th:text="${item.surname}">Id</h4>
+                                    <br>
+                                    <h5 class="card-text" th:text="${item.price_walk} + ' € / paseo'">Precio</h5>
+                                    <h6 class="card-text" th:text="${item.availability}">Disponibilidad</h6>
+                                    <br>
+                                    <p class="card-text" th:text="${item.phone}">Télefono</p>
+                                    <p class="card-text" th:text="${item.email}">Email</p>
+                                    <a class="btn btn-secondary" th:href="@{'/dogwalkeruser/' + ${item.id}}" title="Detail">Ver detalles</a>
+                                </div>
+                            </div>
+                        </tr>
+                    </table>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>
+
+
+

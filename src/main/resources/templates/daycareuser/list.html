@@ -1,137 +1,140 @@
 <!DOCTYPE html>
-<html xmlns="https://www.thymeleaf.org" xmlns:sd="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
-      style="font-size: 16px;" lang="es"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
-
+<head>
+    <title>Gestión de servicios de usuarios</title>
+</head>
 
 <body class="home">
-<link rel="stylesheet" th:href="@{/css/daycareuser.css}" media="screen">
+
 <div layout:fragment="content">
-
-    <section class="u-align-center u-clearfix u-grey-5 u-section-10" id="carousel_1d69">
+    <section class="u-align-center u-clearfix u-section-10" id="carousel_1d69" style="background-color:LightBlue;">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            <h2 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-1">Extraordinary rooms with elegant, yet a rustic atmosphere</h2>
+            <h2 class="u-align-center u-custom-font u-font-montserrat u-text  u-text-2">Lista de residencias</h2>
             <div class="u-expanded-width u-list u-list-1">
-
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-4">
-
-                                <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1">
-                                    <div class="u-container-layout u-similar-container u-container-layout-1">
-                                        <img alt="" class="u-expanded-width u-image u-image-default u-image-1" th:src="@{images/Apertura1-648x324.jpg}">
-                                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-video-cover u-group-1">
-                                            <ul class="u-container-layout u-valign-top u-container-layout-2" th:each="item,iter : ${daycare}" >
-                                                <li><h4 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-2" th:text="${daycare.name}"></h4></li>
-                                                <li><h5 class="u-text u-text-palette-1-base u-text-3" th:text="${daycare.nightPrice}"></h5></li>
-                                                <li><p class="u-text u-text-default u-text-4" th:text="${daycare.phone}"></p><br></li>
-                                                <li><p class="u-text u-text-default u-text-4" th:text="${daycare.email}"></p><br></li>
-                                                <li><p class="u-text u-text-default u-text-4" th:text="${daycare.address}"></li>
-                                                    <a href="https://nicepage.com/k/shopping-cart-html-templates" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-1">Ver más y reservar</a>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-
-               <!-- <div class="col" th:each="item,iter : ${daycares}">
-                    <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1">
-                        <div class="u-container-layout u-similar-container u-container-layout-1">
-                            <img alt="" class="u-expanded-width u-image u-image-default u-image-1" th:src="@{images/Apertura1-648x324.jpg}">
-                            <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-video-cover u-group-1">
-                                <div class="u-container-layout u-valign-top u-container-layout-2">
-                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-2" th:text="${item.name}"></h4>
-                                    <h5 class="u-text u-text-palette-1-base u-text-3" th:text="${item.nightPrice}"></h5>
-                                    <p class="u-text u-text-default u-text-4" th:text="${item.phone}"></p><br>
-                                    <p class="u-text u-text-default u-text-4" th:text="${item.email}"></p><br>
-                                    <p class="u-text u-text-default u-text-4" th:text="${item.address}">
-                                        <a href="https://nicepage.com/k/shopping-cart-html-templates" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-1">Ver más y reservar</a>
+                <form action="#" th:action="@{'/'}" method="post">
+                    <table style="width: 100%" >
+                        <tr th:each="item : ${daycareuser}">
+                            <div class="card border-secondary custom-card text-center mr-2 mt-2 ml-2 mb-2"
+                                 style="width: 15rem; display: inline-block; margin-left: 25px">
+                                <div class="card-body">
+                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-2" style="text-align:center;" th:text="${item.name}">Id</h4>
+                                    <br>
+                                    <h5 class="card-text" th:text="${item.nightPrice} + ' € / noche'">Precio</h5>
+                                    <p class="card-text" th:text="${item.phone}">Télefono</p>
+                                    <p class="card-text" th:text="${item.email}">Email</p>
+                                    <p class="card-text" th:text="${item.address}">Dirección</p>
+                                    <p class="card-text" th:text="${item.ranking}">Ranking</p>
+                                    <a class="btn btn-secondary" th:href="@{'/daycareuser/' + ${item.id}}" title="Detail">Ver detalles</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>-->
-
-
-<!--                <div class="u-repeater u-repeater-1">-->
-<!--                    <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1">-->
-<!--                        <div class="u-container-layout u-similar-container u-container-layout-1">-->
-<!--                            <img alt="" class="u-expanded-width u-image u-image-default u-image-1" src="images/australian-modern-bedroom-interior-nature-window_31965-3690.jpg">-->
-<!--                            <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-video-cover u-group-1">-->
-<!--                                <div class="u-container-layout u-valign-top u-container-layout-2">-->
-<!--                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-2">Apartment - Ground Floor</h4>-->
-<!--                                    <h5 class="u-text u-text-palette-1-base u-text-3">44 m²</h5>-->
-<!--                                    <p class="u-text u-text-default u-text-4">This apartment features a electric kettle, sofa and private entrance.</p>-->
-<!--                                    <a href="https://nicepage.com/k/shopping-cart-html-templates" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-1">book room</a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-2">-->
-<!--                        <div class="u-container-layout u-similar-container u-container-layout-3">-->
-<!--                            <img alt="" class="u-expanded-width u-image u-image-default u-image-2" src="images/modern-studio-apartment-design-with-bedroom-living-space_1262-12375.jpg">-->
-<!--                            <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-video-cover u-group-2">-->
-<!--                                <div class="u-container-layout u-valign-top u-container-layout-4">-->
-<!--                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-5">Double Deluxe Room</h4>-->
-<!--                                    <h5 class="u-text u-text-palette-1-base u-text-6">55 m²</h5>-->
-<!--                                    <p class="u-text u-text-default u-text-7">In the room, designed by Space Copenhagen, every detail is</p>-->
-<!--                                    <a href="https://nicepage.review" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-2">book room</a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-3">-->
-<!--                        <div class="u-container-layout u-similar-container u-container-layout-5">-->
-<!--                            <img alt="" class="u-expanded-width u-image u-image-default u-image-3" src="images/luxury-bedroom-hotel_1150-10836.jpg">-->
-<!--                            <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-group-3">-->
-<!--                                <div class="u-container-layout u-valign-top u-container-layout-6">-->
-<!--                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-8">Apartment with Park View</h4>-->
-<!--                                    <h5 class="u-text u-text-palette-1-base u-text-9">74 m²</h5>-->
-<!--                                    <p class="u-text u-text-default u-text-10">This apartment has a dining area, private entrance and kitchen.</p>-->
-<!--                                    <a href="https://nicepage.com/c/text-website-templates" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-3">book room</a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-
-
-
-
-
-
+                        </tr>
+                    </table>
+                </form>
+                </div>
             </div>
-
         </div>
     </section>
 
-
-    <section class="u-backlink u-clearfix u-grey-80">
-        <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-            <span>Website Templates</span>
-        </a>
-        <p class="u-text">
-            <span>created with</span>
-        </p>
-        <a class="u-link" href="" target="_blank">
-            <span>Website Builder Software</span>
-        </a>.
-    </section>
-
-
-
-    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-    <script class="u-script" type="text/javascript" src="js/jquery.js"></script>
-    <script class="u-script" type="text/javascript" src="js/nicepage.js"></script>
 </div>
 </body>
 </html>
+
+
+
+
+<!--<div class="u-expanded-width u-list u-list-1">-->
+
+<!--    <div class="container-fluid">-->
+<!--        <div class="row">-->
+<!--            <div class="col-4">-->
+
+<!--                <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1">-->
+<!--                    <div class="u-container-layout u-similar-container u-container-layout-1">-->
+<!--                        <img alt="" class="u-expanded-width u-image u-image-default u-image-1" th:src="@{images/Apertura1-648x324.jpg}">-->
+<!--                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-video-cover u-group-1">-->
+<!--                            <div class="u-container-layout u-valign-top u-container-layout-2">-->
+<!--                                <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-2">Apartment - Ground Floor</h4>-->
+<!--                                <h5 class="u-text u-text-palette-1-base u-text-3">44 m²</h5>-->
+<!--                                <p class="u-text u-text-default u-text-4">This apartment features a electric kettle, sofa and private entrance.</p>-->
+<!--                                <a href="https://nicepage.com/k/shopping-cart-html-templates" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-1">book room</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--            <div class="col-4">-->
+
+<!--                <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1">-->
+<!--                    <div class="u-container-layout u-similar-container u-container-layout-1">-->
+<!--                        <img alt="" class="u-expanded-width u-image u-image-default u-image-1" th:src="@{images/Apertura1-648x324.jpg}">-->
+<!--                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-video-cover u-group-1">-->
+<!--                            <div class="u-container-layout u-valign-top u-container-layout-2">-->
+<!--                                <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-2">Apartment - Ground Floor</h4>-->
+<!--                                <h5 class="u-text u-text-palette-1-base u-text-3">44 m²</h5>-->
+<!--                                <p class="u-text u-text-default u-text-4">This apartment features a electric kettle, sofa and private entrance.</p>-->
+<!--                                <a href="https://nicepage.com/k/shopping-cart-html-templates" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-1">book room</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--            <div class="col-4">-->
+<!--                <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-1">-->
+<!--                    <div class="u-container-layout u-similar-container u-container-layout-1">-->
+<!--                        <img alt="" class="u-expanded-width u-image u-image-default u-image-1" th:src="@{images/Apertura1-648x324.jpg}">-->
+<!--                        <div class="u-align-center u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-xl u-group u-video-cover u-group-1">-->
+<!--                            <div class="u-container-layout u-valign-top u-container-layout-2">-->
+<!--                                <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-2">Apartment - Ground Floor</h4>-->
+<!--                                <h5 class="u-text u-text-palette-1-base u-text-3">44 m²</h5>-->
+<!--                                <p class="u-text u-text-default u-text-4">This apartment features a electric kettle, sofa and private entrance.</p>-->
+<!--                                <a href="https://nicepage.com/k/shopping-cart-html-templates" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-text-body-color u-btn-1">book room</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<!--<section class="u-align-center u-clearfix u-grey-5 u-section-10" id="carousel_1d69">-->
+<!--    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">-->
+<!--        <h2 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-1">Lista de residencias</h2>-->
+<!--        <div class="u-expanded-width u-list u-list-1">-->
+<!--            <div class="container-fluid">-->
+<!--                <form action="#" th:action="@{'/'}" method="post">-->
+<!--                    <table style="width: 100%" mr-2 mt-2 ml-2 mb-2>-->
+<!--                        <tr th:each="item : ${daycareuser}">-->
+<!--                            <div class="card border-secondary custom-card text-center mr-2 mt-2 ml-2 mb-2"-->
+<!--                                 style="width: 15rem; display: inline-block">-->
+<!--                                <div class="card-body">-->
+<!--                                    <h4 class="u-custom-font u-font-roboto-condensed u-text u-text-default u-text-2" th:text="${'Nombre residencia - ' + item.name}">Id</h4>-->
+<!--                                    <br>-->
+<!--                                    <h5 class="card-text" th:text="${item.nightPrice} + ' € / noche'">Precio</h5>-->
+<!--                                    <p class="card-text" th:text="${item.phone}">Télefono</p>-->
+<!--                                    <p class="card-text" th:text="${item.email}">Email</p>-->
+<!--                                    <p class="card-text" th:text="${item.address}">Dirección</p>-->
+<!--                                    <p class="card-text" th:text="${item.ranking}">Ranking</p>-->
+<!--                                    <a class="btn btn-secondary" th:href="@{'/daycareuser/' + ${item.id}}" title="Detail">Ver detalles</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+
+

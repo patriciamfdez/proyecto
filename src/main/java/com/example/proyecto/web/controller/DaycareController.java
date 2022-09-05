@@ -94,7 +94,9 @@ public class DaycareController extends AbstractController<DaycareDTO>  {
         return "redirect:/daycare";
     }
 
-    // Vista usuario
+
+    /* ******************* Vista usuario ******************** */
+
     @GetMapping("/daycareuser")
     public String getAll1(@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size,
                          Model model) {
@@ -103,9 +105,9 @@ public class DaycareController extends AbstractController<DaycareDTO>  {
                 size.orElse(10)));
         model
                 //.addAttribute("username", user.getUserName())
-                .addAttribute("daycare", all1)
-                .addAttribute(pageNumbersAttributeKey, getPageNumbers(all1));
-        return "daycareuser/cards";
+                .addAttribute("daycareuser", all1);
+
+        return "daycareuser/list";
     }
 
     @GetMapping("/daycareuser/{id}")

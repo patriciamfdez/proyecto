@@ -6,33 +6,17 @@ import java.io.Serializable;
 /* Procedimiento almacenado en BB.DD. */
 
 
-@NamedStoredProcedureQuery(name = "ActualizarCatalogo", procedureName = "altacatalogo",resultClasses = {
-        Catalogue.class }
-)
-@NamedStoredProcedureQuery(name = "BorradoLogicoCatalogo", procedureName = "borradologicocatalogo",resultClasses = {
-        Catalogue.class }, parameters = {
-        @StoredProcedureParameter(name = "id_product", type = Integer.class, mode = ParameterMode.IN),
-        @StoredProcedureParameter(name = "serviceType", type = String.class, mode = ParameterMode.IN)}
-)
-@NamedStoredProcedureQuery(name = "RestauragoLogicoCatalogo", procedureName = "restauradologicocatalogo",resultClasses = {
-        Catalogue.class }, parameters = {
-        @StoredProcedureParameter(name = "id_product", type = Integer.class, mode = ParameterMode.IN),
-        @StoredProcedureParameter(name = "serviceType", type = String.class, mode = ParameterMode.IN)
-}
-)
-
-
 @Entity
 @Table(name = "catalogue")
-@NamedStoredProcedureQuery(name = "ActualizarCatalogo", procedureName = "altacatalogo",resultClasses = {
+@NamedStoredProcedureQuery(name = "ActualizarCatalogo", procedureName = "alta_catalogo",resultClasses = {
         Catalogue.class }
 )
-@NamedStoredProcedureQuery(name = "BorradoLogicoCatalogo", procedureName = "borradologicocatalogo",resultClasses = {
+@NamedStoredProcedureQuery(name = "BorradoLogicoCatalogo", procedureName = "borrado_logico_catalogo",resultClasses = {
         Catalogue.class }, parameters = {
         @StoredProcedureParameter(name = "id_product", type = Integer.class, mode = ParameterMode.IN),
         @StoredProcedureParameter(name = "serviceType", type = String.class, mode = ParameterMode.IN)}
 )
-@NamedStoredProcedureQuery(name = "RestauragoLogicoCatalogo", procedureName = "restauradologicocatalogo",resultClasses = {
+@NamedStoredProcedureQuery(name = "RestauradoLogicoCatalogo", procedureName = "restaurado_logico_catalogo",resultClasses = {
         Catalogue.class }, parameters = {
         @StoredProcedureParameter(name = "id_product", type = Integer.class, mode = ParameterMode.IN),
         @StoredProcedureParameter(name = "serviceType", type = String.class, mode = ParameterMode.IN)

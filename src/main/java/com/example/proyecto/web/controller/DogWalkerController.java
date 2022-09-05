@@ -1,5 +1,6 @@
 package com.example.proyecto.web.controller;
 
+import com.example.proyecto.dto.DaycareDTO;
 import com.example.proyecto.dto.DogWalkerDTO;
 import com.example.proyecto.service.DogWalkerService;
 import com.example.proyecto.service.MenuService;
@@ -87,5 +88,33 @@ public class DogWalkerController extends AbstractController<DogWalkerDTO>  {
         }
         status.setComplete();
         return "redirect:/dogwalker";
+    }
+
+    /* ******************* Vista usuario ******************** */
+
+    @GetMapping("/dogwalkeruser")
+    public String getAll1(@RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size,
+                          Model model) {
+        //final User user = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        final Page<DogWalkerDTO> all1 = this.service.findAll( PageRequest.of(page.orElse(1) - 1,
+                size.orElse(10)));
+        model
+                //.addAttribute("username", user.getUserName())
+                .addAttribute("dogwalkeruser", all1);
+
+        return "dogwalkeruser/list";
+    }
+
+    @GetMapping("/dogwalkeruser/{id}")
+    public String detail1(@PathVariable("id") Integer id, ModelMap model) {
+        model.addAttribute("dogwalkeruser", this.service.findById(id).get());
+        return "dogwalkeruser/detail";
+    }
+
+    @GetMapping("/dogwalkeruser/{id}/edit")
+    @PostAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    public String edit1(@PathVariable("id") Integer id, ModelMap model) {
+        model.addAttribute("dogwalkeruser", this.service.findById(id).get());
+        return "dogwalkeruser/edit";
     }
 }

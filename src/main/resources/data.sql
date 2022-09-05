@@ -98,14 +98,14 @@ VALUES
   ( 4, '4','Don Dog','Rumania','22178', 'Sevilla'),
   ( 5, '5','Don Dog','Rumania','22178', 'Sevilla');
 
-INSERT INTO daycare (id,name,night_price,phone,email,ranking,address_id,image)
+INSERT INTO daycare (id,name,night_price,phone,email,ranking)
 VALUES
-  ( -1, 'dummy',25,'dummy','dummy', 7, 5,'daycare1.jpg'),
-  ( 1, 'pets junior',25,'666777888','pruebaguarderia@gmail.com', 7, 5, 'daycare2.jpg'),
-  ( 2, 'pets seniors',23,'666777888','pruebaguarderia@gmail.com', 7, 4, 'daycare3.jpg'),
-  ( 3, 'dogs seniors',15,'666777888','pruebaguarderia@gmail.com', 7, 3, null),
-  ( 4, 'dogs junios',10,'666777888','pruebaguarderia@gmail.com', 7, 2, null),
-  ( 5, 'pipi junios',5,'666777888','pruebaguarderia@gmail.com', 7, 1, null);
+  ( -1, 'dummy',25,'dummy','dummy', 7),
+  ( 1, 'pets junior',25,'666777888','pruebaguarderia@gmail.com', 7),
+  ( 2, 'pets seniors',23,'666777888','pruebaguarderia@gmail.com', 7),
+  ( 3, 'dogs seniors',15,'666777888','pruebaguarderia@gmail.com', 7),
+  ( 4, 'dogs junios',10,'666777888','pruebaguarderia@gmail.com', 7),
+  ( 5, 'pipi junios',5,'666777888','pruebaguarderia@gmail.com', 7);
 
 INSERT INTO dog_walker (id, assessment, availability, birthdate, doc_identification, email, gallery, max_num_dogs, name, password, phone, price_walk, profile_picture, reviews, sterilized, user_name, weight_dogs, surname)
 VALUES

@@ -80,7 +80,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/create").permitAll()
                 .antMatchers("/index").permitAll()
                 .antMatchers("/signup").permitAll()
-                .antMatchers("/daycareuser/*").permitAll();
+                .antMatchers("/daycareuser/*").permitAll()
+                .antMatchers("/dogwalkeruser/*").permitAll();
+
     }
 
     @Override
